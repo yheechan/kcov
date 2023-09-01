@@ -2,6 +2,8 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <fstream>
+
 #include <map>
 #include <utility>
 
@@ -42,6 +44,10 @@ public:
             id += 1;
             total_branches += 2;
             printInfo("If", id, s);
+
+            IfStmt * ifStmt = dyn_cast<IfStmt>(s);
+            TheRewriter.InsertTextBefore(ifStmt->getBeginLoc(), "/*Before if statement*/\n    ");
+            TheRewriter.InsertTextAfter(ifStmt->getEndLoc().getLocWithOffset(1), "\n    /*After if statement*/");
         } else if (isa<ForStmt>(s)) {
             id += 1;
             total_branches += 2;
@@ -127,13 +133,31 @@ class MyASTConsumer : public ASTConsumer
 {
 public:
     MyASTConsumer(Rewriter &R, const LangOptions &langOptions)
-        : Visitor(R, langOptions) //initialize MyASTVisitor
+        : Visitor(R, langOptions), //initialize MyASTVisitor
+        TheRewriter(R),
+        langOpts(langOptions)
     {}
+
+	void OnFirstTopLevelDecl(const Decl *d) {
+		std::ifstream file("./include/myLibrary.c");
+		std::string content( (std::istreambuf_iterator<char>(file) ),\
+							 (std::istreambuf_iterator<char>() ));
+
+		TheRewriter.InsertTextBefore(d->getBeginLoc(), content);
+	}
 
     // callback functino of ASTConsumer
     // called for each top-level declaration
     virtual bool HandleTopLevelDecl(DeclGroupRef DR) {
         for (DeclGroupRef::iterator b = DR.begin(), e = DR.end(); b != e; ++b) {
+
+            const Decl* D = *b;
+
+            if (!firstDecl && D->hasBody() && isa<FunctionDecl>(D)) {
+                OnFirstTopLevelDecl(D);
+                firstDecl = true;
+            }
+
             // Travel each function declaration using MyASTVisitor
             Visitor.TraverseDecl(*b);
         }
@@ -142,6 +166,9 @@ public:
 
 private:
     MyASTVisitor Visitor;
+    Rewriter &TheRewriter;
+    const LangOptions &langOpts;
+    bool firstDecl = false;
 };
 
 
@@ -236,6 +263,16 @@ int main(int argc, char *argv[])
     ParseAST(TheCompInst.getPreprocessor(), &TheConsumer, TheCompInst.getASTContext());
 
     llvm::outs() << "Total number of branches: " << total_branches << "\n";
+
+    const RewriteBuffer *RewriteBuf = TheRewriter.getRewriteBufferFor(SourceMgr.getMainFileID());
+	if (RewriteBuf && TheRewriter.buffer_begin() != TheRewriter.buffer_end()) {
+		char o_file[1024]={0};
+		strncpy(o_file, argv[1], strlen(argv[1])-2);
+		strcpy(o_file+strlen(o_file), "-cov.c");
+		ofstream output(o_file);
+		output << string(RewriteBuf->begin(), RewriteBuf->end());
+		output.close();
+	}
 
     return 0;
 }
