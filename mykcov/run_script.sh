@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "-$ gcc -E test.c -o test.i"
 gcc -E test.c -o test.i
 echo ">> preprocess test.c complete!"

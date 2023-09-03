@@ -29,7 +29,33 @@ using namespace clang;
 using namespace std;
 
 int total_branches = 0;
-int id = -1;
+int branch_id = -1;
+
+std::string singleCondStart = "((";
+/*
+std::string id2CondEnd(int id, unsigned int lineNum, std::string expr) {
+    std::string val =\
+") ? \
+(myCov_saveBranch(" + to_string(id) + ", " + to_string(lineNum) + "), \
+strcpy(branches[" + to_string(id)+ "].conditionExpr, \"" + expr + "\"), \
+myCov_onCondTrue(" + to_string(id) + "," + to_string(lineNum) + "), 1)) : \
+\
+(myCov_saveBranch(" + to_string(id) + ", " + to_string(lineNum) + "), \
+(strcpy(branches[" + to_string(id)+ "].conditionExpr, \"" + expr + "\"), \
+myCov_onCondFalse(" + to_string(id) + "," + to_string(lineNum) + "), 0))";
+    return val;
+}
+*/
+std::string id2CondEnd(int id, unsigned int lineNum, std::string expr) {
+    std::string val =\
+") ? \
+(strcpy(branches[" + to_string(id)+ "].conditionExpr, \"" + expr + "\"), \
+myCov_onCondTrue(" + to_string(id) + "," + to_string(lineNum) + "), 1) : \
+\
+(strcpy(branches[" + to_string(id)+ "].conditionExpr, \"" + expr + "\"), \
+myCov_onCondFalse(" + to_string(id) + "," + to_string(lineNum) + "), 0))";
+    return val;
+}
 
 class MyASTVisitor : public RecursiveASTVisitor<MyASTVisitor>
 {
@@ -41,57 +67,48 @@ public:
         // Fill out this function for your homework
 
         if (isa<IfStmt>(s)) {
-            id += 1;
             total_branches += 2;
-            printInfo("If", id, s);
+            branch_id++;
+            auto ifStmt = dyn_cast<IfStmt>(s);
+
+
+            // >> get line number
+            SourceLocation ifLoc = ifStmt->getBeginLoc();
+            SourceManager &srcmgr = TheRewriter.getSourceMgr();
+            unsigned int lineNum = srcmgr.getExpansionLineNumber(ifLoc);
+            
+            // >> get expression name
+            Expr* cond = ifStmt->getCond();
+            std::string str1;
+            llvm::raw_string_ostream os(str1);
+            cond->printPretty(os, NULL, LangOpts);
+            std::string expr = os.str();
+
+            // single condition; x>10
+            TheRewriter.InsertTextBefore(cond->getBeginLoc(), singleCondStart);
+            TheRewriter.InsertTextAfter(ifStmt->getRParenLoc(), id2CondEnd(branch_id, lineNum, expr));
+
+            // >> append branch info to tempData
+            ofstream of;
+
+            of.open("tempDat", ios::app);
+            of << to_string(branch_id) + "," + to_string(lineNum) + ",";
+            of << "0,0,";
+            of << expr + "\n";
+            of.close();
+
+
+            // multi condition; x>10 || x<4
+            // dynamic condition; x++>10, ++x<10
+
+            /*
+            branch_id += 1;
+            total_branches += 2;
+            printInfo("If", branch_id, s);
 
             IfStmt * ifStmt = dyn_cast<IfStmt>(s);
-            TheRewriter.InsertTextBefore(ifStmt->getBeginLoc(), "/*Before if statement*/\n    ");
-            TheRewriter.InsertTextAfter(ifStmt->getEndLoc().getLocWithOffset(1), "\n    /*After if statement*/");
-        } else if (isa<ForStmt>(s)) {
-            id += 1;
-            total_branches += 2;
-            printInfo("For", id, s);
-        } else if (isa<WhileStmt>(s)) {
-            id += 1;
-            total_branches += 2;
-            printInfo("While", id, s);
-        } else if (isa<DoStmt>(s)) {
-            id += 1;
-            total_branches += 2;
-            printInfo("Do", id, s);
-        } else if (isa<CaseStmt>(s)) {
-            id += 1;
-            total_branches += 1;
-            printInfo("Case", id, s);
-        } else if (isa<ConditionalOperator>(s)) {
-            id += 1;
-            total_branches += 2;
-            printInfo("?:", id, s);
-        } else if (isa<DefaultStmt>(s)){
-            id += 1;
-            total_branches += 1;
-            printInfo("Defult", id, s);
-        } else if (isa<SwitchStmt>(s)) {
-            auto switchStmt = cast<SwitchStmt>(s);
-            auto switchCase = switchStmt->getSwitchCaseList();
-
-            int defaultExist = 0;
-            while (switchCase) {
-                if (isa<DefaultStmt>(switchCase)) {
-                    defaultExist = 1;
-                    break;
-                } 
-
-                switchCase = switchCase->getNextSwitchCase();
-            }
-
-            if (!defaultExist) {
-                id += 1;
-                total_branches += 1;
-                printInfo("ImpDef.", id, s);
-            }
-        }
+            */
+        } 
 
         return true;
     }
