@@ -47,12 +47,20 @@ public:
 	*/
 
 	bool VisitStmt(Stmt *stmt) {
-        if (isa<IfStmt>(stmt)){
-            IfStmt * ifStmt = dyn_cast<IfStmt>(stmt);
-            TheRewriter.InsertTextBefore(ifStmt->getBeginLoc(), "/*Before if statement*/\n  ");
-            TheRewriter.InsertTextAfter(ifStmt->getEndLoc().getLocWithOffset(1), "\n  /*After if statement*/\n");
-        }
-        return true;
+		tok::TokenKind tokenKind = clang::tok::semi;
+		unsigned int lineNum = m_sourceManager.getExpansionLineNumber(stmt->getBeginLoc());
+		unsigned int columnNum = m_sourceManager.getExpansionColumnNumber(stmt->getBeginLoc());
+		llvm::outs() << lineNum << ", " << columnNum << "\n";
+		SourceLocation next_after_loc = clang::Lexer::findLocationAfterToken(stmt->getBeginLoc(), tokenKind, m_sourceManager, LangOpts, false);
+		if (next_after_loc.isInvalid()){
+			llvm::outs() << "Invalid SourceLocation\n";
+		} else{
+			lineNum = m_sourceManager.getExpansionLineNumber(next_after_loc);
+			columnNum = m_sourceManager.getExpansionColumnNumber(next_after_loc);
+			llvm::outs() << lineNum << ", " << columnNum << "\n\n\n";
+		}
+		
+		return true;
 	}
 
     bool VisitFunctionDecl(FunctionDecl *f) {

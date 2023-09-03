@@ -38,24 +38,21 @@ std::string id2CondEnd(int id, unsigned int lineNum, std::string expr) {
 ") ? \
 (myCov_saveBranch(" + to_string(id) + ", " + to_string(lineNum) + "), \
 strcpy(branches[" + to_string(id)+ "].conditionExpr, \"" + expr + "\"), \
-myCov_onCondTrue(" + to_string(id) + "," + to_string(lineNum) + "), 1)) : \
+myCov_onCondTrue(" + to_string(id) + "," + to_string(lineNum) + "), 1) : \
 \
 (myCov_saveBranch(" + to_string(id) + ", " + to_string(lineNum) + "), \
-(strcpy(branches[" + to_string(id)+ "].conditionExpr, \"" + expr + "\"), \
+strcpy(branches[" + to_string(id)+ "].conditionExpr, \"" + expr + "\"), \
 myCov_onCondFalse(" + to_string(id) + "," + to_string(lineNum) + "), 0))";
     return val;
 }
 */
-std::string id2CondEnd(int id, unsigned int lineNum, std::string expr) {
-    std::string val =\
-") ? \
-(strcpy(branches[" + to_string(id)+ "].conditionExpr, \"" + expr + "\"), \
-myCov_onCondTrue(" + to_string(id) + "," + to_string(lineNum) + "), 1) : \
-\
-(strcpy(branches[" + to_string(id)+ "].conditionExpr, \"" + expr + "\"), \
-myCov_onCondFalse(" + to_string(id) + "," + to_string(lineNum) + "), 0))";
+std::string id2CondEnd(int id) {
+    std::string val = ") ? (myCov_onCondTrue(" + to_string(id)+ "), 1) : \
+(myCov_onCondFalse(" + to_string(id) + "), 0))";
     return val;
 }
+std::string readCMD = "myCov_readInitData();\n ";
+std::string writeCMD = "myCov_writeUpdData();\n ";
 
 class MyASTVisitor : public RecursiveASTVisitor<MyASTVisitor>
 {
@@ -77,7 +74,7 @@ public:
             SourceManager &srcmgr = TheRewriter.getSourceMgr();
             unsigned int lineNum = srcmgr.getExpansionLineNumber(ifLoc);
             
-            // >> get expression name
+            // >> get expression string
             Expr* cond = ifStmt->getCond();
             std::string str1;
             llvm::raw_string_ostream os(str1);
@@ -86,11 +83,10 @@ public:
 
             // single condition; x>10
             TheRewriter.InsertTextBefore(cond->getBeginLoc(), singleCondStart);
-            TheRewriter.InsertTextAfter(ifStmt->getRParenLoc(), id2CondEnd(branch_id, lineNum, expr));
+            TheRewriter.InsertTextAfter(ifStmt->getRParenLoc(), id2CondEnd(branch_id));
 
-            // >> append branch info to tempData
+            // >> append initial branch info to tempDat
             ofstream of;
-
             of.open("tempDat", ios::app);
             of << to_string(branch_id) + "," + to_string(lineNum) + ",";
             of << "0,0,";
@@ -156,12 +152,28 @@ public:
     {}
 
 	void OnFirstTopLevelDecl(const Decl *d) {
-		std::ifstream file("./include/myLibrary.c");
-		std::string content( (std::istreambuf_iterator<char>(file) ),\
+		std::ifstream file("./probes/utilities.c");
+		std::string utilityFile( (std::istreambuf_iterator<char>(file) ),\
 							 (std::istreambuf_iterator<char>() ));
 
-		TheRewriter.InsertTextBefore(d->getBeginLoc(), content);
+		TheRewriter.InsertTextBefore(d->getBeginLoc(), utilityFile);
 	}
+
+    void OnMainFuncDecl(const Decl *d) {
+        // get body as stmt
+        auto body = d->getBody();
+        if (isa<CompoundStmt>(body)) {
+            auto cmpStmt = dyn_cast<CompoundStmt>(body);
+            auto frontStmt = cmpStmt->body_front();
+            auto backStmt = cmpStmt->body_back();
+
+            TheRewriter.InsertTextBefore(frontStmt->getBeginLoc(), readCMD);
+
+            if (isa<ReturnStmt>(backStmt)) {
+                TheRewriter.InsertTextBefore(backStmt->getBeginLoc(), writeCMD);
+            }
+        }
+    }
 
     // callback functino of ASTConsumer
     // called for each top-level declaration
@@ -170,9 +182,18 @@ public:
 
             const Decl* D = *b;
 
+            // at first declaration of a function
+            // insert probes for utility function for branch coverage
             if (!firstDecl && D->hasBody() && isa<FunctionDecl>(D)) {
                 OnFirstTopLevelDecl(D);
                 firstDecl = true;
+            }
+
+            // at declaration of main function
+            // insert probes for reading initial information of branch
+            // insert probes for writing final (updated) information of branch
+            if (isa<FunctionDecl>(D) && D->getAsFunction()->isMain()) {
+                OnMainFuncDecl(D);
             }
 
             // Travel each function declaration using MyASTVisitor

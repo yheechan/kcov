@@ -1,0 +1,7 @@
+done 1. write all discovered branch to 'tempDat' file (inital branch information)
+done 2. write a reading function
+done 3. insert the reading function at the beginning of target program's main function
+4. functions 'onCondTrue & False' will update branch structure as branches are executed
+done 5. write a writing function
+done 6. insert the writing function at the end of target program's main function
+7. final output file should be also written
