@@ -25,6 +25,7 @@ void myCov_onCondFalse(int bId) {
 void myCov_readInitData() {
     FILE* fp;
 
+    // read from tempDat
     fp = fopen("tempDat", "r");
     int iter = 0;
     
@@ -40,20 +41,41 @@ void myCov_readInitData() {
     }
 
     fclose(fp);
+
+    // write header for coverage.dat
+    fp = fopen("coverage.dat", "w+");
+
+    fprintf(fp,"|Line#\t|# of execution\t|# of execution\t|condition\n");
+    fprintf(fp,"|\t\t|of then branch\t|of else branch\t|expression\n");
+    fprintf(fp,"-----------------------------------------------------\n");
+
+    fclose(fp);
 }
 
 void myCov_writeUpdData() {
-    FILE* fp;
-    fp = fopen("tempDat", "wb");
+    FILE* fp1;
+    FILE* fp2;
+
+    // write update information to tempDat
+    fp1 = fopen("tempDat", "wb");
+    fp2 = fopen("coverage.dat", "a");
 
     int iter = 0;
     for (iter; iter<totBranchCount+1; iter++) {
-        fprintf(fp, "%d,%d,%d,%d,%s\n",\
+        fprintf(fp1, "%d,%d,%d,%d,%s\n",\
         branches[iter].id, branches[iter].lineNum,\
         branches[iter].thenCnt, branches[iter].elseCnt,\
         branches[iter].conditionExpr);
+
+        fprintf(fp2, "|%d\t|\t\t%d\t\t|\t\t%d\t\t|\t%s\n",\
+        branches[iter].lineNum,\
+        branches[iter].thenCnt, branches[iter].elseCnt,\
+        branches[iter].conditionExpr);
     }
+
+    fprintf(fp2,"-----------------------------------------------------\n");
     
-    fclose(fp);
+    fclose(fp1);
+    fclose(fp2);
 }
 

@@ -32,27 +32,13 @@ int total_branches = 0;
 int branch_id = -1;
 
 std::string singleCondStart = "((";
-/*
-std::string id2CondEnd(int id, unsigned int lineNum, std::string expr) {
-    std::string val =\
-") ? \
-(myCov_saveBranch(" + to_string(id) + ", " + to_string(lineNum) + "), \
-strcpy(branches[" + to_string(id)+ "].conditionExpr, \"" + expr + "\"), \
-myCov_onCondTrue(" + to_string(id) + "," + to_string(lineNum) + "), 1) : \
-\
-(myCov_saveBranch(" + to_string(id) + ", " + to_string(lineNum) + "), \
-strcpy(branches[" + to_string(id)+ "].conditionExpr, \"" + expr + "\"), \
-myCov_onCondFalse(" + to_string(id) + "," + to_string(lineNum) + "), 0))";
-    return val;
-}
-*/
 std::string id2CondEnd(int id) {
     std::string val = ") ? (myCov_onCondTrue(" + to_string(id)+ "), 1) : \
 (myCov_onCondFalse(" + to_string(id) + "), 0))";
     return val;
 }
-std::string readCMD = "myCov_readInitData();\n ";
-std::string writeCMD = "myCov_writeUpdData();\n ";
+std::string readCMD = "myCov_readInitData();\n\t";
+std::string writeCMD = "myCov_writeUpdData();\n\t";
 
 class MyASTVisitor : public RecursiveASTVisitor<MyASTVisitor>
 {
@@ -86,12 +72,7 @@ public:
             TheRewriter.InsertTextAfter(ifStmt->getRParenLoc(), id2CondEnd(branch_id));
 
             // >> append initial branch info to tempDat
-            ofstream of;
-            of.open("tempDat", ios::app);
-            of << to_string(branch_id) + "," + to_string(lineNum) + ",";
-            of << "0,0,";
-            of << expr + "\n";
-            of.close();
+            writeBranchInitData(branch_id, lineNum, expr);
 
 
             // multi condition; x>10 || x<4
@@ -104,7 +85,28 @@ public:
 
             IfStmt * ifStmt = dyn_cast<IfStmt>(s);
             */
-        } 
+        } else if (isa<ForStmt>(s)) {
+            total_branches += 2;
+            branch_id++;
+            printInfo("For", branch_id, s);
+
+            auto forStmt = dyn_cast<ForStmt>(s);
+
+            // >> get line number
+            SourceLocation forLoc = forStmt->getBeginLoc();
+            SourceManager &srcmgr = TheRewriter.getSourceMgr();
+            unsigned int lineNum = srcmgr.getExpansionLineNumber(forLoc);
+            
+            // >> get expression string
+            Expr* cond = forStmt->getCond();
+            std::string str1;
+            llvm::raw_string_ostream os(str1);
+            cond->printPretty(os, NULL, LangOpts);
+            std::string expr = os.str();
+
+            writeBranchInitData(branch_id, lineNum, expr);
+
+        }
 
         return true;
     }
@@ -122,6 +124,18 @@ public:
 private:
     Rewriter &TheRewriter;
     const LangOptions &LangOpts;
+
+    void writeBranchInitData(int branch_id, int lineNum, std::string expr) {
+        ofstream of;
+        of.open("tempDat", ios::app);
+
+        // writer branch information
+        of << to_string(branch_id) + "," + to_string(lineNum) + ",";
+        of << "0,0,";
+        of << expr + "\n";
+
+        of.close();
+    }
 
     void printInfo(string name, int id, Stmt *s) {
         // get statement class name
@@ -168,11 +182,14 @@ public:
             auto backStmt = cmpStmt->body_back();
 
             TheRewriter.InsertTextBefore(frontStmt->getBeginLoc(), readCMD);
-
-            if (isa<ReturnStmt>(backStmt)) {
-                TheRewriter.InsertTextBefore(backStmt->getBeginLoc(), writeCMD);
-            }
+            TheRewriter.InsertTextBefore(backStmt->getBeginLoc(), writeCMD);
         }
+
+        // init tempDat
+        ofstream of;
+        of.open("tempDat", ios::trunc);
+        of << "";
+        of.close();
     }
 
     // callback functino of ASTConsumer

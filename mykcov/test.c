@@ -11,17 +11,9 @@ int main(int argc, char* argv[]) {
 	int a = argc;
 	int b = argc;
 
-	if ( a == 1 || a == 234) {
-		a += 8;
-	} else if ( a++ == 3 ) {
-		printf("a++\n");
-	} else if ( ++b == 3 ) {
-		printf("++b\n");
-	} else {
-		a = 100;
+	for (int i=0; (i<10) ? (printf("true\n"),1):(printf("false"),0); i++) {
+		printf("hello world\n");
 	}
-
-	printf("%d %d\n", a, b);
 	
 	return 0;
 }
