@@ -31,14 +31,26 @@ using namespace std;
 int total_branches = 0;
 int branch_id = -1;
 
-std::string singleCondStart = "((";
+std::string onCondition = "((";
 std::string id2CondEnd(int id) {
     std::string val = ") ? (myCov_onCondTrue(" + to_string(id)+ "), 1) : \
 (myCov_onCondFalse(" + to_string(id) + "), 0))";
     return val;
 }
-std::string readCMD = "myCov_readInitData();\n\t";
-std::string writeCMD = "myCov_writeUpdData();\n\t";
+std::string readCMD = "myCov_readInitData();";
+std::string writeCMD = "myCov_writeUpdData();";
+std::string onCondTrue(int id) {
+    std::string val = "myCov_onCondTrue(" + to_string(id) +");";
+    return val;
+}
+std::string onCondFalse(int id) {
+    std::string val = "myCov_onCondFalse(" + to_string(id) +");";
+    return val;
+}
+std::string onlyFalse(int id) {
+    std::string val = ") ? (1) : (myCov_onCondFalse(" + to_string(id) +"),0))";
+    return val;
+}
 
 class MyASTVisitor : public RecursiveASTVisitor<MyASTVisitor>
 {
@@ -54,7 +66,6 @@ public:
             branch_id++;
             auto ifStmt = dyn_cast<IfStmt>(s);
 
-
             // >> get line number
             SourceLocation ifLoc = ifStmt->getBeginLoc();
             SourceManager &srcmgr = TheRewriter.getSourceMgr();
@@ -67,29 +78,15 @@ public:
             cond->printPretty(os, NULL, LangOpts);
             std::string expr = os.str();
 
-            // single condition; x>10
-            TheRewriter.InsertTextBefore(cond->getBeginLoc(), singleCondStart);
+            // insert probes
+            TheRewriter.InsertTextBefore(cond->getBeginLoc(), onCondition);
             TheRewriter.InsertTextAfter(ifStmt->getRParenLoc(), id2CondEnd(branch_id));
 
             // >> append initial branch info to tempDat
-            writeBranchInitData(branch_id, lineNum, expr);
-
-
-            // multi condition; x>10 || x<4
-            // dynamic condition; x++>10, ++x<10
-
-            /*
-            branch_id += 1;
-            total_branches += 2;
-            printInfo("If", branch_id, s);
-
-            IfStmt * ifStmt = dyn_cast<IfStmt>(s);
-            */
+            writeBranchInitData(branch_id, lineNum, expr, 2);
         } else if (isa<ForStmt>(s)) {
             total_branches += 2;
             branch_id++;
-            printInfo("For", branch_id, s);
-
             auto forStmt = dyn_cast<ForStmt>(s);
 
             // >> get line number
@@ -97,15 +94,135 @@ public:
             SourceManager &srcmgr = TheRewriter.getSourceMgr();
             unsigned int lineNum = srcmgr.getExpansionLineNumber(forLoc);
             
+
+            // insert probes
+            auto body = forStmt->getBody();
+            if (isa<CompoundStmt>(body)) {
+                auto cmpStmt = dyn_cast<CompoundStmt>(body);
+                TheRewriter.InsertTextAfter(cmpStmt->getLBracLoc().getLocWithOffset(1), onCondTrue(branch_id));
+                // TheRewriter.InsertTextBefore(cmpStmt->getRBracLoc().getLocWithOffset(1), onCondFalse(branch_id));
+            } /*else {
+                SourceLocation begLoc = body->getBeginLoc();
+                SourceLocation endLoc = body->getEndLoc();
+
+                TheRewriter.InsertTextBefore(begLoc, "{" + onCondTrue(branch_id));
+
+                tok::TokenKind tokenKind = clang::tok::semi;
+                SourceLocation next_after_loc = clang::Lexer::findLocationAfterToken(endLoc, tokenKind, srcmgr, LangOpts, false);
+                if (next_after_loc.isInvalid()){
+                    llvm::outs() << "Invalid SourceLocation\n";
+                } else{
+                    TheRewriter.InsertTextAfter(next_after_loc.getLocWithOffset(1), "\n}"+onCondFalse(branch_id));
+                }
+            }*/
+
+            // get expression string
+            auto cond = forStmt->getCond();
+            std::string expr;
+            if (cond == NULL) {
+                expr = "1";
+            } else {
+                std::string str;
+                llvm::raw_string_ostream os(str);
+                cond->printPretty(os, NULL, LangOpts);
+                expr = os.str();
+            }
+
+            // >> append initial branch info to tempDat
+            writeBranchInitData(branch_id, lineNum, expr, 2);
+        } else if (isa<WhileStmt>(s)) {
+            total_branches += 2;
+            branch_id++;
+            auto whileStmt = dyn_cast<WhileStmt>(s);
+
+            // >> get line number
+            SourceLocation whileLoc = whileStmt->getBeginLoc();
+            SourceManager &srcmgr = TheRewriter.getSourceMgr();
+            unsigned int lineNum = srcmgr.getExpansionLineNumber(whileLoc);
+
             // >> get expression string
-            Expr* cond = forStmt->getCond();
+            auto cond = whileStmt->getCond();
             std::string str1;
             llvm::raw_string_ostream os(str1);
             cond->printPretty(os, NULL, LangOpts);
             std::string expr = os.str();
 
-            writeBranchInitData(branch_id, lineNum, expr);
+            // insert probes
+            TheRewriter.InsertTextBefore(cond->getBeginLoc(), onCondition);
+            TheRewriter.InsertTextAfter(whileStmt->getRParenLoc(), id2CondEnd(branch_id));
 
+            // >> append initial branch info to tempDat
+            writeBranchInitData(branch_id, lineNum, expr, 2);
+        } else if (isa<DoStmt>(s)) {
+            total_branches += 2;
+            branch_id++;
+            auto doStmt = dyn_cast<DoStmt>(s);
+
+            // >> get line number
+            SourceLocation doLoc = doStmt->getBeginLoc();
+            SourceManager &srcmgr = TheRewriter.getSourceMgr();
+            unsigned int lineNum = srcmgr.getExpansionLineNumber(doLoc);
+
+            // >> get expression string
+            auto cond = doStmt->getCond();
+            std::string str1;
+            llvm::raw_string_ostream os(str1);
+            cond->printPretty(os, NULL, LangOpts);
+            std::string expr = os.str();
+
+            // insert probes
+            auto body = doStmt->getBody();
+            /*
+            TheRewriter.InsertTextBefore(body->getBeginLoc().getLocWithOffset(1), onCondTrue(branch_id));
+            TheRewriter.InsertTextBefore(cond->getBeginLoc(), onCondition);
+            */
+            TheRewriter.InsertTextBefore(cond->getBeginLoc(), onCondition);
+            TheRewriter.InsertTextAfter(doStmt->getRParenLoc(), id2CondEnd(branch_id));
+
+            // >> append initial branch info to tempDat
+            writeBranchInitData(branch_id, lineNum, expr, 2);
+        } else if (isa<CaseStmt>(s)) {
+            total_branches += 1;
+            branch_id++;
+            auto caseStmt = dyn_cast<CaseStmt>(s);
+
+            // >> get line number
+            SourceLocation caseLoc = caseStmt->getBeginLoc();
+            SourceManager &srcmgr = TheRewriter.getSourceMgr();
+            unsigned int lineNum = srcmgr.getExpansionLineNumber(caseLoc);
+
+            auto subStmt = caseStmt->getSubStmt();
+            TheRewriter.InsertTextBefore(subStmt->getBeginLoc(), onCondTrue(branch_id));
+
+            // >> get expression string
+            auto cond = caseStmt->getSubStmt();
+            SourceLocation b = caseStmt->getBeginLoc();
+            SourceLocation e = caseStmt->getColonLoc();
+            std::string expr;
+
+            if (b.isValid() && e.isValid()) {
+                llvm::StringRef str = Lexer::getSourceText(CharSourceRange::getCharRange(b, e), srcmgr, LangOpts);
+                expr = str.trim().str();
+            }
+            
+            // >> append initial branch info to tempDat
+            writeBranchInitData(branch_id, lineNum, expr, 1);
+        } else if (isa<DefaultStmt>(s)) {
+            total_branches += 1;
+            branch_id++;
+            auto defStmt = cast<DefaultStmt>(s);
+
+            SourceLocation defLoc = defStmt->getBeginLoc();
+            SourceManager &srcmgr = TheRewriter.getSourceMgr();
+            unsigned int lineNum = srcmgr.getExpansionLineNumber(defLoc);
+
+            std::string expr = "default";
+
+            auto subStmt = defStmt->getSubStmt();
+            TheRewriter.InsertTextBefore(subStmt->getBeginLoc(), onCondTrue(branch_id));
+
+            // >> append initial branch info to tempDat
+            writeBranchInitData(branch_id, lineNum, expr, 1);
         }
 
         return true;
@@ -116,7 +233,7 @@ public:
         if (f->hasBody()) {
             Stmt *FuncBody = f->getBody();
             auto funcName = f->getName();
-            llvm::outs() << "function: " << funcName << "\n";
+            // llvm::outs() << "function: " << funcName << "\n";
         }
         return true;
     }
@@ -125,13 +242,13 @@ private:
     Rewriter &TheRewriter;
     const LangOptions &LangOpts;
 
-    void writeBranchInitData(int branch_id, int lineNum, std::string expr) {
+    void writeBranchInitData(int branch_id, int lineNum, std::string expr, int n) {
         ofstream of;
         of.open("tempDat", ios::app);
 
         // writer branch information
         of << to_string(branch_id) + "," + to_string(lineNum) + ",";
-        of << "0,0,";
+        of << "0,0,"+to_string(n)+",";
         of << expr + "\n";
 
         of.close();
@@ -317,7 +434,7 @@ int main(int argc, char *argv[])
     // from slide (note): ParseAST() start building and traversal of an AST.
     ParseAST(TheCompInst.getPreprocessor(), &TheConsumer, TheCompInst.getASTContext());
 
-    llvm::outs() << "Total number of branches: " << total_branches << "\n";
+    // llvm::outs() << "Total number of branches: " << total_branches << "\n";
 
     const RewriteBuffer *RewriteBuf = TheRewriter.getRewriteBufferFor(SourceMgr.getMainFileID());
 	if (RewriteBuf && TheRewriter.buffer_begin() != TheRewriter.buffer_end()) {

@@ -47,19 +47,18 @@ public:
 	*/
 
 	bool VisitStmt(Stmt *stmt) {
-		tok::TokenKind tokenKind = clang::tok::semi;
-		unsigned int lineNum = m_sourceManager.getExpansionLineNumber(stmt->getBeginLoc());
-		unsigned int columnNum = m_sourceManager.getExpansionColumnNumber(stmt->getBeginLoc());
-		llvm::outs() << lineNum << ", " << columnNum << "\n";
-		SourceLocation next_after_loc = clang::Lexer::findLocationAfterToken(stmt->getBeginLoc(), tokenKind, m_sourceManager, LangOpts, false);
-		if (next_after_loc.isInvalid()){
-			llvm::outs() << "Invalid SourceLocation\n";
-		} else{
-			lineNum = m_sourceManager.getExpansionLineNumber(next_after_loc);
-			columnNum = m_sourceManager.getExpansionColumnNumber(next_after_loc);
-			llvm::outs() << lineNum << ", " << columnNum << "\n\n\n";
+		if (isa<SwitchStmt>(stmt)) {
+			auto switchStmt = cast<SwitchStmt>(stmt);
+			auto switchCase = switchStmt->getSwitchCaseList();
+			
+			while (switchCase){
+				std::string case_str;
+				llvm::raw_string_ostream os(case_str);
+				switchCase->printPretty(os, NULL, LangOpts);
+				llvm::outs() << os.str() << "\n\n";
+				switchCase = switchCase->getNextSwitchCase();
+			}
 		}
-		
 		return true;
 	}
 

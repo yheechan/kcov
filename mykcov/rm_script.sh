@@ -1,3 +1,3 @@
 #!/bin/bash
 make clean
-rm *.gc* test-cov.c test.i test-cov a.out tempDat coverage.dat
+rm *.gc* grep-cov.c grep.i grep tempDat coverage.dat
