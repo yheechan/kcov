@@ -1,0 +1,94 @@
+grep.c: In function ‘fillbuf’:
+grep.c:319:19: warning: format ‘%s’ expects a matching ‘char *’ argument [-Wformat=]
+    fprintf(stderr, "%s: warning: %s: %s\n", filename,
+                   ^~~~~~~~~~~~~~~~~~~~~~~
+grep.c: In function ‘prline’:
+grep.c:396:14: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+       printf("%d%c", ++totalnl, sep);
+              ^~~~~~  ~~~~~~~~~
+grep.c: In function ‘re_match_2’:
+grep.c:5420:33: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                           if ((int) old_regend[r] >= (int) regstart[r])
+                                 ^
+grep.c:5420:56: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                           if ((int) old_regend[r] >= (int) regstart[r])
+                                                        ^
+grep.c:5426:539: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+                   PUSH_FAILURE_POINT (p1 + mcnt, d, -2);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ^
+grep.c:5426:618: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+                   PUSH_FAILURE_POINT (p1 + mcnt, d, -2);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
+grep.c:5573:531: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+           PUSH_FAILURE_POINT (p + mcnt, NULL, -2);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ^
+grep.c:5573:610: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+           PUSH_FAILURE_POINT (p + mcnt, NULL, -2);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^
+grep.c:5626:531: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+           PUSH_FAILURE_POINT (p + mcnt, d, -2);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ^
+grep.c:5626:610: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+           PUSH_FAILURE_POINT (p + mcnt, d, -2);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^
+grep.c:5732:204: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+             POP_FAILURE_POINT (sdummy, pdummy,
+                                                                                                                                                                                                            ^
+grep.c:5732:271: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+             POP_FAILURE_POINT (sdummy, pdummy,
+                                                                                                                                                                                                                                                                               ^
+grep.c:5765:531: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+           PUSH_FAILURE_POINT (0, 0, -2);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ^
+grep.c:5765:610: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+           PUSH_FAILURE_POINT (0, 0, -2);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^
+grep.c:5778:531: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+           PUSH_FAILURE_POINT (0, 0, -2);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ^
+grep.c:5778:610: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+           PUSH_FAILURE_POINT (0, 0, -2);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^
+grep.c:5946:196: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+           POP_FAILURE_POINT (d, p,
+                                                                                                                                                                                                    ^
+grep.c:5946:267: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+           POP_FAILURE_POINT (d, p,
+                                                                                                                                                                                                                                                                           ^
+grep.c: At top level:
+grep.c:6913:8: warning: type defaults to ‘int’ in declaration of ‘lexleft’ [-Wimplicit-int]
+ static lexleft;   /* Number of characters remaining. */
+        ^~~~~~~
+grep.c:7300:8: warning: type defaults to ‘int’ in declaration of ‘depth’ [-Wimplicit-int]
+ static depth;   /* Current depth of a hypothetical stack
+        ^~~~~
+grep.c: In function ‘nsubtoks’:
+grep.c:7398:1: warning: type of ‘tindex’ defaults to ‘int’ [-Wimplicit-int]
+ nsubtoks(tindex)
+ ^~~~~~~~
+grep.c: In function ‘dfastate’:
+grep.c:8091:10: warning: type defaults to ‘int’ in declaration of ‘initialized’ [-Wimplicit-int]
+   static initialized;  /* Flag for static initialization. */
+          ^~~~~~~~~~~
+grep.c: In function ‘dfaexec’:
+grep.c:8429:12: warning: type defaults to ‘int’ in declaration of ‘s’ [-Wimplicit-int]
+   register s, s1, tmp;  /* Current state. */
+            ^
+grep.c:8429:15: warning: type defaults to ‘int’ in declaration of ‘s1’ [-Wimplicit-int]
+   register s, s1, tmp;  /* Current state. */
+               ^~
+grep.c:8429:19: warning: type defaults to ‘int’ in declaration of ‘tmp’ [-Wimplicit-int]
+   register s, s1, tmp;  /* Current state. */
+                   ^~~
+grep.c:8431:14: warning: type defaults to ‘int’ in declaration of ‘trans’ [-Wimplicit-int]
+   register **trans, *t;  /* Copy of d->trans so it can be optimized
+              ^~~~~
+grep.c:8431:22: warning: type defaults to ‘int’ in declaration of ‘t’ [-Wimplicit-int]
+   register **trans, *t;  /* Copy of d->trans so it can be optimized
+                      ^
+grep.c:8433:10: warning: type defaults to ‘int’ in declaration of ‘sbit’ [-Wimplicit-int]
+   static sbit[NOTCHAR]; /* Table for anding with d->success. */
+          ^~~~
+grep.c:8434:10: warning: type defaults to ‘int’ in declaration of ‘sbit_init’ [-Wimplicit-int]
+   static sbit_init;
+          ^~~~~~~~~

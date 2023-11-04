@@ -1,0 +1,1471 @@
+|Line#	|# of execution	|# of execution	|condition
+|		|of then branch	|of else branch	|expression
+-----------------------------------------------------
+|4301	|		0		|		0		|	prog && strrchr(prog, '/')
+|4321	|		0		|		2		|	(opt = getopt(argc, argv, "0123456789A:B:CEFGVX:bce:f:hiLlnqsvwxy")) != (-1)
+|4329	|		0		|		0		|	case '0'
+|4330	|		0		|		0		|	case '1'
+|4331	|		3		|		0		|	case '2'
+|4332	|		0		|		3		|	case '3'
+|4333	|		0		|		3		|	case '4'
+|4334	|		0		|		33		|	case '5'
+|4335	|		0		|		33		|	case '6'
+|4336	|		0		|		0		|	case '7'
+|4337	|		0		|		0		|	case '8'
+|4338	|		684		|		33		|	case '9'
+|4342	|		27		|		6		|	case 'A'
+|4344	|		0		|		27		|	out_after < 0
+|4347	|		3		|		3		|	case 'B'
+|4349	|		30		|		3		|	out_before < 0
+|4352	|		0		|		0		|	case 'C'
+|4355	|		9648		|		257381		|	case 'E'
+|4356	|		0		|		1399		|	matcher && strcmp(matcher, "egrep") != 0
+|4360	|		1281		|		118		|	case 'F'
+|4361	|		0		|		1399		|	matcher && strcmp(matcher, "fgrep") != 0
+|4365	|		0		|		1399		|	case 'G'
+|4366	|		0		|		0		|	matcher && strcmp(matcher, "grep") != 0
+|4370	|		0		|		0		|	case 'V'
+|4377	|		0		|		0		|	case 'X'
+|4378	|		0		|		1399		|	matcher
+|4382	|		1399		|		0		|	case 'b'
+|4385	|		0		|		0		|	case 'c'
+|4389	|		0		|		0		|	case 'e'
+|4392	|		0		|		0		|	keyfound
+|4398	|		0		|		1399		|	case 'f'
+|4404	|		0		|		1399		|	!fp
+|4410	|		0		|		1399		|	keyalloc <= keycc
+|4414	|		0		|		0		|	keyfound
+|4416	|		0		|		0		|	!feof(fp) && (cc = fread(keys + keycc, 1, keyalloc - keycc, fp)) > 0
+|4420	|		0		|		0		|	keycc == keyalloc
+|4423	|		1399		|		0		|	fp != stdin
+|4430	|		1399		|		30		|	keycc - oldcc > 0 && keys[keycc - 1] == '\n'
+|4434	|		0		|		1399		|	case 'h'
+|4437	|		1399		|		0		|	case 'i'
+|4438	|		0		|		0		|	case 'y'
+|4441	|		0		|		30		|	case 'L'
+|4447	|		33		|		0		|	case 'l'
+|4451	|		0		|		33		|	case 'n'
+|4454	|		0		|		33		|	case 'q'
+|4457	|		3		|		30		|	case 's'
+|4460	|		0		|		0		|	case 'v'
+|4463	|		30		|		0		|	case 'w'
+|4466	|		0		|		30		|	case 'x'
+|4469	|		0		|		30		|	default
+|4474	|		0		|		0		|	!keyfound
+|4475	|		30		|		0		|	optind < argc
+|4483	|		10		|		20		|	!matcher
+|4486	|		0		|		3		|	!setmatcher(matcher) && !setmatcher("default")
+|4491	|		0		|		0		|	argc - optind > 1 && !no_filenames
+|4496	|		0		|		0		|	optind < argc
+|4497	|		3		|		16		|	optind < argc
+|4504	|		0		|		3		|	desc < 0
+|4506	|		3		|		3		|	!suppress_errors
+|4517	|		0		|		0		|	count_matches
+|4519	|		0		|		0		|	out_file
+|4523	|		0		|		0		|	count
+|4526	|		0		|		0		|	list_files == 1
+|4529	|		0		|		0		|	list_files == -1
+|4532	|		0		|		0		|	desc != 0
+|4540	|		0		|		0		|	count_matches
+|4542	|		0		|		0		|	count
+|4545	|		0		|		0		|	list_files == 1
+|4548	|		0		|		0		|	list_files == -1
+|4563	|		0		|		0		|	done
+|4568	|		0		|		0		|	c <= 'z'
+|4571	|		0		|		0		|	c <= 'Z'
+|4574	|		0		|		0		|	c <= '9'
+|5096	|		0		|		0		|	compile_stack.stack == ((void *)0)
+|5124	|		2		|		0		|	bufp->allocated == 0
+|5126	|		0		|		2		|	bufp->buffer
+|5136	|		0		|		0		|	!bufp->buffer
+|5144	|		0		|		0		|	p != pend
+|5146	|		0		|		0		|	0
+|5146	|		0		|		0		|	p == pend
+|5146	|		0		|		0		|	translate
+|5150	|		0		|		0		|	case '^'
+|5152	|		0		|		0		|	p == pattern + 1 || syntax & ((((1) << 1) << 1) << 1) || at_begline_loc_p(pattern, p, syntax)
+|5158	|		0		|		0		|	0
+|5158	|		0		|		0		|	b - bufp->buffer + (1) > bufp->allocated
+|5158	|		0		|		0		|	0
+|5158	|		0		|		0		|	bufp->allocated == (1L << 16)
+|5158	|		0		|		0		|	bufp->allocated > (1L << 16)
+|5158	|		0		|		0		|	bufp->buffer == ((void *)0)
+|5162	|		0		|		0		|	old_buffer != bufp->buffer
+|5162	|		0		|		0		|	fixup_alt_jump
+|5162	|		0		|		0		|	laststart
+|5162	|		0		|		0		|	pending_exact
+|5169	|		0		|		0		|	case '$'
+|5171	|		0		|		0		|	p == pend || syntax & ((((1) << 1) << 1) << 1) || at_endline_loc_p(p, pend, syntax)
+|5177	|		0		|		0		|	0
+|5177	|		0		|		0		|	b - bufp->buffer + (1) > bufp->allocated
+|5177	|		0		|		0		|	0
+|5177	|		0		|		0		|	bufp->allocated == (1L << 16)
+|5177	|		0		|		0		|	bufp->allocated > (1L << 16)
+|5177	|		1		|		0		|	bufp->buffer == ((void *)0)
+|5181	|		0		|		0		|	old_buffer != bufp->buffer
+|5181	|		0		|		0		|	fixup_alt_jump
+|5181	|		0		|		0		|	laststart
+|5181	|		0		|		0		|	pending_exact
+|5188	|		0		|		0		|	case '+'
+|5189	|		0		|		0		|	case '?'
+|5190	|		3		|		0		|	(syntax & ((1) << 1)) || (syntax & (((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1))
+|5194	|		3		|		0		|	case '*'
+|5196	|		1		|		2		|	!laststart
+|5198	|		0		|		3		|	syntax & ((((((1) << 1) << 1) << 1) << 1) << 1)
+|5200	|		0		|		3		|	!(syntax & (((((1) << 1) << 1) << 1) << 1))
+|5216	|		3		|		0		|	1
+|5221	|		3		|		3		|	p == pend
+|5224	|		0		|		3		|	0
+|5224	|		0		|		0		|	p == pend
+|5224	|		0		|		3		|	translate
+|5226	|		0		|		0		|	c == '*' || (!(syntax & ((1) << 1)) && (c == '+' || c == '?'))
+|5230	|		3		|		0		|	syntax & ((1) << 1) && c == '\\'
+|5232	|		0		|		3		|	p == pend
+|5234	|		0		|		0		|	0
+|5234	|		3		|		0		|	p == pend
+|5234	|		0		|		0		|	translate
+|5235	|		0		|		0		|	!(c1 == '+' || c1 == '?')
+|5255	|		0		|		0		|	!laststart
+|5260	|		0		|		0		|	many_times_ok
+|5266	|		0		|		3		|	b - bufp->buffer + (3) > bufp->allocated
+|5266	|		0		|		0		|	0
+|5266	|		0		|		0		|	bufp->allocated == (1L << 16)
+|5266	|		0		|		0		|	bufp->allocated > (1L << 16)
+|5266	|		0		|		3		|	bufp->buffer == ((void *)0)
+|5270	|		3		|		0		|	old_buffer != bufp->buffer
+|5270	|		0		|		3		|	fixup_alt_jump
+|5270	|		0		|		3		|	laststart
+|5270	|		7		|		3		|	pending_exact
+|5277	|		0		|		7		|	(translate ? translate[(unsigned char)(*(p - 2))] : (*(p - 2))) == (translate ? translate[(unsigned char)('.')] : ('.')) && zero_times_ok && p < pend && (translate ? translate[(unsigned char)(*p)] : (*p)) == (translate ? translate[(unsigned char)('\n')] : ('\n')) && !(syntax & (((((((1) << 1) << 1) << 1) << 1) << 1) << 1))
+|5295	|		0		|		7		|	b - bufp->buffer + (3) > bufp->allocated
+|5295	|		0		|		7		|	0
+|5295	|		0		|		0		|	bufp->allocated == (1L << 16)
+|5295	|		0		|		0		|	bufp->allocated > (1L << 16)
+|5295	|		0		|		0		|	bufp->buffer == ((void *)0)
+|5299	|		0		|		0		|	old_buffer != bufp->buffer
+|5299	|		0		|		0		|	fixup_alt_jump
+|5299	|		0		|		0		|	laststart
+|5299	|		0		|		0		|	pending_exact
+|5306	|		0		|		0		|	!zero_times_ok
+|5313	|		0		|		0		|	b - bufp->buffer + (3) > bufp->allocated
+|5313	|		0		|		0		|	0
+|5313	|		0		|		0		|	bufp->allocated == (1L << 16)
+|5313	|		0		|		0		|	bufp->allocated > (1L << 16)
+|5313	|		0		|		0		|	bufp->buffer == ((void *)0)
+|5317	|		0		|		0		|	old_buffer != bufp->buffer
+|5317	|		0		|		0		|	fixup_alt_jump
+|5317	|		0		|		0		|	laststart
+|5317	|		0		|		0		|	pending_exact
+|5325	|		0		|		0		|	case '.'
+|5327	|		0		|		0		|	0
+|5327	|		0		|		0		|	b - bufp->buffer + (1) > bufp->allocated
+|5327	|		0		|		0		|	0
+|5327	|		0		|		0		|	bufp->allocated == (1L << 16)
+|5327	|		0		|		0		|	bufp->allocated > (1L << 16)
+|5327	|		0		|		0		|	bufp->buffer == ((void *)0)
+|5331	|		1		|		0		|	old_buffer != bufp->buffer
+|5331	|		1		|		0		|	fixup_alt_jump
+|5331	|		0		|		1		|	laststart
+|5331	|		1		|		0		|	pending_exact
+|5335	|		0		|		1		|	case '['
+|5339	|		0		|		0		|	p == pend
+|5343	|		0		|		0		|	b - bufp->buffer + (34) > bufp->allocated
+|5343	|		1		|		0		|	0
+|5343	|		1		|		0		|	bufp->allocated == (1L << 16)
+|5343	|		0		|		0		|	bufp->allocated > (1L << 16)
+|5343	|		0		|		0		|	bufp->buffer == ((void *)0)
+|5347	|		0		|		0		|	old_buffer != bufp->buffer
+|5347	|		0		|		0		|	fixup_alt_jump
+|5347	|		0		|		0		|	laststart
+|5347	|		0		|		0		|	pending_exact
+|5353	|		0		|		0		|	0
+|5353	|		0		|		0		|	b - bufp->buffer + (1) > bufp->allocated
+|5353	|		0		|		0		|	0
+|5353	|		0		|		0		|	bufp->allocated == (1L << 16)
+|5353	|		0		|		1		|	bufp->allocated > (1L << 16)
+|5353	|		1		|		0		|	bufp->buffer == ((void *)0)
+|5357	|		0		|		1		|	old_buffer != bufp->buffer
+|5357	|		0		|		0		|	fixup_alt_jump
+|5357	|		0		|		0		|	laststart
+|5357	|		0		|		0		|	pending_exact
+|5358	|		0		|		0		|	*p == '^'
+|5365	|		0		|		0		|	0
+|5365	|		0		|		0		|	b - bufp->buffer + (1) > bufp->allocated
+|5365	|		0		|		0		|	0
+|5365	|		0		|		0		|	bufp->allocated == (1L << 16)
+|5365	|		0		|		1		|	bufp->allocated > (1L << 16)
+|5365	|		0		|		1		|	bufp->buffer == ((void *)0)
+|5369	|		0		|		0		|	old_buffer != bufp->buffer
+|5369	|		0		|		0		|	fixup_alt_jump
+|5369	|		0		|		0		|	laststart
+|5369	|		0		|		0		|	pending_exact
+|5375	|		0		|		0		|	(re_opcode_t)b[-2] == charset_not && (syntax & (((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1))
+|5380	|		0		|		0		|	1
+|5382	|		0		|		0		|	p == pend
+|5384	|		0		|		0		|	0
+|5384	|		1		|		0		|	p == pend
+|5384	|		0		|		1		|	translate
+|5387	|		0		|		0		|	(syntax & (1)) && c == '\\'
+|5389	|		0		|		0		|	p == pend
+|5391	|		0		|		0		|	0
+|5391	|		0		|		0		|	p == pend
+|5391	|		0		|		0		|	translate
+|5399	|		0		|		0		|	c == ']' && p != p1 + 1
+|5404	|		0		|		0		|	had_char_class && c == '-' && *p != ']'
+|5411	|		0		|		0		|	c == '-' && !(p - 2 >= pattern && p[-2] == '[') && !(p - 3 >= pattern && p[-3] == '[' && p[-2] == '^') && *p != ']'
+|5418	|		0		|		0		|	ret != REG_NOERROR
+|5421	|		0		|		0		|	p[0] == '-' && p[1] != ']'
+|5426	|		0		|		0		|	0
+|5426	|		0		|		0		|	p == pend
+|5426	|		0		|		0		|	translate
+|5429	|		0		|		0		|	ret != REG_NOERROR
+|5435	|		0		|		0		|	syntax & (((1) << 1) << 1) && c == '[' && *p == ':'
+|5439	|		0		|		0		|	0
+|5439	|		0		|		0		|	p == pend
+|5439	|		0		|		0		|	translate
+|5443	|		0		|		0		|	p == pend
+|5445	|		4		|		0		|	1
+|5447	|		0		|		4		|	0
+|5447	|		2		|		4		|	p == pend
+|5447	|		0		|		2		|	translate
+|5448	|		0		|		2		|	c == ':' || c == ']' || p == pend || c1 == 6
+|5458	|		0		|		2		|	c == ':' && *p == ']'
+|5474	|		0		|		2		|	!(((strcmp(str, "alpha") == 0)) || ((strcmp(str, "upper") == 0)) || ((strcmp(str, "lower") == 0)) || ((strcmp(str, "digit") == 0)) || ((strcmp(str, "alnum") == 0)) || ((strcmp(str, "xdigit") == 0)) || ((strcmp(str, "space") == 0)) || ((strcmp(str, "print") == 0)) || ((strcmp(str, "punct") == 0)) || ((strcmp(str, "graph") == 0)) || ((strcmp(str, "cntrl") == 0)) || ((strcmp(str, "blank") == 0)))
+|5478	|		0		|		2		|	0
+|5478	|		0		|		0		|	p == pend
+|5478	|		0		|		0		|	translate
+|5480	|		0		|		0		|	p == pend
+|5482	|		0		|		4		|	ch < 1 << 8
+|5484	|		0		|		4		|	(is_alnum && (1 && ((*__ctype_b_loc())[(int)((ch))] & (unsigned short)_ISalnum))) || (is_alpha && (1 && ((*__ctype_b_loc())[(int)((ch))] & (unsigned short)_ISalpha))) || (is_blank && (1 && ((*__ctype_b_loc())[(int)((ch))] & (unsigned short)_ISblank))) || (is_cntrl && (1 && ((*__ctype_b_loc())[(int)((ch))] & (unsigned short)_IScntrl))) || (is_digit && (1 && ((*__ctype_b_loc())[(int)((ch))] & (unsigned short)_ISdigit))) || (is_graph && (1 && ((*__ctype_b_loc())[(int)((ch))] & (unsigned short)_ISgraph))) || (is_lower && (1 && ((*__ctype_b_loc())[(int)((ch))] & (unsigned short)_ISlower))) || (is_print && (1 && ((*__ctype_b_loc())[(int)((ch))] & (unsigned short)_ISprint))) || (is_punct && (1 && ((*__ctype_b_loc())[(int)((ch))] & (unsigned short)_ISpunct))) || (is_space && (1 && ((*__ctype_b_loc())[(int)((ch))] & (unsigned short)_ISspace))) || (is_upper && (1 && ((*__ctype_b_loc())[(int)((ch))] & (unsigned short)_ISupper))) || (is_xdigit && (1 && ((*__ctype_b_loc())[(int)((ch
+|0	|		0		|		0		|	
+|0	|		0		|		0		|	
+|0	|		0		|		0		|	
+|5599	|		0		|		0		|	c1--
+|5615	|		0		|		0		|	(int)b[-1] > 0 && b[b[-1] - 1] == 0
+|5622	|		0		|		0		|	case '('
+|5623	|		0		|		0		|	syntax & ((((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|5629	|		0		|		0		|	case ')'
+|5630	|		0		|		2		|	syntax & ((((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|5636	|		0		|		4		|	case '\n'
+|5637	|		0		|		4		|	syntax & ((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|5643	|		0		|		2		|	case '|'
+|5644	|		0		|		0		|	syntax & ((((((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|5650	|		0		|		0		|	case '{'
+|5651	|		0		|		0		|	syntax & ((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) && syntax & (((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|5657	|		0		|		0		|	case '\\'
+|5658	|		0		|		0		|	p == pend
+|5663	|		0		|		0		|	0
+|5663	|		0		|		0		|	p == pend
+|5667	|		0		|		2		|	case '('
+|5668	|		4		|		2		|	syntax & ((((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|5675	|		4		|		4		|	(compile_stack.avail == compile_stack.size)
+|5679	|		0		|		8		|	compile_stack.stack == ((void *)0)
+|5702	|		0		|		8		|	regnum <= 255
+|5705	|		0		|		8		|	0
+|5705	|		0		|		8		|	b - bufp->buffer + (3) > bufp->allocated
+|5705	|		0		|		4		|	0
+|5705	|		0		|		0		|	bufp->allocated == (1L << 16)
+|5705	|		0		|		0		|	bufp->allocated > (1L << 16)
+|5705	|		0		|		0		|	bufp->buffer == ((void *)0)
+|5709	|		2		|		2		|	old_buffer != bufp->buffer
+|5709	|		2		|		4		|	fixup_alt_jump
+|5709	|		0		|		4		|	laststart
+|5709	|		0		|		2		|	pending_exact
+|5724	|		0		|		2		|	case ')'
+|5725	|		2		|		0		|	syntax & ((((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|5727	|		0		|		2		|	(compile_stack.avail == 0)
+|5728	|		0		|		2		|	syntax & ((((((((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|5734	|		0		|		2		|	fixup_alt_jump
+|5739	|		2		|		2		|	0
+|5739	|		0		|		2		|	b - bufp->buffer + (1) > bufp->allocated
+|5739	|		0		|		2		|	0
+|5739	|		0		|		2		|	bufp->allocated == (1L << 16)
+|5739	|		0		|		2		|	bufp->allocated > (1L << 16)
+|5739	|		12		|		0		|	bufp->buffer == ((void *)0)
+|5743	|		0		|		12		|	old_buffer != bufp->buffer
+|5743	|		0		|		12		|	fixup_alt_jump
+|5743	|		0		|		12		|	laststart
+|5743	|		2		|		10		|	pending_exact
+|5751	|		2		|		0		|	(compile_stack.avail == 0)
+|5752	|		0		|		2		|	syntax & ((((((((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|5781	|		0		|		2		|	this_group_regnum <= 255
+|5787	|		0		|		2		|	0
+|5787	|		0		|		2		|	b - bufp->buffer + (3) > bufp->allocated
+|5787	|		0		|		2		|	0
+|5787	|		512		|		0		|	bufp->allocated == (1L << 16)
+|5787	|		62		|		450		|	bufp->allocated > (1L << 16)
+|5787	|		0		|		0		|	bufp->buffer == ((void *)0)
+|5791	|		40		|		2		|	old_buffer != bufp->buffer
+|5791	|		48		|		2		|	fixup_alt_jump
+|5791	|		0		|		0		|	laststart
+|5791	|		0		|		0		|	pending_exact
+|5798	|		0		|		0		|	case '|'
+|5799	|		0		|		0		|	syntax & (((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) || syntax & ((((((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|5802	|		0		|		0		|	syntax & (((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|5807	|		0		|		0		|	b - bufp->buffer + (3) > bufp->allocated
+|5807	|		0		|		0		|	0
+|5807	|		0		|		0		|	bufp->allocated == (1L << 16)
+|5807	|		0		|		0		|	bufp->allocated > (1L << 16)
+|5807	|		0		|		0		|	bufp->buffer == ((void *)0)
+|5811	|		0		|		0		|	old_buffer != bufp->buffer
+|5811	|		0		|		0		|	fixup_alt_jump
+|5811	|		0		|		0		|	laststart
+|5811	|		0		|		0		|	pending_exact
+|5816	|		0		|		0		|	fixup_alt_jump
+|5823	|		0		|		0		|	b - bufp->buffer + (3) > bufp->allocated
+|5823	|		0		|		0		|	0
+|5823	|		0		|		0		|	bufp->allocated == (1L << 16)
+|5823	|		0		|		0		|	bufp->allocated > (1L << 16)
+|5823	|		0		|		0		|	bufp->buffer == ((void *)0)
+|5827	|		0		|		0		|	old_buffer != bufp->buffer
+|5827	|		0		|		0		|	fixup_alt_jump
+|5827	|		0		|		0		|	laststart
+|5827	|		0		|		0		|	pending_exact
+|5835	|		0		|		0		|	case '{'
+|5837	|		0		|		0		|	!(syntax & ((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)) || ((syntax & ((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)) && (syntax & (((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1))) || (p - 2 == pattern && p == pend)
+|5853	|		0		|		0		|	p == pend
+|5855	|		0		|		0		|	syntax & (((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|5861	|		0		|		0		|	p != pend
+|5861	|		0		|		0		|	0
+|5861	|		0		|		0		|	p == pend
+|5861	|		0		|		0		|	translate
+|5861	|		0		|		0		|	(1 && ((*__ctype_b_loc())[(int)((c))] & (unsigned short)_ISdigit))
+|5869	|		0		|		0		|	lower_bound < 0
+|5869	|		0		|		0		|	p == pend
+|5869	|		0		|		0		|	0
+|5869	|		0		|		0		|	p == pend
+|5869	|		0		|		0		|	translate
+|5871	|		0		|		0		|	c == ','
+|5873	|		0		|		0		|	p != pend
+|5873	|		0		|		0		|	0
+|5873	|		0		|		0		|	p == pend
+|5873	|		0		|		0		|	translate
+|5873	|		0		|		0		|	(1 && ((*__ctype_b_loc())[(int)((c))] & (unsigned short)_ISdigit))
+|5881	|		0		|		0		|	upper_bound < 0
+|5881	|		0		|		0		|	p == pend
+|5881	|		0		|		0		|	0
+|5881	|		0		|		0		|	p == pend
+|5881	|		0		|		0		|	translate
+|5882	|		0		|		0		|	upper_bound < 0
+|5888	|		0		|		0		|	lower_bound < 0 || upper_bound > ((1 << 15) - 1) || lower_bound > upper_bound
+|5891	|		0		|		0		|	syntax & (((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|5897	|		0		|		0		|	!(syntax & (((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1))
+|5899	|		0		|		0		|	c != '\\'
+|5901	|		0		|		0		|	0
+|5901	|		0		|		0		|	p == pend
+|5901	|		0		|		0		|	translate
+|5904	|		0		|		0		|	c != '}'
+|5906	|		0		|		0		|	syntax & (((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|5915	|		0		|		0		|	!laststart
+|5917	|		0		|		0		|	syntax & ((((((1) << 1) << 1) << 1) << 1) << 1)
+|5919	|		0		|		0		|	syntax & (((((1) << 1) << 1) << 1) << 1)
+|5928	|		0		|		0		|	upper_bound == 0
+|5930	|		0		|		0		|	b - bufp->buffer + (3) > bufp->allocated
+|5930	|		0		|		0		|	0
+|5930	|		0		|		0		|	bufp->allocated == (1L << 16)
+|5930	|		0		|		0		|	bufp->allocated > (1L << 16)
+|5930	|		0		|		0		|	bufp->buffer == ((void *)0)
+|5934	|		0		|		0		|	old_buffer != bufp->buffer
+|5934	|		0		|		0		|	fixup_alt_jump
+|5934	|		0		|		0		|	laststart
+|5934	|		0		|		0		|	pending_exact
+|5944	|		0		|		0		|	b - bufp->buffer + (nbytes) > bufp->allocated
+|5944	|		0		|		0		|	0
+|5944	|		0		|		0		|	bufp->allocated == (1L << 16)
+|5944	|		0		|		0		|	bufp->allocated > (1L << 16)
+|5944	|		0		|		0		|	bufp->buffer == ((void *)0)
+|5948	|		0		|		0		|	old_buffer != bufp->buffer
+|5948	|		0		|		0		|	fixup_alt_jump
+|5948	|		0		|		0		|	laststart
+|5948	|		0		|		0		|	pending_exact
+|5967	|		0		|		0		|	upper_bound > 1
+|6004	|		0		|		0		|	0
+|6004	|		0		|		0		|	p == pend
+|6004	|		0		|		0		|	translate
+|6006	|		0		|		0		|	!(syntax & (((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1))
+|6008	|		0		|		0		|	p > pattern && p[-1] == '\\'
+|6013	|		0		|		0		|	case 'w'
+|6015	|		0		|		0		|	0
+|6015	|		0		|		0		|	b - bufp->buffer + (1) > bufp->allocated
+|6015	|		0		|		0		|	0
+|6015	|		0		|		0		|	bufp->allocated == (1L << 16)
+|6015	|		0		|		0		|	bufp->allocated > (1L << 16)
+|6015	|		0		|		0		|	bufp->buffer == ((void *)0)
+|6019	|		0		|		0		|	old_buffer != bufp->buffer
+|6019	|		0		|		0		|	fixup_alt_jump
+|6019	|		0		|		0		|	laststart
+|6019	|		0		|		0		|	pending_exact
+|6023	|		0		|		0		|	case 'W'
+|6025	|		0		|		0		|	0
+|6025	|		0		|		0		|	b - bufp->buffer + (1) > bufp->allocated
+|6025	|		0		|		0		|	0
+|6025	|		0		|		0		|	bufp->allocated == (1L << 16)
+|6025	|		0		|		0		|	bufp->allocated > (1L << 16)
+|6025	|		0		|		0		|	bufp->buffer == ((void *)0)
+|6029	|		0		|		0		|	old_buffer != bufp->buffer
+|6029	|		0		|		0		|	fixup_alt_jump
+|6029	|		0		|		0		|	laststart
+|6029	|		0		|		0		|	pending_exact
+|6033	|		0		|		0		|	case '<'
+|6034	|		0		|		0		|	0
+|6034	|		0		|		0		|	b - bufp->buffer + (1) > bufp->allocated
+|6034	|		0		|		0		|	0
+|6034	|		0		|		0		|	bufp->allocated == (1L << 16)
+|6034	|		0		|		0		|	bufp->allocated > (1L << 16)
+|6034	|		0		|		0		|	bufp->buffer == ((void *)0)
+|6038	|		0		|		0		|	old_buffer != bufp->buffer
+|6038	|		0		|		0		|	fixup_alt_jump
+|6038	|		0		|		0		|	laststart
+|6038	|		0		|		0		|	pending_exact
+|6041	|		0		|		0		|	case '>'
+|6042	|		0		|		0		|	0
+|6042	|		0		|		0		|	b - bufp->buffer + (1) > bufp->allocated
+|6042	|		0		|		0		|	0
+|6042	|		0		|		0		|	bufp->allocated == (1L << 16)
+|6042	|		0		|		0		|	bufp->allocated > (1L << 16)
+|6042	|		0		|		0		|	bufp->buffer == ((void *)0)
+|6046	|		0		|		0		|	old_buffer != bufp->buffer
+|6046	|		0		|		0		|	fixup_alt_jump
+|6046	|		0		|		0		|	laststart
+|6046	|		0		|		0		|	pending_exact
+|6049	|		0		|		0		|	case 'b'
+|6050	|		0		|		0		|	0
+|6050	|		0		|		0		|	b - bufp->buffer + (1) > bufp->allocated
+|6050	|		0		|		0		|	0
+|6050	|		0		|		0		|	bufp->allocated == (1L << 16)
+|6050	|		0		|		0		|	bufp->allocated > (1L << 16)
+|6050	|		0		|		0		|	bufp->buffer == ((void *)0)
+|6054	|		0		|		0		|	old_buffer != bufp->buffer
+|6054	|		0		|		0		|	fixup_alt_jump
+|6054	|		0		|		0		|	laststart
+|6054	|		0		|		0		|	pending_exact
+|6057	|		0		|		0		|	case 'B'
+|6058	|		0		|		0		|	0
+|6058	|		0		|		0		|	b - bufp->buffer + (1) > bufp->allocated
+|6058	|		0		|		0		|	0
+|6058	|		0		|		0		|	bufp->allocated == (1L << 16)
+|6058	|		0		|		0		|	bufp->allocated > (1L << 16)
+|6058	|		0		|		0		|	bufp->buffer == ((void *)0)
+|6062	|		0		|		0		|	old_buffer != bufp->buffer
+|6062	|		0		|		0		|	fixup_alt_jump
+|6062	|		0		|		0		|	laststart
+|6062	|		0		|		0		|	pending_exact
+|6065	|		0		|		0		|	case '`'
+|6066	|		0		|		0		|	0
+|6066	|		0		|		0		|	b - bufp->buffer + (1) > bufp->allocated
+|6066	|		0		|		0		|	0
+|6066	|		0		|		0		|	bufp->allocated == (1L << 16)
+|6066	|		0		|		0		|	bufp->allocated > (1L << 16)
+|6066	|		0		|		0		|	bufp->buffer == ((void *)0)
+|6070	|		0		|		0		|	old_buffer != bufp->buffer
+|6070	|		0		|		0		|	fixup_alt_jump
+|6070	|		0		|		0		|	laststart
+|6070	|		0		|		0		|	pending_exact
+|6073	|		0		|		0		|	case '\''
+|6074	|		0		|		0		|	0
+|6074	|		0		|		0		|	b - bufp->buffer + (1) > bufp->allocated
+|6074	|		0		|		0		|	0
+|6074	|		0		|		0		|	bufp->allocated == (1L << 16)
+|6074	|		0		|		0		|	bufp->allocated > (1L << 16)
+|6074	|		0		|		0		|	bufp->buffer == ((void *)0)
+|6078	|		0		|		0		|	old_buffer != bufp->buffer
+|6078	|		0		|		0		|	fixup_alt_jump
+|6078	|		0		|		0		|	laststart
+|6078	|		0		|		0		|	pending_exact
+|6081	|		0		|		0		|	case '1'
+|6081	|		0		|		0		|	case '2'
+|6081	|		0		|		0		|	case '3'
+|6081	|		0		|		0		|	case '4'
+|6081	|		0		|		0		|	case '5'
+|6082	|		0		|		0		|	case '6'
+|6082	|		0		|		0		|	case '7'
+|6082	|		0		|		0		|	case '8'
+|6082	|		0		|		0		|	case '9'
+|6083	|		0		|		0		|	syntax & (((((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|6088	|		0		|		0		|	c1 > regnum
+|6092	|		0		|		0		|	group_in_compile_stack(compile_stack, c1)
+|6096	|		0		|		0		|	0
+|6096	|		0		|		0		|	b - bufp->buffer + (2) > bufp->allocated
+|6096	|		0		|		0		|	0
+|6096	|		0		|		0		|	bufp->allocated == (1L << 16)
+|6096	|		0		|		0		|	bufp->allocated > (1L << 16)
+|6096	|		0		|		0		|	bufp->buffer == ((void *)0)
+|6100	|		0		|		0		|	old_buffer != bufp->buffer
+|6100	|		0		|		0		|	fixup_alt_jump
+|6100	|		0		|		0		|	laststart
+|6100	|		0		|		0		|	pending_exact
+|6104	|		0		|		0		|	case '+'
+|6105	|		0		|		0		|	case '?'
+|6106	|		0		|		0		|	syntax & ((1) << 1)
+|6111	|		0		|		0		|	default
+|6122	|		0		|		0		|	default
+|6126	|		0		|		0		|	!pending_exact || pending_exact + *pending_exact + 1 != b || *pending_exact == (1 << 8) - 1 || *p == '*' || *p == '^' || ((syntax & ((1) << 1)) ? *p == '\\' && (p[1] == '+' || p[1] == '?') : (*p == '+' || *p == '?')) || ((syntax & ((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)) && ((syntax & (((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)) ? *p == '{' : (p[0] == '\\' && p[1] == '{')))
+|6148	|		0		|		0		|	0
+|6148	|		0		|		0		|	b - bufp->buffer + (2) > bufp->allocated
+|6148	|		0		|		0		|	0
+|6148	|		0		|		0		|	bufp->allocated == (1L << 16)
+|6148	|		0		|		0		|	bufp->allocated > (1L << 16)
+|6148	|		0		|		0		|	bufp->buffer == ((void *)0)
+|6152	|		0		|		0		|	old_buffer != bufp->buffer
+|6152	|		0		|		0		|	fixup_alt_jump
+|6152	|		0		|		0		|	laststart
+|6152	|		0		|		0		|	pending_exact
+|6156	|		0		|		0		|	0
+|6156	|		0		|		0		|	b - bufp->buffer + (1) > bufp->allocated
+|6156	|		0		|		0		|	0
+|6156	|		0		|		0		|	bufp->allocated == (1L << 16)
+|6156	|		0		|		0		|	bufp->allocated > (1L << 16)
+|6156	|		0		|		0		|	bufp->buffer == ((void *)0)
+|6160	|		0		|		0		|	old_buffer != bufp->buffer
+|6160	|		0		|		0		|	fixup_alt_jump
+|6160	|		0		|		0		|	laststart
+|6160	|		0		|		0		|	pending_exact
+|6169	|		0		|		0		|	fixup_alt_jump
+|6172	|		0		|		0		|	!(compile_stack.avail == 0)
+|6194	|		0		|		0		|	0
+|6207	|		0		|		0		|	0
+|6208	|		0		|		0		|	0
+|6225	|		0		|		0		|	pfrom != loc
+|6244	|		0		|		0		|	pfrom != loc
+|6307	|		0		|		0		|	this_element >= 0
+|6310	|		0		|		0		|	compile_stack.stack[this_element].regnum == regnum
+|6328	|		0		|		0		|	p == pend
+|6339	|		0		|		0		|	range_start > range_end
+|6346	|		0		|		0		|	this_char <= range_end
+|6394	|		0		|		0		|	0
+|6402	|		0		|		0		|	fail_stack.stack == ((void *)0)
+|6411	|		0		|		0		|	p != pend || !(fail_stack.avail == 0)
+|6413	|		0		|		0		|	p == pend
+|6438	|		0		|		0		|	case duplicate
+|6446	|		0		|		0		|	case exactn
+|6451	|		0		|		0		|	case charset
+|6452	|		0		|		0		|	j >= 0
+|6453	|		0		|		0		|	p[j / 8] & (1 << (j % 8))
+|6458	|		0		|		0		|	case charset_not
+|6460	|		0		|		0		|	j < (1 << 8)
+|6463	|		0		|		0		|	j >= 0
+|6464	|		0		|		0		|	!(p[j / 8] & (1 << (j % 8)))
+|6469	|		0		|		0		|	case wordchar
+|6470	|		0		|		0		|	j < (1 << 8)
+|6471	|		0		|		0		|	re_syntax_table[j] == 1
+|6476	|		0		|		0		|	case notwordchar
+|6477	|		0		|		0		|	j < (1 << 8)
+|6478	|		0		|		0		|	re_syntax_table[j] != 1
+|6483	|		0		|		0		|	case anychar
+|6485	|		0		|		0		|	j < (1 << 8)
+|6489	|		0		|		0		|	!(bufp->syntax & (((((((1) << 1) << 1) << 1) << 1) << 1) << 1))
+|6494	|		2		|		0		|	bufp->can_be_null
+|6500	|		1		|		1		|	case no_op
+|6501	|		0		|		1		|	case begline
+|6502	|		0		|		1		|	case endline
+|6503	|		0		|		0		|	case begbuf
+|6504	|		0		|		0		|	case endbuf
+|6505	|		0		|		0		|	case wordbound
+|6506	|		0		|		0		|	case notwordbound
+|6507	|		0		|		0		|	case wordbeg
+|6508	|		0		|		0		|	case wordend
+|6509	|		0		|		0		|	case push_dummy_failure
+|6513	|		0		|		0		|	case jump_n
+|6514	|		0		|		2		|	case pop_failure_jump
+|6515	|		0		|		2		|	case maybe_pop_jump
+|6516	|		0		|		0		|	case jump
+|6517	|		0		|		0		|	case jump_past_alt
+|6518	|		0		|		0		|	case dummy_failure_jump
+|6519	|		0		|		0		|	0
+|6519	|		0		|		0		|	0
+|6521	|		0		|		0		|	j > 0
+|6529	|		0		|		1		|	(re_opcode_t)*p != on_failure_jump && (re_opcode_t)*p != succeed_n
+|6534	|		0		|		2		|	0
+|6534	|		0		|		2		|	0
+|6538	|		0		|		4		|	!(fail_stack.avail == 0) && fail_stack.stack[fail_stack.avail - 1] == p
+|6545	|		0		|		0		|	case on_failure_jump
+|6546	|		0		|		0		|	case on_failure_keep_string_jump
+|6548	|		29		|		2		|	0
+|6548	|		0		|		0		|	0
+|6550	|		0		|		0		|	p + j < pend
+|6552	|		0		|		0		|	!(((fail_stack.avail == fail_stack.size) && !((fail_stack).size > re_max_failures * ((num_regs - 1) * 3 + 4) ? 0 : ((fail_stack).stack = (fail_stack_elt_t *)(destination = (char *)__builtin_alloca(((fail_stack).size << 1) * sizeof(fail_stack_elt_t)) , memcpy((destination), ((fail_stack).stack), ((fail_stack).size * sizeof(fail_stack_elt_t))) , destination) , (fail_stack).stack == ((void *)0) ? 0 : ((fail_stack).size <<= 1 , 1)))) ? 0 : ((fail_stack).stack[(fail_stack).avail++] = p + j , 1))
+|6570	|		0		|		2		|	succeed_n_p
+|6572	|		0		|		2		|	0
+|6572	|		20		|		0		|	0
+|6579	|		0		|		0		|	case succeed_n
+|6584	|		0		|		0		|	0
+|6584	|		0		|		0		|	0
+|6585	|		0		|		0		|	k == 0
+|6594	|		0		|		0		|	case set_number_at
+|6599	|		0		|		0		|	case start_memory
+|6600	|		0		|		0		|	case stop_memory
+|6605	|		0		|		0		|	default
+|6632	|		0		|		0		|	num_regs
+|6684	|		0		|		0		|	startpos < 0 || startpos > total_size
+|6689	|		0		|		0		|	endpos < -1
+|6691	|		0		|		0		|	endpos > total_size
+|6696	|		0		|		0		|	bufp->used > 0 && (re_opcode_t)bufp->buffer[0] == begbuf && range > 0
+|6698	|		0		|		0		|	startpos > 0
+|6705	|		0		|		0		|	fastmap && !bufp->fastmap_accurate
+|6706	|		0		|		0		|	re_compile_fastmap(bufp) == -2
+|6710	|		0		|		0		|	1
+|6716	|		0		|		0		|	fastmap && startpos < total_size && !bufp->can_be_null
+|6718	|		0		|		0		|	range > 0
+|6724	|		0		|		0		|	startpos < size1 && startpos + range >= size1
+|6731	|		0		|		0		|	translate
+|6732	|		0		|		0		|	range > lim && !fastmap[(unsigned char)translate[(unsigned char)*d++]]
+|6737	|		0		|		0		|	range > lim && !fastmap[(unsigned char)*d++]
+|6748	|		0		|		0		|	!fastmap[(unsigned char)(translate ? translate[(unsigned char)(c)] : (c))]
+|6754	|		0		|		0		|	range >= 0 && startpos == total_size && fastmap && !bufp->can_be_null
+|6760	|		0		|		0		|	val >= 0
+|6763	|		0		|		0		|	val == -2
+|6767	|		0		|		0		|	!range
+|6769	|		0		|		0		|	range > 0
+|6898	|		0		|		0		|	0
+|6906	|		0		|		0		|	fail_stack.stack == ((void *)0)
+|6917	|		0		|		0		|	bufp->re_nsub
+|7001	|		0		|		0		|	!(regstart && regend && old_regstart && old_regend && reg_info && best_regstart && best_regend && reg_dummy && reg_info_dummy)
+|7017	|		0		|		0		|	pos < 0 || pos > size1 + size2
+|7034	|		0		|		0		|	mcnt < num_regs
+|7047	|		0		|		0		|	size2 == 0 && string1 != ((void *)0)
+|7062	|		0		|		0		|	stop <= size1
+|7079	|		0		|		0		|	size1 > 0 && pos <= size1
+|7099	|		0		|		0		|	1
+|7103	|		0		|		0		|	p == pend
+|7109	|		0		|		0		|	d != end_match_2
+|7113	|		0		|		0		|	!(fail_stack.avail == 0)
+|7119	|		0		|		0		|	!best_regs_set || (same_str_p && d > match_end) || (!same_str_p && !(dend == end_match_1))
+|7128	|		0		|		0		|	mcnt < num_regs
+|7138	|		0		|		0		|	best_regs_set
+|7152	|		0		|		0		|	mcnt < num_regs
+|7163	|		0		|		0		|	regs && !bufp->no_sub
+|7166	|		0		|		0		|	bufp->regs_allocated == 0
+|7173	|		0		|		0		|	regs->start == ((void *)0) || regs->end == ((void *)0)
+|7185	|		0		|		0		|	bufp->regs_allocated == 1
+|7189	|		0		|		0		|	regs->num_regs < num_regs + 1
+|7194	|		0		|		0		|	regs->start == ((void *)0) || regs->end == ((void *)0)
+|7216	|		0		|		0		|	regs->num_regs > 0
+|7225	|		0		|		0		|	mcnt < ((num_regs) < (regs->num_regs) ? (num_regs) : (regs->num_regs))
+|7227	|		0		|		0		|	((regstart[mcnt]) == ((char *)-1)) || ((regend[mcnt]) == ((char *)-1))
+|7241	|		0		|		0		|	mcnt < regs->num_regs
+|7277	|		0		|		0		|	case no_op
+|7285	|		0		|		0		|	case exactn
+|7291	|		0		|		0		|	translate
+|7293	|		0		|		0		|	--mcnt
+|7295	|		0		|		0		|	d == dend
+|7295	|		0		|		0		|	dend == end_match_2
+|7296	|		0		|		0		|	translate[(unsigned char)*d++] != (char)*p++
+|7303	|		0		|		0		|	--mcnt
+|7305	|		0		|		0		|	d == dend
+|7305	|		0		|		0		|	dend == end_match_2
+|7306	|		0		|		0		|	*d++ != (char)*p++
+|7310	|		0		|		0		|	0
+|7310	|		0		|		0		|	r <= highest_active_reg
+|7315	|		0		|		0		|	case anychar
+|7318	|		0		|		0		|	d == dend
+|7318	|		0		|		0		|	dend == end_match_2
+|7320	|		0		|		0		|	(!(bufp->syntax & (((((((1) << 1) << 1) << 1) << 1) << 1) << 1)) && (translate ? translate[(unsigned char)(*d)] : (*d)) == '\n') || (bufp->syntax & ((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) && (translate ? translate[(unsigned char)(*d)] : (*d)) == '\x00')
+|7324	|		0		|		0		|	0
+|7324	|		0		|		0		|	r <= highest_active_reg
+|7330	|		0		|		0		|	case charset
+|7331	|		0		|		0		|	case charset_not
+|7338	|		0		|		0		|	d == dend
+|7338	|		0		|		0		|	dend == end_match_2
+|7343	|		0		|		0		|	c < (unsigned int)(*p * 8) && p[1 + c / 8] & (1 << (c % 8))
+|7349	|		0		|		0		|	!not
+|7351	|		0		|		0		|	0
+|7351	|		0		|		0		|	r <= highest_active_reg
+|7362	|		0		|		0		|	case start_memory
+|7368	|		0		|		0		|	((reg_info[*p]).bits.match_null_string_p) == 3
+|7394	|		0		|		0		|	lowest_active_reg == ((1 << 8) + 1)
+|7405	|		0		|		0		|	case stop_memory
+|7427	|		0		|		0		|	lowest_active_reg == highest_active_reg
+|7438	|		0		|		0		|	r > 0 && !((reg_info[r]).bits.is_active)
+|7441	|		0		|		0		|	r == 0
+|7455	|		0		|		0		|	(!((reg_info[*p]).bits.matched_something) || (re_opcode_t)p[-3] == start_memory) && (p + 2) < pend
+|7465	|		0		|		0		|	case jump_n
+|7467	|		0		|		0		|	case pop_failure_jump
+|7468	|		0		|		0		|	case maybe_pop_jump
+|7469	|		0		|		0		|	case jump
+|7470	|		0		|		0		|	case dummy_failure_jump
+|7471	|		0		|		0		|	0
+|7471	|		0		|		0		|	0
+|7472	|		0		|		0		|	is_a_jump_n
+|7476	|		0		|		0		|	default
+|7486	|		0		|		0		|	mcnt < 0 && (re_opcode_t)*p1 == on_failure_jump && (re_opcode_t)p1[3] == start_memory && p1[4] == *p
+|7490	|		0		|		0		|	((reg_info[*p]).bits.ever_matched_something)
+|7497	|		0		|		0		|	r < *p + *(p + 1)
+|7502	|		0		|		0		|	(int)old_regend[r] >= (int)regstart[r]
+|7507	|		0		|		0		|	0
+|7507	|		0		|		0		|	0
+|7508	|		0		|		0		|	0
+|7508	|		0		|		0		|	((fail_stack).size - (fail_stack).avail) < ((highest_active_reg - lowest_active_reg + 1) * 3 + 4)
+|7508	|		0		|		0		|	!((fail_stack).size > re_max_failures * ((num_regs - 1) * 3 + 4) ? 0 : ((fail_stack).stack = (fail_stack_elt_t *)(destination = (char *)__builtin_alloca(((fail_stack).size << 1) * sizeof(fail_stack_elt_t)) , memcpy((destination), ((fail_stack).stack), ((fail_stack).size * sizeof(fail_stack_elt_t))) , destination) , (fail_stack).stack == ((void *)0) ? 0 : ((fail_stack).size <<= 1 , 1)))
+|7520	|		0		|		0		|	this_reg <= highest_active_reg
+|7533	|		0		|		0		|	case duplicate
+|7540	|		0		|		0		|	((regstart[regno]) == ((char *)-1)) || ((regend[regno]) == ((char *)-1))
+|7554	|		0		|		0		|	1
+|7558	|		0		|		0		|	d2 == dend2
+|7560	|		0		|		0		|	dend2 == end_match_2
+|7561	|		0		|		0		|	dend2 == regend[regno]
+|7568	|		0		|		0		|	d2 == dend2
+|7571	|		0		|		0		|	d == dend
+|7571	|		0		|		0		|	dend == end_match_2
+|7578	|		0		|		0		|	mcnt > dend2 - d2
+|7583	|		0		|		0		|	translate ? bcmp_translate(d, d2, mcnt, translate) : memcmp((d), (d2), (mcnt))
+|7596	|		0		|		0		|	case begline
+|7599	|		0		|		0		|	((d) == (size1 ? string1 : string2) || !size2)
+|7601	|		0		|		0		|	!bufp->not_bol
+|7603	|		0		|		0		|	d[-1] == '\n' && bufp->newline_anchor
+|7612	|		0		|		0		|	case endline
+|7615	|		0		|		0		|	((d) == end2)
+|7617	|		0		|		0		|	!bufp->not_eol
+|7621	|		0		|		0		|	(d == end1 ? *string2 : *d) == '\n' && bufp->newline_anchor
+|7630	|		0		|		0		|	case begbuf
+|7632	|		0		|		0		|	((d) == (size1 ? string1 : string2) || !size2)
+|7638	|		0		|		0		|	case endbuf
+|7640	|		0		|		0		|	((d) == end2)
+|7644	|		0		|		0		|	case on_failure_keep_string_jump
+|7647	|		0		|		0		|	0
+|7647	|		0		|		0		|	0
+|7650	|		0		|		0		|	0
+|7650	|		0		|		0		|	((fail_stack).size - (fail_stack).avail) < ((highest_active_reg - lowest_active_reg + 1) * 3 + 4)
+|7650	|		0		|		0		|	!((fail_stack).size > re_max_failures * ((num_regs - 1) * 3 + 4) ? 0 : ((fail_stack).stack = (fail_stack_elt_t *)(destination = (char *)__builtin_alloca(((fail_stack).size << 1) * sizeof(fail_stack_elt_t)) , memcpy((destination), ((fail_stack).stack), ((fail_stack).size * sizeof(fail_stack_elt_t))) , destination) , (fail_stack).stack == ((void *)0) ? 0 : ((fail_stack).size <<= 1 , 1)))
+|7662	|		0		|		0		|	this_reg <= highest_active_reg
+|7669	|		0		|		0		|	case on_failure_jump
+|7673	|		0		|		0		|	0
+|7673	|		0		|		0		|	0
+|7682	|		0		|		0		|	p1 < pend && (re_opcode_t)*p1 == no_op
+|7685	|		0		|		0		|	p1 < pend && (re_opcode_t)*p1 == start_memory
+|7692	|		0		|		0		|	lowest_active_reg == ((1 << 8) + 1)
+|7697	|		0		|		0		|	0
+|7697	|		0		|		0		|	((fail_stack).size - (fail_stack).avail) < ((highest_active_reg - lowest_active_reg + 1) * 3 + 4)
+|7697	|		0		|		0		|	!((fail_stack).size > re_max_failures * ((num_regs - 1) * 3 + 4) ? 0 : ((fail_stack).stack = (fail_stack_elt_t *)(destination = (char *)__builtin_alloca(((fail_stack).size << 1) * sizeof(fail_stack_elt_t)) , memcpy((destination), ((fail_stack).stack), ((fail_stack).size * sizeof(fail_stack_elt_t))) , destination) , (fail_stack).stack == ((void *)0) ? 0 : ((fail_stack).size <<= 1 , 1)))
+|7709	|		0		|		0		|	this_reg <= highest_active_reg
+|7715	|		0		|		0		|	case maybe_pop_jump
+|7716	|		0		|		0		|	0
+|7716	|		0		|		0		|	0
+|7721	|		0		|		0		|	p2 + 2 < pend && ((re_opcode_t)*p2 == stop_memory || (re_opcode_t)*p2 == start_memory)
+|7727	|		0		|		0		|	p2 == pend
+|7737	|		0		|		0		|	(re_opcode_t)*p2 == exactn || (bufp->newline_anchor && (re_opcode_t)*p2 == endline)
+|7747	|		0		|		0		|	(re_opcode_t)p1[3] == exactn && p1[5] != c
+|7754	|		0		|		0		|	(re_opcode_t)p1[3] == charset || (re_opcode_t)p1[3] == charset_not
+|7759	|		0		|		0		|	c < (unsigned char)(p1[4] * 8) && p1[5 + c / 8] & (1 << (c % 8))
+|7765	|		0		|		0		|	!not
+|7774	|		0		|		0		|	(re_opcode_t)p[-1] != pop_failure_jump
+|7781	|		0		|		0		|	case pop_failure_jump
+|7793	|		0		|		0		|	string_temp != ((void *)0)
+|7797	|		0		|		0		|	this_reg >= dummy_low_reg
+|7805	|		0		|		0		|	case jump
+|7807	|		0		|		0		|	0
+|7807	|		0		|		0		|	0
+|7816	|		0		|		0		|	case jump_past_alt
+|7826	|		0		|		0		|	case dummy_failure_jump
+|7830	|		0		|		0		|	0
+|7830	|		0		|		0		|	((fail_stack).size - (fail_stack).avail) < ((highest_active_reg - lowest_active_reg + 1) * 3 + 4)
+|7830	|		0		|		0		|	!((fail_stack).size > re_max_failures * ((num_regs - 1) * 3 + 4) ? 0 : ((fail_stack).stack = (fail_stack_elt_t *)(destination = (char *)__builtin_alloca(((fail_stack).size << 1) * sizeof(fail_stack_elt_t)) , memcpy((destination), ((fail_stack).stack), ((fail_stack).size * sizeof(fail_stack_elt_t))) , destination) , (fail_stack).stack == ((void *)0) ? 0 : ((fail_stack).size <<= 1 , 1)))
+|7842	|		0		|		0		|	this_reg <= highest_active_reg
+|7851	|		0		|		0		|	case push_dummy_failure
+|7855	|		0		|		0		|	0
+|7855	|		0		|		0		|	((fail_stack).size - (fail_stack).avail) < ((highest_active_reg - lowest_active_reg + 1) * 3 + 4)
+|7855	|		0		|		0		|	!((fail_stack).size > re_max_failures * ((num_regs - 1) * 3 + 4) ? 0 : ((fail_stack).stack = (fail_stack_elt_t *)(destination = (char *)__builtin_alloca(((fail_stack).size << 1) * sizeof(fail_stack_elt_t)) , memcpy((destination), ((fail_stack).stack), ((fail_stack).size * sizeof(fail_stack_elt_t))) , destination) , (fail_stack).stack == ((void *)0) ? 0 : ((fail_stack).size <<= 1 , 1)))
+|7867	|		0		|		0		|	this_reg <= highest_active_reg
+|7872	|		0		|		0		|	case succeed_n
+|7873	|		0		|		0		|	0
+|7878	|		0		|		0		|	mcnt > 0
+|7882	|		0		|		0		|	0
+|7882	|		0		|		0		|	0
+|7885	|		0		|		0		|	mcnt == 0
+|7894	|		0		|		0		|	case jump_n
+|7895	|		0		|		0		|	0
+|7899	|		0		|		0		|	mcnt
+|7902	|		0		|		0		|	0
+|7910	|		0		|		0		|	case set_number_at
+|7914	|		0		|		0		|	0
+|7914	|		0		|		0		|	0
+|7916	|		0		|		0		|	0
+|7916	|		0		|		0		|	0
+|7918	|		0		|		0		|	0
+|7922	|		0		|		0		|	case wordbound
+|7924	|		0		|		0		|	(((d) == (size1 ? string1 : string2) || !size2) || ((d) == end2) || (re_syntax_table[(d - 1) == end1 ? *string2 : (d - 1) == string2 - 1 ? *(end1 - 1) : *(d - 1)] == 1) != (re_syntax_table[(d) == end1 ? *string2 : (d) == string2 - 1 ? *(end1 - 1) : *(d)] == 1))
+|7928	|		0		|		0		|	case notwordbound
+|7930	|		0		|		0		|	(((d) == (size1 ? string1 : string2) || !size2) || ((d) == end2) || (re_syntax_table[(d - 1) == end1 ? *string2 : (d - 1) == string2 - 1 ? *(end1 - 1) : *(d - 1)] == 1) != (re_syntax_table[(d) == end1 ? *string2 : (d) == string2 - 1 ? *(end1 - 1) : *(d)] == 1))
+|7934	|		0		|		0		|	case wordbeg
+|7936	|		0		|		0		|	(re_syntax_table[(d) == end1 ? *string2 : (d) == string2 - 1 ? *(end1 - 1) : *(d)] == 1) && (((d) == (size1 ? string1 : string2) || !size2) || !(re_syntax_table[(d - 1) == end1 ? *string2 : (d - 1) == string2 - 1 ? *(end1 - 1) : *(d - 1)] == 1))
+|7940	|		0		|		0		|	case wordend
+|7942	|		0		|		0		|	!((d) == (size1 ? string1 : string2) || !size2) && (re_syntax_table[(d - 1) == end1 ? *string2 : (d - 1) == string2 - 1 ? *(end1 - 1) : *(d - 1)] == 1) && (!(re_syntax_table[(d) == end1 ? *string2 : (d) == string2 - 1 ? *(end1 - 1) : *(d)] == 1) || ((d) == end2))
+|7947	|		0		|		0		|	case wordchar
+|7949	|		0		|		0		|	d == dend
+|7949	|		0		|		0		|	dend == end_match_2
+|7950	|		0		|		0		|	!(re_syntax_table[(d) == end1 ? *string2 : (d) == string2 - 1 ? *(end1 - 1) : *(d)] == 1)
+|7952	|		0		|		0		|	0
+|7952	|		0		|		0		|	r <= highest_active_reg
+|7956	|		0		|		0		|	case notwordchar
+|7958	|		0		|		0		|	d == dend
+|7958	|		0		|		0		|	dend == end_match_2
+|7959	|		0		|		0		|	(re_syntax_table[(d) == end1 ? *string2 : (d) == string2 - 1 ? *(end1 - 1) : *(d)] == 1)
+|7961	|		0		|		0		|	0
+|7961	|		0		|		0		|	r <= highest_active_reg
+|7966	|		0		|		0		|	default
+|7974	|		0		|		0		|	!(fail_stack.avail == 0)
+|7977	|		0		|		0		|	string_temp != ((void *)0)
+|7981	|		0		|		0		|	this_reg >= lowest_active_reg
+|7986	|		0		|		0		|	!p
+|7991	|		0		|		0		|	p < pend
+|7999	|		0		|		0		|	case jump_n
+|8001	|		0		|		0		|	case maybe_pop_jump
+|8002	|		0		|		0		|	case pop_failure_jump
+|8003	|		0		|		0		|	case jump
+|8005	|		0		|		0		|	0
+|8005	|		0		|		0		|	0
+|8008	|		0		|		0		|	(is_a_jump_n && (re_opcode_t)*p1 == succeed_n) || (!is_a_jump_n && (re_opcode_t)*p1 == on_failure_jump)
+|8013	|		0		|		0		|	default
+|8018	|		0		|		0		|	d >= string1 && d <= end1
+|8025	|		0		|		0		|	best_regs_set
+|8050	|		0		|		0		|	p1 < end
+|8059	|		0		|		0		|	case on_failure_jump
+|8061	|		0		|		0		|	0
+|8061	|		0		|		0		|	0
+|8066	|		0		|		0		|	mcnt >= 0
+|8069	|		0		|		0		|	(re_opcode_t)p1[mcnt - 3] == jump_past_alt
+|8075	|		0		|		0		|	!alt_match_null_string_p(p1, p1 + mcnt - 3, reg_info)
+|8085	|		0		|		0		|	(re_opcode_t)*p1 != on_failure_jump
+|8091	|		0		|		0		|	0
+|8091	|		0		|		0		|	0
+|8092	|		0		|		0		|	(re_opcode_t)p1[mcnt - 3] != jump_past_alt
+|8103	|		0		|		0		|	0
+|8105	|		0		|		0		|	!alt_match_null_string_p(p1, p1 + mcnt, reg_info)
+|8113	|		0		|		0		|	case stop_memory
+|8119	|		0		|		0		|	default
+|8120	|		0		|		0		|	!common_op_match_null_string_p(&p1, end, reg_info)
+|8141	|		0		|		0		|	p1 < end
+|8149	|		0		|		0		|	case on_failure_jump
+|8151	|		0		|		0		|	0
+|8151	|		0		|		0		|	0
+|8155	|		0		|		0		|	default
+|8156	|		0		|		0		|	!common_op_match_null_string_p(&p1, end, reg_info)
+|8182	|		0		|		0		|	case no_op
+|8183	|		0		|		0		|	case begline
+|8184	|		0		|		0		|	case endline
+|8185	|		0		|		0		|	case begbuf
+|8186	|		0		|		0		|	case endbuf
+|8187	|		0		|		0		|	case wordbeg
+|8188	|		0		|		0		|	case wordend
+|8189	|		0		|		0		|	case wordbound
+|8190	|		0		|		0		|	case notwordbound
+|8198	|		0		|		0		|	case start_memory
+|8206	|		0		|		0		|	((reg_info[reg_no]).bits.match_null_string_p) == 3
+|8209	|		0		|		0		|	!ret
+|8214	|		0		|		0		|	case jump
+|8215	|		0		|		0		|	0
+|8215	|		0		|		0		|	0
+|8216	|		0		|		0		|	mcnt >= 0
+|8222	|		0		|		0		|	case succeed_n
+|8225	|		0		|		0		|	0
+|8225	|		0		|		0		|	0
+|8227	|		0		|		0		|	mcnt == 0
+|8230	|		0		|		0		|	0
+|8230	|		0		|		0		|	0
+|8237	|		0		|		0		|	case duplicate
+|8238	|		0		|		0		|	!((reg_info[*p1]).bits.match_null_string_p)
+|8242	|		0		|		0		|	case set_number_at
+|8245	|		0		|		0		|	default
+|8265	|		0		|		0		|	len
+|8267	|		0		|		0		|	translate[*p1++] != translate[*p2++]
+|8320	|		0		|		0		|	cflags & (1 << 1)
+|8325	|		0		|		0		|	preg->translate == ((void *)0)
+|8333	|		0		|		0		|	i < 256
+|8352	|		0		|		0		|	cflags & ((1 << 1) << 1)
+|8370	|		0		|		0		|	ret == REG_ERPAREN
+|8399	|		0		|		0		|	want_reg_info
+|8404	|		0		|		0		|	regs.start == ((void *)0) || regs.end == ((void *)0)
+|8422	|		0		|		0		|	want_reg_info
+|8424	|		0		|		0		|	ret >= 0
+|8428	|		0		|		0		|	r < nmatch
+|8458	|		0		|		0		|	errcode < 0 || errcode >= (sizeof (re_error_msg) / sizeof (re_error_msg[0]))
+|8470	|		0		|		0		|	!msg
+|8475	|		0		|		0		|	errbuf_size != 0
+|8477	|		0		|		0		|	msg_size > errbuf_size
+|8496	|		0		|		0		|	preg->buffer != ((void *)0)
+|8511	|		0		|		0		|	preg->fastmap != ((void *)0)
+|8524	|		0		|		0		|	preg->translate != ((void *)0)
+|8776	|		0		|		0		|	!r
+|8788	|		0		|		0		|	!r
+|8801	|		0		|		0		|	!r
+|8837	|		0		|		0		|	i < (((1 << 8) + (8 * sizeof(int)) - 1) / (8 * sizeof(int)))
+|8847	|		0		|		0		|	i < (((1 << 8) + (8 * sizeof(int)) - 1) / (8 * sizeof(int)))
+|8857	|		0		|		0		|	i < (((1 << 8) + (8 * sizeof(int)) - 1) / (8 * sizeof(int)))
+|8868	|		0		|		0		|	i < (((1 << 8) + (8 * sizeof(int)) - 1) / (8 * sizeof(int)))
+|8869	|		0		|		0		|	s1[i] != s2[i]
+|8884	|		0		|		0		|	i < dfa->cindex
+|8885	|		0		|		0		|	equal(s, dfa->charclasses[i])
+|8887	|		0		|		0		|	(dfa->cindex) >= (dfa->calloc)
+|8887	|		0		|		0		|	(dfa->cindex) >= (dfa->calloc)
+|9052	|		0		|		0		|	lexleft < len
+|9071	|		0		|		0		|	i < 2
+|9073	|		0		|		0		|	!lexleft
+|9073	|		0		|		0		|	0 != 0
+|9076	|		0		|		0		|	case '\\'
+|9077	|		0		|		0		|	backslash
+|9079	|		0		|		0		|	lexleft == 0
+|9084	|		0		|		0		|	case '^'
+|9085	|		0		|		0		|	backslash
+|9087	|		0		|		0		|	syntax_bits & ((((1) << 1) << 1) << 1) || lasttok == END || lasttok == LPAREN || lasttok == OR
+|9094	|		0		|		0		|	case '$'
+|9095	|		0		|		0		|	backslash
+|9097	|		0		|		0		|	syntax_bits & ((((1) << 1) << 1) << 1) || lexleft == 0 || (syntax_bits & ((((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) ? lexleft > 0 && *lexptr == ')' : lexleft > 1 && lexptr[0] == '\\' && lexptr[1] == ')') || (syntax_bits & ((((((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) ? lexleft > 0 && *lexptr == '|' : lexleft > 1 && lexptr[0] == '\\' && lexptr[1] == '|') || ((syntax_bits & ((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)) && lexleft > 0 && *lexptr == '\n')
+|9110	|		0		|		0		|	case '1'
+|9111	|		0		|		0		|	case '2'
+|9112	|		0		|		0		|	case '3'
+|9113	|		0		|		0		|	case '4'
+|9114	|		0		|		0		|	case '5'
+|9115	|		0		|		0		|	case '6'
+|9116	|		0		|		0		|	case '7'
+|9117	|		0		|		0		|	case '8'
+|9118	|		0		|		0		|	case '9'
+|9119	|		0		|		0		|	backslash && !(syntax_bits & (((((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1))
+|9126	|		0		|		0		|	case '<'
+|9127	|		0		|		0		|	backslash
+|9131	|		0		|		0		|	case '>'
+|9132	|		0		|		0		|	backslash
+|9136	|		0		|		0		|	case 'b'
+|9137	|		0		|		0		|	backslash
+|9141	|		0		|		0		|	case 'B'
+|9142	|		0		|		0		|	backslash
+|9146	|		0		|		0		|	case '?'
+|9147	|		0		|		0		|	syntax_bits & (((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|9149	|		0		|		0		|	backslash != ((syntax_bits & ((1) << 1)) != 0)
+|9151	|		0		|		0		|	!(syntax_bits & (((((1) << 1) << 1) << 1) << 1)) && laststart
+|9155	|		0		|		0		|	case '*'
+|9156	|		0		|		0		|	backslash
+|9158	|		0		|		0		|	!(syntax_bits & (((((1) << 1) << 1) << 1) << 1)) && laststart
+|9162	|		0		|		0		|	case '+'
+|9163	|		0		|		0		|	syntax_bits & (((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|9165	|		0		|		0		|	backslash != ((syntax_bits & ((1) << 1)) != 0)
+|9167	|		0		|		0		|	!(syntax_bits & (((((1) << 1) << 1) << 1) << 1)) && laststart
+|9171	|		0		|		3		|	case '{'
+|9172	|		0		|		40		|	!(syntax_bits & ((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1))
+|9174	|		0		|		51		|	backslash != ((syntax_bits & (((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)) == 0)
+|9182	|		0		|		34		|	!lexleft
+|9182	|		0		|		3		|	"unfinished repeat count" != 0
+|9183	|		0		|		0		|	(1 && ((*__ctype_b_loc())[(int)((c))] & (unsigned short)_ISdigit))
+|9194	|		0		|		0		|	1
+|9196	|		1		|		1		|	!lexleft
+|9196	|		0		|		8		|	"unfinished repeat count" != 0
+|9197	|		0		|		1		|	!(1 && ((*__ctype_b_loc())[(int)((c))] & (unsigned short)_ISdigit))
+|9210	|		2		|		1		|	c != ','
+|9212	|		1		|		2		|	c == ','
+|9213	|		0		|		5		|	1
+|9215	|		3		|		0		|	!lexleft
+|9215	|		5		|		2		|	"unfinished repeat count" != 0
+|9216	|		4		|		4		|	!(1 && ((*__ctype_b_loc())[(int)((c))] & (unsigned short)_ISdigit))
+|9230	|		1		|		3		|	!(syntax_bits & (((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1))
+|9232	|		0		|		1		|	c != '\\'
+|9234	|		0		|		0		|	!lexleft
+|9234	|		0		|		0		|	"unfinished repeat count" != 0
+|9236	|		0		|		0		|	c != '}'
+|9241	|		0		|		0		|	case '|'
+|9242	|		0		|		0		|	syntax_bits & (((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|9244	|		0		|		0		|	backslash != ((syntax_bits & ((((((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)) == 0)
+|9249	|		0		|		0		|	case '\n'
+|9250	|		0		|		0		|	syntax_bits & (((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) || backslash || !(syntax_bits & ((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1))
+|9257	|		0		|		0		|	case '('
+|9258	|		0		|		0		|	backslash != ((syntax_bits & ((((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)) == 0)
+|9264	|		0		|		0		|	case ')'
+|9265	|		0		|		0		|	backslash != ((syntax_bits & ((((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)) == 0)
+|9267	|		0		|		0		|	parens == 0 && syntax_bits & ((((((((((((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|9273	|		0		|		0		|	case '.'
+|9274	|		0		|		0		|	backslash
+|9278	|		0		|		0		|	!(syntax_bits & (((((((1) << 1) << 1) << 1) << 1) << 1) << 1))
+|9280	|		0		|		0		|	syntax_bits & ((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|9285	|		0		|		0		|	case 'w'
+|9286	|		0		|		0		|	case 'W'
+|9287	|		0		|		0		|	!backslash
+|9290	|		0		|		0		|	c2 < (1 << 8)
+|9291	|		0		|		0		|	(1 && ((*__ctype_b_loc())[(int)((c2))] & (unsigned short)_ISalnum))
+|9301	|		0		|		0		|	c == 'W'
+|9306	|		0		|		0		|	case '['
+|9307	|		0		|		0		|	backslash
+|9310	|		0		|		0		|	!lexleft
+|9310	|		0		|		0		|	"Unbalanced [" != 0
+|9311	|		0		|		0		|	c == '^'
+|9313	|		0		|		0		|	!lexleft
+|9313	|		0		|		0		|	"Unbalanced [" != 0
+|9318	|		0		|		0		|	(c = c1) != ']'
+|9326	|		0		|		0		|	c == '[' && (syntax_bits & (((1) << 1) << 1))
+|9327	|		0		|		0		|	prednames[c1].name
+|9328	|		1		|		0		|	looking_at(prednames[c1].name)
+|9330	|		0		|		1		|	c2 < (1 << 8)
+|9331	|		0		|		1		|	(*prednames[c1].pred)(c2)
+|9335	|		0		|		1		|	!lexleft
+|9335	|		0		|		0		|	"Unbalanced [" != 0
+|9338	|		0		|		0		|	c == '\\' && (syntax_bits & (1))
+|9339	|		0		|		0		|	!lexleft
+|9339	|		0		|		0		|	"Unbalanced [" != 0
+|9340	|		0		|		0		|	!lexleft
+|9340	|		0		|		0		|	"Unbalanced [" != 0
+|9341	|		0		|		0		|	c1 == '-'
+|9343	|		0		|		0		|	!lexleft
+|9343	|		0		|		0		|	"Unbalanced [" != 0
+|9344	|		0		|		0		|	c2 == ']'
+|9354	|		0		|		0		|	c2 == '\\' && (syntax_bits & (1))
+|9356	|		0		|		0		|	!lexleft
+|9356	|		0		|		0		|	"Unbalanced [" != 0
+|9357	|		0		|		0		|	!lexleft
+|9357	|		0		|		0		|	"Unbalanced [" != 0
+|9362	|		0		|		0		|	c <= c2
+|9365	|		0		|		0		|	case_fold
+|9366	|		0		|		0		|	(1 && ((*__ctype_b_loc())[(int)((c))] & (unsigned short)_ISupper))
+|9376	|		0		|		0		|	(1 && ((*__ctype_b_loc())[(int)((c))] & (unsigned short)_ISlower))
+|9392	|		0		|		0		|	invert
+|9395	|		0		|		0		|	syntax_bits & (((((((((1) << 1) << 1) << 1) << 1) << 1) << 1) << 1) << 1)
+|9401	|		0		|		0		|	default
+|9404	|		0		|		0		|	case_fold && (1 && ((*__ctype_b_loc())[(int)((c))] & (unsigned short)_ISalpha))
+|9416	|		0		|		0		|	((*__ctype_b_loc())[(int)((c))] & (unsigned short)_ISupper)
+|9454	|		0		|		0		|	(dfa->tindex) >= (dfa->talloc)
+|9454	|		0		|		0		|	(dfa->tindex) >= (dfa->talloc)
+|9459	|		0		|		0		|	case QMARK
+|9460	|		0		|		0		|	case STAR
+|9461	|		0		|		0		|	case PLUS
+|9464	|		0		|		0		|	case CAT
+|9465	|		0		|		0		|	case OR
+|9466	|		0		|		0		|	case ORTOP
+|9470	|		0		|		0		|	default
+|9472	|		0		|		0		|	case EMPTY
+|9476	|		0		|		0		|	depth > dfa->depth
+|9488	|		0		|		0		|	(tok >= 0 && tok < (1 << 8)) || tok >= CSET || tok == BACKREF || tok == BEGLINE || tok == ENDLINE || tok == BEGWORD || tok == ENDWORD || tok == LIMWORD || tok == NOTLIMWORD
+|9495	|		0		|		0		|	tok == LPAREN
+|9499	|		0		|		0		|	tok != RPAREN
+|9515	|		0		|		0		|	default
+|9517	|		0		|		0		|	case QMARK
+|9518	|		2		|		0		|	case STAR
+|9519	|		2		|		2		|	case PLUS
+|9521	|		0		|		4		|	case CAT
+|9522	|		0		|		2		|	case OR
+|9523	|		0		|		2		|	case ORTOP
+|9536	|		0		|		2		|	i < ntokens
+|9546	|		0		|		0		|	tok == QMARK || tok == STAR || tok == PLUS || tok == REPMN
+|9547	|		0		|		2		|	tok == REPMN
+|9551	|		2		|		2		|	maxrep == 0
+|9553	|		0		|		2		|	minrep == 0
+|9555	|		2		|		3		|	i < minrep
+|9560	|		0		|		0		|	i < maxrep
+|9579	|		62		|		450		|	tok != RPAREN && tok != OR && tok >= 0
+|9591	|		0		|		2		|	tok == OR
+|9595	|		0		|		0		|	toplevel
+|9619	|		0		|		0		|	!syntax_bits_set
+|9627	|		0		|		2		|	tok != END
+|9633	|		0		|		0		|	d->nregexps
+|9649	|		0		|		0		|	i < src->nelem
+|9666	|		0		|		2		|	i < s->nelem && p.strchr < s->elems[i].strchr
+|9668	|		0		|		0		|	i < s->nelem && p.strchr == s->elems[i].strchr
+|9674	|		2		|		0		|	i < s->nelem
+|9694	|		0		|		2		|	i < s1->nelem && j < s2->nelem
+|9695	|		0		|		0		|	s1->elems[i].strchr > s2->elems[j].strchr
+|9697	|		0		|		2		|	s1->elems[i].strchr < s2->elems[j].strchr
+|9704	|		0		|		2		|	i < s1->nelem
+|9706	|		0		|		0		|	j < s2->nelem
+|9718	|		0		|		0		|	i < s->nelem
+|9719	|		0		|		2		|	p.strchr == s->elems[i].strchr
+|9721	|		0		|		0		|	i < s->nelem
+|9722	|		20		|		2		|	i < s->nelem
+|9744	|		0		|		20		|	i < s->nelem
+|9748	|		0		|		0		|	i < d->sindex
+|9750	|		0		|		2		|	hash != d->states[i].hash || s->nelem != d->states[i].elems.nelem || newline != d->states[i].newline || letter != d->states[i].letter
+|9753	|		0		|		2		|	j < s->nelem
+|9754	|		0		|		0		|	s->elems[j].constraint != d->states[i].elems.elems[j].constraint || s->elems[j].strchr != d->states[i].elems.elems[j].strchr
+|9758	|		0		|		0		|	j == s->nelem
+|9763	|		2		|		0		|	(d->sindex) >= (d->salloc)
+|9763	|		3		|		4		|	(d->sindex) >= (d->salloc)
+|9772	|		6		|		6		|	j < s->nelem
+|9773	|		6		|		5		|	d->tokens[s->elems[j].strchr] < 0
+|9776	|		3		|		3		|	(((constraint) & 1 << (((newline) ? 2 : 0) + ((0) ? 1 : 0) + 4)) && ((constraint) & 1 << (((letter) ? 2 : 0) + ((0) ? 1 : 0)))) || (((constraint) & 1 << (((newline) ? 2 : 0) + ((0) ? 1 : 0) + 4)) && ((constraint) & 1 << (((letter) ? 2 : 0) + ((1) ? 1 : 0)))) || (((constraint) & 1 << (((newline) ? 2 : 0) + ((1) ? 1 : 0) + 4)) && ((constraint) & 1 << (((letter) ? 2 : 0) + ((0) ? 1 : 0)))) || (((constraint) & 1 << (((newline) ? 2 : 0) + ((1) ? 1 : 0) + 4)) && ((constraint) & 1 << (((letter) ? 2 : 0) + ((1) ? 1 : 0))))
+|9781	|		0		|		0		|	!d->states[i].first_end
+|9784	|		3		|		0		|	d->tokens[s->elems[j].strchr] == BACKREF
+|9810	|		4		|		0		|	i < d->tindex
+|9813	|		6		|		0		|	i < s->nelem
+|9814	|		7		|		0		|	d->tokens[s->elems[i].strchr] >= (1 << 8) && d->tokens[s->elems[i].strchr] != BACKREF && d->tokens[s->elems[i].strchr] < CSET
+|9821	|		8		|		0		|	visited[old.strchr]
+|9829	|		8		|		3		|	case BEGLINE
+|9832	|		7		|		4		|	case ENDLINE
+|9835	|		4		|		3		|	case BEGWORD
+|9838	|		2		|		0		|	case ENDWORD
+|9841	|		0		|		0		|	case LIMWORD
+|9844	|		0		|		0		|	case NOTLIMWORD
+|9847	|		0		|		0		|	default
+|9850	|		0		|		0		|	j < d->follows[old.strchr].nelem
+|9895	|		0		|		0		|	i < d->tindex
+|9901	|		0		|		0		|	i < d->tindex
+|9907	|		0		|		0		|	case EMPTY
+|9915	|		0		|		0		|	case STAR
+|9916	|		0		|		2		|	case PLUS
+|9922	|		1		|		2		|	j < nlastpos[-1]
+|9925	|		0		|		3		|	(merged.nelem - 1) >= (nalloc[pos[j].strchr])
+|9925	|		0		|		0		|	(merged.nelem - 1) >= (nalloc[pos[j].strchr])
+|9930	|		0		|		0		|	case QMARK
+|9932	|		0		|		0		|	d->tokens[i] != PLUS
+|9936	|		1		|		1		|	case CAT
+|9942	|		1		|		2		|	j < nlastpos[-2]
+|9945	|		1		|		2		|	(merged.nelem - 1) >= (nalloc[pos[j].strchr])
+|9945	|		0		|		2		|	(merged.nelem - 1) >= (nalloc[pos[j].strchr])
+|9952	|		0		|		2		|	nullable[-2]
+|9960	|		0		|		3		|	nullable[-1]
+|9965	|		0		|		2		|	j >= 0
+|9977	|		0		|		1		|	case OR
+|9978	|		0		|		9		|	case ORTOP
+|9992	|		11		|		18		|	default
+|10012	|		9		|		12		|	i < d->tindex
+|10013	|		2		|		4		|	d->tokens[i] < (1 << 8) || d->tokens[i] == BACKREF || d->tokens[i] >= CSET
+|10019	|		1		|		2		|	d->follows[i].nelem < merged.nelem
+|10027	|		2		|		2		|	i < nfirstpos[-1]
+|10033	|		2		|		5		|	i < merged.nelem
+|10034	|		3		|		5		|	(((merged.elems[i].constraint) & 192) >> 2 != ((merged.elems[i].constraint) & 48))
+|10081	|		0		|		2		|	!initialized
+|10084	|		0		|		0		|	i < (1 << 8)
+|10085	|		0		|		0		|	(1 && ((*__ctype_b_loc())[(int)((i))] & (unsigned short)_ISalnum))
+|10100	|		0		|		0		|	i < d->states[s].elems.nelem
+|10103	|		10		|		0		|	d->tokens[pos.strchr] >= 0 && d->tokens[pos.strchr] < (1 << 8)
+|10105	|		14		|		5		|	d->tokens[pos.strchr] >= CSET
+|10112	|		5		|		4		|	pos.constraint != 255
+|10114	|		0		|		7		|	!((pos.constraint) & 1 << (((d->states[s].newline) ? 2 : 0) + ((1) ? 1 : 0) + 4))
+|10117	|		5		|		6		|	!((pos.constraint) & 1 << (((d->states[s].newline) ? 2 : 0) + ((0) ? 1 : 0) + 4))
+|10119	|		6		|		1		|	j < (((1 << 8) + (8 * sizeof(int)) - 1) / (8 * sizeof(int)))
+|10121	|		4		|		3		|	!((pos.constraint) & 1 << (((d->states[s].letter) ? 2 : 0) + ((1) ? 1 : 0)))
+|10123	|		2		|		3		|	j < (((1 << 8) + (8 * sizeof(int)) - 1) / (8 * sizeof(int)))
+|10125	|		1		|		4		|	!((pos.constraint) & 1 << (((d->states[s].letter) ? 2 : 0) + ((0) ? 1 : 0)))
+|10127	|		2		|		5		|	j < (((1 << 8) + (8 * sizeof(int)) - 1) / (8 * sizeof(int)))
+|10131	|		2		|		1		|	j < (((1 << 8) + (8 * sizeof(int)) - 1) / (8 * sizeof(int))) && !matches[j]
+|10133	|		1		|		4		|	j == (((1 << 8) + (8 * sizeof(int)) - 1) / (8 * sizeof(int)))
+|10137	|		0		|		5		|	j < ngrps
+|10142	|		0		|		1		|	d->tokens[pos.strchr] >= 0 && d->tokens[pos.strchr] < (1 << 8) && !tstbit(d->tokens[pos.strchr], labels[j])
+|10149	|		0		|		3		|	k < (((1 << 8) + (8 * sizeof(int)) - 1) / (8 * sizeof(int)))
+|10151	|		0		|		4		|	!intersectf
+|10156	|		0		|		3		|	k < (((1 << 8) + (8 * sizeof(int)) - 1) / (8 * sizeof(int)))
+|10166	|		0		|		0		|	leftoversf
+|10181	|		0		|		0		|	!matchesf
+|10187	|		0		|		0		|	j == ngrps
+|10204	|		0		|		0		|	d->searchflag
+|10208	|		0		|		0		|	i < d->states[0].elems.nelem
+|10210	|		0		|		0		|	(((d->states[0].elems.elems[i].constraint) & 192) >> 2 != ((d->states[0].elems.elems[i].constraint) & 48))
+|10212	|		0		|		0		|	(((d->states[0].elems.elems[i].constraint) & 12) >> 2 != ((d->states[0].elems.elems[i].constraint) & 3))
+|10217	|		0		|		0		|	wants_newline
+|10221	|		0		|		0		|	wants_letter
+|10225	|		0		|		0		|	i < (1 << 8)
+|10226	|		0		|		0		|	i == '\n'
+|10228	|		0		|		0		|	(1 && ((*__ctype_b_loc())[(int)((i))] & (unsigned short)_ISalnum))
+|10242	|		1		|		0		|	i < (1 << 8)
+|10245	|		1		|		0		|	i < ngrps
+|10251	|		0		|		1		|	j < grps[i].nelem
+|10252	|		0		|		0		|	k < d->follows[grps[i].elems[j].strchr].nelem
+|10257	|		1		|		0		|	d->searchflag
+|10258	|		2		|		1		|	j < d->states[0].elems.nelem
+|10263	|		4		|		0		|	tstbit('\n', labels[i])
+|10264	|		4		|		2		|	j < follows.nelem
+|10265	|		3		|		1		|	(((follows.elems[j].constraint) & 192) >> 2 != ((follows.elems[j].constraint) & 48))
+|10269	|		1		|		5		|	j < (((1 << 8) + (8 * sizeof(int)) - 1) / (8 * sizeof(int)))
+|10270	|		0		|		4		|	labels[i][j] & letters[j]
+|10272	|		0		|		4		|	j < (((1 << 8) + (8 * sizeof(int)) - 1) / (8 * sizeof(int)))
+|10273	|		0		|		2		|	j < follows.nelem
+|10274	|		0		|		0		|	(((follows.elems[j].constraint) & 12) >> 2 != ((follows.elems[j].constraint) & 3))
+|10279	|		3		|		0		|	wants_newline
+|10283	|		3		|		0		|	wants_letter
+|10289	|		6		|		2		|	j < (((1 << 8) + (8 * sizeof(int)) - 1) / (8 * sizeof(int)))
+|10290	|		3		|		6		|	k < (8 * sizeof(int))
+|10291	|		3		|		5		|	labels[i][j] & 1 << k
+|10295	|		0		|		3		|	c == '\n'
+|10297	|		0		|		1		|	(1 && ((*__ctype_b_loc())[(int)((c))] & (unsigned short)_ISalnum))
+|10307	|		1		|		3		|	c < (1 << 8)
+|10312	|		1		|		3		|	i < ngrps
+|10330	|		62		|		194		|	d->trcount >= 1024
+|10332	|		67		|		194		|	i < d->tralloc
+|10333	|		6		|		5		|	d->trans[i]
+|10342	|		4		|		7		|	d->fails[i]
+|10358	|		5		|		5		|	((((*d).states[s].constraint) & 1 << (((d->states[s].newline) ? 2 : 0) + ((1) ? 1 : 0) + 4)) && (((*d).states[s].constraint) & 1 << (((d->states[s].letter) ? 2 : 0) + ((0) ? 1 : 0))))
+|10361	|		0		|		5		|	((((*d).states[s].constraint) & 1 << (((d->states[s].newline) ? 2 : 0) + ((0) ? 1 : 0) + 4)) && (((*d).states[s].constraint) & 1 << (((d->states[s].letter) ? 2 : 0) + ((1) ? 1 : 0))))
+|10364	|		0		|		0		|	((((*d).states[s].constraint) & 1 << (((d->states[s].newline) ? 2 : 0) + ((0) ? 1 : 0) + 4)) && (((*d).states[s].constraint) & 1 << (((d->states[s].letter) ? 2 : 0) + ((0) ? 1 : 0))))
+|10374	|		0		|		0		|	i < (1 << 8)
+|10375	|		0		|		0		|	trans[i] >= d->tralloc
+|10379	|		0		|		0		|	trans[i] >= d->tralloc
+|10386	|		0		|		0		|	oldalloc < d->tralloc
+|10406	|		0		|		0		|	((*d).states[s].constraint)
+|10442	|		0		|		0		|	!sbit_init
+|10447	|		0		|		0		|	i < (1 << 8)
+|10448	|		1		|		0		|	i == '\n'
+|10450	|		2		|		1		|	(1 && ((*__ctype_b_loc())[(int)((i))] & (unsigned short)_ISalnum))
+|10464	|		0		|		2		|	!d->tralloc
+|10472	|		1		|		0		|	1
+|10475	|		0		|		2		|	(t = trans[s]) != 0
+|10476	|		16		|		0		|	(t = trans[s]) != 0
+|10479	|		0		|		2		|	!(t = trans[s1])
+|10489	|		6		|		0		|	s >= 0 && p <= (unsigned char *)end && d->fails[s]
+|10491	|		6		|		2		|	d->success[s] & sbit[*p]
+|10493	|		6		|		0		|	backref
+|10494	|		3		|		3		|	d->states[s].backref
+|10507	|		0		|		6		|	count && (char *)p <= end && p[-1] == '\n'
+|10511	|		0		|		6		|	(char *)p > end
+|10518	|		0		|		6		|	s >= 0
+|10525	|		0		|		3		|	p[-1] == '\n' && newline
+|10563	|		3		|		765		|	case_fold
+|10569	|		189		|		1344		|	!copy
+|10574	|		186		|		579		|	i < len
+|10575	|		4		|		0		|	(1 && ((*__ctype_b_loc())[(int)((s[i]))] & (unsigned short)_ISupper))
+|10616	|		3		|		0		|	i < d->sindex
+|10619	|		0		|		0		|	i < d->tindex
+|10620	|		4		|		0		|	d->follows[i].elems
+|10623	|		3		|		0		|	i < d->tralloc
+|10624	|		0		|		4		|	d->trans[i]
+|10626	|		0		|		3		|	d->fails[i]
+|10631	|		0		|		0		|	dm
+|10652	|		0		|		0		|	old == ((void *)0)
+|10658	|		4		|		5		|	newsize == 0
+|10661	|		7		|		3		|	old == ((void *)0)
+|10669	|		3		|		0		|	result != ((void *)0) && new != ((void *)0)
+|10702	|		0		|		8		|	*cp != '\x00'
+|10703	|		0		|		12		|	strncmp(cp, lookfor, len) == 0
+|10716	|		0		|		7		|	cp != ((void *)0)
+|10730	|		0		|		3		|	cpp == ((void *)0)
+|10736	|		0		|		0		|	cpp[i] != ((void *)0)
+|10759	|		82		|		942		|	cpp == ((void *)0)
+|10769	|		30		|		820		|	(new = icpyalloc(new)) == ((void *)0)
+|10784	|		82		|		30		|	cpp[i] != ((void *)0)
+|10789	|		30		|		0		|	istrstr(cpp[i], new) != ((void *)0)
+|10800	|		0		|		0		|	cpp[j] != ((void *)0)
+|10805	|		0		|		3		|	istrstr(new, cpp[j]) == ((void *)0)
+|10814	|		0		|		3		|	--i == j
+|10825	|		0		|		0		|	cpp == ((void *)0)
+|10857	|		0		|		0		|	left == ((void *)0) || right == ((void *)0)
+|10872	|		1		|		2		|	cpp == ((void *)0)
+|10887	|		2		|		4		|	*lcp != '\x00'
+|10891	|		2		|		4		|	rcp != ((void *)0)
+|10897	|		1		|		2		|	lcp[i] != '\x00' && lcp[i] == rcp[i]
+|10899	|		2		|		766		|	i > len
+|10903	|		4		|		768		|	len == 0
+|10905	|		5		|		4		|	(cpp = enlist(cpp, lcp, len)) == ((void *)0)
+|10922	|		4		|		4		|	old == ((void *)0) || new == ((void *)0)
+|10936	|		2		|		41		|	new[i] != ((void *)0)
+|10943	|		1		|		97		|	old == ((void *)0)
+|10964	|		1		|		255		|	left == ((void *)0) || right == ((void *)0)
+|10979	|		63		|		448		|	both == ((void *)0)
+|10994	|		63		|		232		|	left[lnum] != ((void *)0)
+|11000	|		10942		|		97		|	right[rnum] != ((void *)0)
+|11007	|		21881		|		1		|	temp == ((void *)0)
+|11022	|		159672		|		4941		|	both == ((void *)0)
+|11070	|		154132		|		158619		|	musts == ((void *)0)
+|11077	|		6023		|		163990		|	i <= dfa->tindex
+|11079	|		118		|		10853		|	i <= dfa->tindex
+|11085	|		118		|		0		|	mp[i].in == ((void *)0) || mp[i].left == ((void *)0) || mp[i].right == ((void *)0) || mp[i].is == ((void *)0)
+|11112	|		88		|		30		|	ri < dfa->tindex
+|11116	|		0		|		10999		|	case LPAREN
+|11117	|		10		|		21754		|	case RPAREN
+|11119	|		12		|		21742		|	case EMPTY
+|11120	|		2		|		21740		|	case BEGLINE
+|11121	|		0		|		10842		|	case ENDLINE
+|11122	|		0		|		1		|	case BEGWORD
+|11123	|		0		|		1		|	case ENDWORD
+|11124	|		0		|		0		|	case LIMWORD
+|11125	|		0		|		0		|	case NOTLIMWORD
+|11126	|		0		|		0		|	case BACKREF
+|11129	|		0		|		0		|	case STAR
+|11130	|		0		|		0		|	case QMARK
+|11131	|		0		|		0		|	mp <= musts
+|11136	|		0		|		0		|	case OR
+|11137	|		0		|		0		|	case ORTOP
+|11138	|		0		|		1		|	mp < &musts[2]
+|11149	|		1		|		1		|	strcmp(lmp->is, rmp->is) != 0
+|11153	|		6		|		4		|	lmp->left[i] != '\x00' && lmp->left[i] == rmp->left[i]
+|11160	|		0		|		4		|	n > rn
+|11162	|		5		|		4		|	i < n
+|11163	|		9		|		0		|	lmp->right[ln - i - 1] != rmp->right[rn - i - 1]
+|11165	|		24		|		0		|	j < i
+|11169	|		30		|		13		|	new == ((void *)0)
+|11180	|		24		|		9		|	case PLUS
+|11181	|		0		|		8		|	mp <= musts
+|11186	|		2		|		0		|	case END
+|11187	|		0		|		4		|	mp != &musts[1]
+|11189	|		0		|		4		|	musts[0].in[i] != ((void *)0)
+|11194	|		0		|		0		|	strlen(musts[0].in[i]) > strlen(result)
+|11196	|		0		|		3		|	strcmp(result, musts[0].is) == 0
+|11199	|		3		|		3		|	case CAT
+|11200	|		1		|		2		|	mp < &musts[2]
+|11212	|		1		|		1		|	lmp->in == ((void *)0)
+|11218	|		0		|		4		|	lmp->right[0] != '\x00' && rmp->left[0] != '\x00'
+|11224	|		0		|		0		|	tp == ((void *)0)
+|11231	|		0		|		0		|	tp == ((void *)0)
+|11240	|		0		|		0		|	lmp->in == ((void *)0)
+|11248	|		0		|		0		|	lmp->is[0] != '\x00'
+|11252	|		0		|		0		|	lmp->left == ((void *)0)
+|11260	|		0		|		0		|	rmp->is[0] == '\x00'
+|11263	|		0		|		1		|	lmp->right == ((void *)0)
+|11270	|		0		|		1		|	lmp->is[0] != '\x00' && rmp->is[0] != '\x00'
+|11273	|		0		|		1		|	lmp->is == ((void *)0)
+|11284	|		1		|		0		|	default
+|11285	|		0		|		1		|	t < END
+|11290	|		0		|		0		|	t == '\x00'
+|11295	|		0		|		0		|	t >= CSET
+|11307	|		0		|		0		|	mp->in == ((void *)0)
+|11320	|		0		|		0		|	strlen(result)
+|11330	|		0		|		1		|	i <= dfa->tindex
+|11564	|		0		|		1		|	!kwset
+|11570	|		6		|		1		|	__o1->next_free == value
+|11571	|		7		|		6		|	!kwset->trie
+|11614	|		10		|		7		|	len--
+|11626	|		5		|		6		|	link && label != link->label
+|11629	|		4		|		0		|	label < link->label
+|11638	|		0		|		0		|	!link
+|11640	|		0		|		0		|	__o1->next_free == value
+|11642	|		0		|		0		|	!link
+|11646	|		0		|		0		|	__o1->next_free == value
+|11648	|		0		|		0		|	!link->trie
+|11661	|		0		|		0		|	dirs[--depth] == L
+|11667	|		0		|		0		|	depth && !links[depth]->balance
+|11669	|		0		|		0		|	dirs[depth] == L
+|11677	|		0		|		0		|	depth && ((dirs[depth] == L && --links[depth]->balance) || (dirs[depth] == R && ++links[depth]->balance))
+|11682	|		0		|		0		|	case (char) -2
+|11685	|		0		|		0		|	case L
+|11690	|		0		|		0		|	case R
+|11700	|		0		|		0		|	case 2
+|11703	|		0		|		0		|	case R
+|11708	|		0		|		0		|	case L
+|11720	|		0		|		0		|	dirs[depth - 1] == L
+|11732	|		0		|		0		|	!trie->accepting
+|11737	|		0		|		0		|	trie->depth < kwset->mind
+|11739	|		0		|		0		|	trie->depth > kwset->maxd
+|11752	|		0		|		0		|	!tree
+|11770	|		0		|		0		|	!tree
+|11778	|		0		|		0		|	fail
+|11781	|		1		|		0		|	link && tree->label != link->label
+|11782	|		1		|		1		|	tree->label < link->label
+|11786	|		1		|		1		|	link
+|11805	|		1		|		1		|	!tree
+|11809	|		0		|		1		|	depth < delta[tree->label]
+|11819	|		1		|		0		|	!b
+|11821	|		3		|		0		|	!hasevery(a, b->llink)
+|11823	|		2		|		1		|	!hasevery(a, b->rlink)
+|11825	|		1		|		2		|	a && b->label != a->label
+|11826	|		0		|		3		|	b->label < a->label
+|11840	|		0		|		2		|	!tree
+|11873	|		1		|		0		|	kwset->mind < 256
+|11874	|		0		|		1		|	i < ((127 * 2 + 1) + 1)
+|11881	|		0		|		2		|	i < ((127 * 2 + 1) + 1)
+|11890	|		0		|		2		|	kwset->words == 1 && kwset->trans == 0
+|11893	|		2		|		0		|	__o1->next_free == value
+|11894	|		1		|		2		|	i >= 0
+|11900	|		0		|		3		|	i < kwset->mind
+|11905	|		0		|		2		|	i < kwset->mind - 1
+|11906	|		3		|		0		|	kwset->target[i] == kwset->target[kwset->mind - 1]
+|11913	|		2		|		3		|	curr
+|11929	|		2		|		4		|	fail
+|11934	|		2		|		4		|	!hasevery(fail->links, curr->links)
+|11935	|		2		|		2		|	curr->depth - fail->depth < fail->shift
+|11941	|		0		|		3		|	curr->accepting && fail->maxshift > curr->depth - fail->depth
+|11948	|		6		|		3		|	curr
+|11950	|		8		|		0		|	curr->maxshift > curr->parent->maxshift
+|11952	|		6		|		0		|	curr->shift > curr->maxshift
+|11958	|		0		|		1		|	i < ((127 * 2 + 1) + 1)
+|11966	|		0		|		1		|	(trans = kwset->trans) != 0
+|11967	|		0		|		1		|	i < ((127 * 2 + 1) + 1)
+|11974	|		2		|		1		|	i < ((127 * 2 + 1) + 1)
+|11983	|		0		|		2		|	(trans = kwset->trans) != 0
+|11984	|		0		|		0		|	i < ((127 * 2 + 1) + 1)
+|11991	|		2		|		0		|	i < ((127 * 2 + 1) + 1)
+|12018	|		0		|		2		|	len == 0
+|12020	|		0		|		2		|	len > size
+|12022	|		0		|		2		|	len == 1
+|12032	|		0		|		2		|	size > 12 * len
+|12034	|		2		|		0		|	1
+|12036	|		0		|		2		|	tp <= ep
+|12040	|		0		|		0		|	d == 0
+|12045	|		0		|		2		|	d == 0
+|12050	|		0		|		0		|	d == 0
+|12057	|		0		|		0		|	((unsigned char)(tp[-2])) == gc
+|12059	|		0		|		0		|	i <= len && ((unsigned char)(tp[-i])) == ((unsigned char)(sp[-i]))
+|12061	|		0		|		0		|	i > len
+|12071	|		0		|		0		|	d <= ep - tp
+|12074	|		0		|		0		|	d != 0
+|12076	|		0		|		0		|	tp[-2] == gc
+|12078	|		1		|		0		|	i <= len && ((unsigned char)(tp[-i])) == ((unsigned char)(sp[-i]))
+|12080	|		1		|		0		|	i > len
+|12108	|		1		|		0		|	len < kwset->mind
+|12115	|		0		|		0		|	(d = kwset->mind) != 0
+|12123	|		0		|		0		|	len >= 4 * kwset->mind
+|12128	|		0		|		0		|	lim - end >= d
+|12130	|		0		|		0		|	qlim && end <= qlim
+|12133	|		0		|		0		|	(d = delta[c = *end]) && end < qlim
+|12143	|		0		|		0		|	d
+|12147	|		0		|		0		|	trie->accepting
+|12153	|		0		|		0		|	beg > text
+|12157	|		0		|		0		|	tree && c != tree->label
+|12158	|		0		|		0		|	c < tree->label
+|12162	|		0		|		0		|	tree
+|12165	|		0		|		0		|	trie->accepting
+|12175	|		0		|		0		|	mch
+|12184	|		0		|		0		|	lim - mch > kwset->maxd
+|12188	|		1		|		0		|	lim - end >= d
+|12190	|		0		|		0		|	(d = delta[c = (end += d)[-1]]) != 0
+|12193	|		0		|		0		|	!(trie = next[c])
+|12198	|		1		|		0		|	trie->accepting && beg <= mch
+|12204	|		0		|		1		|	beg > text
+|12208	|		2		|		0		|	tree && c != tree->label
+|12209	|		0		|		0		|	c < tree->label
+|12213	|		0		|		0		|	tree
+|12216	|		0		|		1		|	trie->accepting && beg <= mch
+|12226	|		0		|		0		|	lmch
+|12231	|		0		|		0		|	!d
+|12235	|		0		|		0		|	kwsmatch
+|12255	|		0		|		0		|	kwset->words == 1 && kwset->trans == 0
+|12258	|		0		|		0		|	kwsmatch != 0 && ret != 0
+|12278	|		0		|		0		|	__obj > (void *)__o->chunk && __obj < (void *)__o->chunk_limit
+|12336	|		0		|		0		|	match_icase
+|12337	|		0		|		0		|	i < ((127 * 2 + 1) + 1)
+|12352	|		0		|		0		|	!(kwset = kwsalloc(match_icase ? trans : (char *)0))
+|12366	|		0		|		0		|	dfa_1.musts
+|12372	|		0		|		0		|	dm
+|12374	|		0		|		0		|	!dm->exact
+|12377	|		0		|		1		|	(err = kwsincr(kwset, dm->must, strlen(dm->must))) != 0
+|12382	|		0		|		0		|	dm
+|12384	|		0		|		0		|	dm->exact
+|12386	|		0		|		1291		|	(err = kwsincr(kwset, dm->must, strlen(dm->must))) != 0
+|12389	|		0		|		1291		|	(err = kwsprep(kwset)) != 0
+|12407	|		0		|		1291		|	(err = re_compile_pattern(pattern, size, &regex)) != 0
+|12416	|		1290		|		1		|	match_words || match_lines
+|12429	|		3215		|		0		|	match_lines
+|12431	|		16489		|		9		|	match_words
+|12438	|		1249		|		15240		|	match_words
+|12440	|		1102		|		14138		|	match_lines
+|12462	|		855		|		13283		|	strcmp(matcher, "posix-egrep") == 0
+|12473	|		1281		|		1925		|	(err = re_compile_pattern(pattern, size, &regex)) != 0
+|12482	|		0		|		0		|	match_words || match_lines
+|12495	|		1281		|		0		|	match_lines
+|12497	|		63		|		10		|	match_words
+|12504	|		63		|		0		|	match_words
+|12506	|		0		|		0		|	match_lines
+|12532	|		0		|		0		|	end < buflim
+|12534	|		0		|		0		|	kwset
+|12538	|		0		|		0		|	!beg
+|12543	|		0		|		0		|	!end
+|12545	|		0		|		0		|	beg > buf && beg[-1] != '\n'
+|12548	|		0		|		0		|	kwsm.strchr < lastexact
+|12550	|		0		|		0		|	!dfaexec(&dfa_1, beg, end, 0, (int *)0, &backref)
+|12557	|		0		|		0		|	!backref
+|12566	|		0		|		0		|	!beg
+|12570	|		0		|		0		|	!end
+|12572	|		0		|		0		|	beg > buf && beg[-1] != '\n'
+|12575	|		0		|		0		|	!backref
+|12581	|		0		|		0		|	(start = re_search(&regex, beg, end - beg, 0, end - beg, &regs)) >= 0
+|12584	|		0		|		0		|	!match_lines && !match_words || match_lines && len == end - beg
+|12592	|		0		|		0		|	match_words
+|12593	|		0		|		0		|	start >= 0
+|12595	|		0		|		0		|	(start == 0 || !((1 && ((*__ctype_b_loc())[(int)((beg[start - 1]))] & (unsigned short)_ISalnum)) || (beg[start - 1]) == '_')) && (len == end - beg || !((1 && ((*__ctype_b_loc())[(int)((beg[start + len]))] & (unsigned short)_ISalnum)) || (beg[start + len]) == '_'))
+|12614	|		0		|		0		|	len > 0
+|12621	|		0		|		0		|	len <= 0
+|12624	|		0		|		0		|	start == end - beg
+|12653	|		0		|		0		|	beg < pattern + size
+|12655	|		0		|		0		|	lim < pattern + size && *lim != '\n'
+|12657	|		0		|		0		|	(err = kwsincr(kwset, beg, lim - beg)) != 0
+|12659	|		0		|		0		|	lim < pattern + size
+|12665	|		0		|		0		|	(err = kwsprep(kwset)) != 0
+|12679	|		0		|		0		|	beg <= buf + size
+|12681	|		0		|		0		|	!(beg = kwsexec(kwset, beg, buf + size - beg, &kwsmatch))
+|12684	|		0		|		0		|	match_lines
+|12686	|		0		|		0		|	beg > buf && beg[-1] != '\n'
+|12688	|		1291		|		0		|	beg + len < buf + size && beg[len] != '\n'
+|12692	|		1281		|		10		|	match_words
+|12693	|		0		|		0		|	len && try
+|12695	|		0		|		1		|	try > buf && ((1 && ((*__ctype_b_loc())[(int)(((unsigned char)try[-1]))] & (unsigned short)_ISalnum)) || ((unsigned char)try[-1]) == '_')
+-----------------------------------------------------
+Covered: 569 / 2682 = 21.215511 %

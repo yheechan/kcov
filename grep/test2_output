@@ -1,0 +1,88 @@
+   Copyright (C) 1992 Free Software Foundation, Inc.
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+   Written July 1992 by Mike Haertel.  */
+      bufsalloc = MAX(8192, getpagesize());
+	 In fact, it actually slows us down about 30%! */
+  while ((opt = getopt(argc, argv, "0123456789A:B:CEFGVX:bce:f:hiLlnqsvwxy"))
+	out_before = 10 * out_before + opt - '0';
+	out_after = 10 * out_after + opt - '0';
+   Copyright (C) 1987, 88, 89, 90, 91, 92, 1993
+   Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.  */
+/* XXX 1003.2 says this must be 1 before any call.  */
+	    if (c < 040 || c >= 0177)
+	    /* 1003.2 specifies the format of this message.  */
+		    /* 1003.2 specifies the format of this message.  */
+      c = getopt (argc, argv, "abc:d:0123456789");
+   version 0.12.
+   (Implements POSIX draft P10003.2/D11.2, except for
+   Copyright (C) 1993 Free Software Foundation, Inc.
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+#define CHAR_SET_SIZE 256
+#define SIGN_EXTEND_CHAR(c) ((((unsigned char) (c)) ^ 128) - 128)
+    (destination)[0] = (number) & 0377;					\
+    (destination) = *(source) & 0377;					\
+  *dest = *source & 0377;
+            register int c, last = -100;
+            for (c = 0; c < 256; c++)
+#define INIT_BUF_SIZE  32
+   into the pattern are two bytes long.  So if 2^16 bytes turns out to
+#define MAX_BUF_SIZE (1L << 16)
+#define MAX_REGNUM 255
+#define INIT_COMPILE_STACK_SIZE 32
+           num = num * 10 + c - '0'; 					\
+               opcode, the length count, and the bitset; 34 bytes in all.  */
+	    GET_BUFFER_SPACE (34);
+                     unsigned nbytes = 10 + (upper_bound > 1) * 10;
+int re_max_failures = 2000;
+   register values; since we have a limit of 255 registers (because
+   use numbers larger than 255.  They must differ by 1, because of
+              || (bufp->syntax & RE_DOT_NOT_NULL && TRANSLATE (*d) == '\000'))
+               bit list is a full 32 bytes long.  */
+#ifdef emacs19
+#else /* not emacs19 */
+#endif /* not emacs19 */
+      re_comp_buf.buffer = (unsigned char *) malloc (200);
+      re_comp_buf.allocated = 200;
+   Copyright (C) 1988 Free Software Foundation, Inc.
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+/* Written June, 1988 by Mike Haertel
+   Modified July, 1988 by Arthur David Olson to assist BMG speedups  */
+		  minrep = 10 * minrep + c - '0';
+		maxrep = 10 * maxrep + c - '0';
+     exist at once.  1024 is arbitrary.  The idea is that the frequently
+  if (d->trcount >= 1024)
+   Copyright 1989 Free Software Foundation
+		  Written August 1989 by Mike Haertel.
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+   IBM-Germany, Scientific Center Heidelberg, Tiergartenstrasse 15, D-6900
+   String Matching:  An Aid to Bibliographic Search," CACM June 1975,
+   Vol. 18, No. 6, which describes the failure function used below. */
+#define INT_MAX 2147483647
+#define UCHAR_MAX 255
+  struct tree *links[12];
+  enum { L, R } dirs[12];
+  if (kwset->mind < 256)
+      delta[i] = 255;
+  /* Significance of 12: 1 (initial offset) + 10 (skip loop) + 1 (md2). */
+  if (size > 12 * len)
+    /* 11 is not a bug, the initial offset happens only once. */
+    for (ep = text + size - 11 * len;;)
+   Copyright (C) 1988, 1993 Free Software Foundation, Inc.
+Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.  */
+    /* Default size is what GNU malloc can fit in a 4096-byte block.  */
+      /* 12 is sizeof (mhead) and 4 is EXTRA from GNU malloc.
+	 and we used a larger request, a whole extra 4096 bytes would be
+      int extra = ((((12 + DEFAULT_ROUNDING - 1) & ~(DEFAULT_ROUNDING - 1))
+      size = 4096 - extra;
+    /* Default size is what GNU malloc can fit in a 4096-byte block.  */
+      /* 12 is sizeof (mhead) and 4 is EXTRA from GNU malloc.
+	 and we used a larger request, a whole extra 4096 bytes would be
+      int extra = ((((12 + DEFAULT_ROUNDING - 1) & ~(DEFAULT_ROUNDING - 1))
+      size = 4096 - extra;
+  new_size = (obj_size + length) + (obj_size >> 3) + 100;
+   Copyright (C) 1992 Free Software Foundation, Inc.
+   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+   Written August 1992 by Mike Haertel. */
+#define UCHAR_MAX 255
+      char *n = malloc(size + 50);
+      char *n = malloc(size + 50);

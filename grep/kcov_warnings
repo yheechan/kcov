@@ -1,0 +1,300 @@
+grep.i:4480:5: warning: add explicit braces to avoid dangling else
+    else
+    ^
+grep.i:5675:40: warning: equality comparison with extraneous parentheses
+              if ((compile_stack.avail == compile_stack.size))
+                   ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+grep.i:5675:40: note: remove extraneous parentheses around the comparison to silence this warning
+              if ((compile_stack.avail == compile_stack.size))
+                  ~                    ^                    ~
+grep.i:5675:40: note: use '=' to turn this equality comparison into an assignment
+              if ((compile_stack.avail == compile_stack.size))
+                                       ^~
+                                       =
+grep.i:5727:40: warning: equality comparison with extraneous parentheses
+              if ((compile_stack.avail == 0))
+                   ~~~~~~~~~~~~~~~~~~~~^~~~
+grep.i:5727:40: note: remove extraneous parentheses around the comparison to silence this warning
+              if ((compile_stack.avail == 0))
+                  ~                    ^   ~
+grep.i:5727:40: note: use '=' to turn this equality comparison into an assignment
+              if ((compile_stack.avail == 0))
+                                       ^~
+                                       =
+grep.i:5730:17: warning: add explicit braces to avoid dangling else
+                else
+                ^
+grep.i:5751:40: warning: equality comparison with extraneous parentheses
+              if ((compile_stack.avail == 0))
+                   ~~~~~~~~~~~~~~~~~~~~^~~~
+grep.i:5751:40: note: remove extraneous parentheses around the comparison to silence this warning
+              if ((compile_stack.avail == 0))
+                  ~                    ^   ~
+grep.i:5751:40: note: use '=' to turn this equality comparison into an assignment
+              if ((compile_stack.avail == 0))
+                                       ^~
+                                       =
+grep.i:5754:17: warning: add explicit braces to avoid dangling else
+                else
+                ^
+grep.i:6394:27: warning: cast to 'fail_stack_elt_t *' (aka 'const unsigned char **') from smaller integer type 'int'
+  do { fail_stack.stack = (fail_stack_elt_t *) 
+                          ^~~~~~~~~~~~~~~~~~~~
+grep.i:6552:192: warning: cast to 'char *' from smaller integer type 'int'
+              if (!(((fail_stack.avail == fail_stack.size) && !((fail_stack).size > re_max_failures * ((num_regs - 1) * 3 + 4) ? 0 : ((fail_stack).stack = (fail_stack_elt_t *) (destination = (char *) 
+                                                                                                                                                                                               ^~~~~~~~
+grep.i:6643:33: warning: expression which evaluates to zero treated as a null pointer constant of type 'regoff_t *' (aka 'int *')
+      regs->start = regs->end = (regoff_t) 0;
+                                ^~~~~~~~~~~~
+grep.i:6898:27: warning: cast to 'fail_stack_elt_t *' (aka 'const unsigned char **') from smaller integer type 'int'
+  do { fail_stack.stack = (fail_stack_elt_t *) 
+                          ^~~~~~~~~~~~~~~~~~~~
+grep.i:6919:19: warning: cast to 'const char **' from smaller integer type 'int'
+      regstart = ((const char * *) 
+                  ^~~~~~~~~~~~~~~~
+grep.i:6928:17: warning: cast to 'const char **' from smaller integer type 'int'
+      regend = ((const char * *) 
+                ^~~~~~~~~~~~~~~~
+grep.i:6937:23: warning: cast to 'const char **' from smaller integer type 'int'
+      old_regstart = ((const char * *) 
+                      ^~~~~~~~~~~~~~~~
+grep.i:6946:21: warning: cast to 'const char **' from smaller integer type 'int'
+      old_regend = ((const char * *) 
+                    ^~~~~~~~~~~~~~~~
+grep.i:6955:24: warning: cast to 'const char **' from smaller integer type 'int'
+      best_regstart = ((const char * *) 
+                       ^~~~~~~~~~~~~~~~
+grep.i:6964:22: warning: cast to 'const char **' from smaller integer type 'int'
+      best_regend = ((const char * *) 
+                     ^~~~~~~~~~~~~~~~
+grep.i:6973:19: warning: cast to 'register_info_type *' from smaller integer type 'int'
+      reg_info = ((register_info_type *) 
+                  ^~~~~~~~~~~~~~~~~~~~~~
+grep.i:6982:20: warning: cast to 'const char **' from smaller integer type 'int'
+      reg_dummy = ((const char * *) 
+                   ^~~~~~~~~~~~~~~~
+grep.i:6991:25: warning: cast to 'register_info_type *' from smaller integer type 'int'
+      reg_info_dummy = ((register_info_type *) 
+                        ^~~~~~~~~~~~~~~~~~~~~~
+grep.i:7502:31: warning: cast to smaller integer type 'int' from 'const char *'
+                          if ((int) old_regend[r] >= (int) regstart[r])
+                              ^~~~~~~~~~~~~~~~~~~
+grep.i:7502:54: warning: cast to smaller integer type 'int' from 'const char *'
+                          if ((int) old_regend[r] >= (int) regstart[r])
+                                                     ^~~~~~~~~~~~~~~~~
+grep.i:7508:312: warning: cast to 'char *' from smaller integer type 'int'
+                  do { char *destination; int this_reg; ; ; ; ; ; ; ; while (((fail_stack).size - (fail_stack).avail) < ((highest_active_reg - lowest_active_reg + 1) * 3 + 4)) { if (!((fail_stack).size > re_max_failures * ((num_regs - 1) * 3 + 4) ? 0 : ((fail_stack).stack = (fail_stack_elt_t *) (destination = (char *) 
+                                                                                                                                                                                                                                                                                                                       ^~~~~~~~
+grep.i:7520:456: warning: cast to 'fail_stack_elt_t' (aka 'const unsigned char *') from smaller integer type 'unsigned int'
+                 ? 0 : ((fail_stack).size <<= 1, 1)))) return -2; ; ; } ; for (this_reg = lowest_active_reg; this_reg <= highest_active_reg; this_reg++) { ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regstart[this_reg]; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regend[this_reg]; ; ; ; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) reg_info[this_reg].word; } ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) lowest_active_reg; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) highest_active_reg; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) p1 + mcnt; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) d; ; ; } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+grep.i:7520:535: warning: cast to 'fail_stack_elt_t' (aka 'const unsigned char *') from smaller integer type 'unsigned int'
+                 ? 0 : ((fail_stack).size <<= 1, 1)))) return -2; ; ; } ; for (this_reg = lowest_active_reg; this_reg <= highest_active_reg; this_reg++) { ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regstart[this_reg]; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regend[this_reg]; ; ; ; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) reg_info[this_reg].word; } ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) lowest_active_reg; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) highest_active_reg; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) p1 + mcnt; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) d; ; ; } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+grep.i:7615:20: warning: equality comparison with extraneous parentheses
+          if (((d) == end2))
+               ~~~~^~~~~~~
+grep.i:7615:20: note: remove extraneous parentheses around the comparison to silence this warning
+          if (((d) == end2))
+              ~    ^      ~
+grep.i:7615:20: note: use '=' to turn this equality comparison into an assignment
+          if (((d) == end2))
+                   ^~
+                   =
+grep.i:7640:13: warning: equality comparison with extraneous parentheses
+   if (((d) == end2))
+        ~~~~^~~~~~~
+grep.i:7640:13: note: remove extraneous parentheses around the comparison to silence this warning
+   if (((d) == end2))
+       ~    ^      ~
+grep.i:7640:13: note: use '=' to turn this equality comparison into an assignment
+   if (((d) == end2))
+            ^~
+            =
+grep.i:7650:304: warning: cast to 'char *' from smaller integer type 'int'
+          do { char *destination; int this_reg; ; ; ; ; ; ; ; while (((fail_stack).size - (fail_stack).avail) < ((highest_active_reg - lowest_active_reg + 1) * 3 + 4)) { if (!((fail_stack).size > re_max_failures * ((num_regs - 1) * 3 + 4) ? 0 : ((fail_stack).stack = (fail_stack_elt_t *) (destination = (char *) 
+                                                                                                                                                                                                                                                                                                               ^~~~~~~~
+grep.i:7662:448: warning: cast to 'fail_stack_elt_t' (aka 'const unsigned char *') from smaller integer type 'unsigned int'
+         ? 0 : ((fail_stack).size <<= 1, 1)))) return -2; ; ; } ; for (this_reg = lowest_active_reg; this_reg <= highest_active_reg; this_reg++) { ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regstart[this_reg]; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regend[this_reg]; ; ; ; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) reg_info[this_reg].word; } ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) lowest_active_reg; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) highest_active_reg; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) p + mcnt; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+grep.i:7662:527: warning: cast to 'fail_stack_elt_t' (aka 'const unsigned char *') from smaller integer type 'unsigned int'
+         ? 0 : ((fail_stack).size <<= 1, 1)))) return -2; ; ; } ; for (this_reg = lowest_active_reg; this_reg <= highest_active_reg; this_reg++) { ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regstart[this_reg]; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regend[this_reg]; ; ; ; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) reg_info[this_reg].word; } ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) lowest_active_reg; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) highest_active_reg; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) p + mcnt; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+grep.i:7697:304: warning: cast to 'char *' from smaller integer type 'int'
+          do { char *destination; int this_reg; ; ; ; ; ; ; ; while (((fail_stack).size - (fail_stack).avail) < ((highest_active_reg - lowest_active_reg + 1) * 3 + 4)) { if (!((fail_stack).size > re_max_failures * ((num_regs - 1) * 3 + 4) ? 0 : ((fail_stack).stack = (fail_stack_elt_t *) (destination = (char *) 
+                                                                                                                                                                                                                                                                                                               ^~~~~~~~
+grep.i:7709:448: warning: cast to 'fail_stack_elt_t' (aka 'const unsigned char *') from smaller integer type 'unsigned int'
+         ? 0 : ((fail_stack).size <<= 1, 1)))) return -2; ; ; } ; for (this_reg = lowest_active_reg; this_reg <= highest_active_reg; this_reg++) { ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regstart[this_reg]; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regend[this_reg]; ; ; ; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) reg_info[this_reg].word; } ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) lowest_active_reg; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) highest_active_reg; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) p + mcnt; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) d; ; ; } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+grep.i:7709:527: warning: cast to 'fail_stack_elt_t' (aka 'const unsigned char *') from smaller integer type 'unsigned int'
+         ? 0 : ((fail_stack).size <<= 1, 1)))) return -2; ; ; } ; for (this_reg = lowest_active_reg; this_reg <= highest_active_reg; this_reg++) { ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regstart[this_reg]; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regend[this_reg]; ; ; ; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) reg_info[this_reg].word; } ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) lowest_active_reg; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) highest_active_reg; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) p + mcnt; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) d; ; ; } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+grep.i:7797:143: warning: cast to smaller integer type 'unsigned int' from 'fail_stack_elt_t' (aka 'const unsigned char *')
+           ) sdummy = (const char *) string_temp; ; ; ; pdummy = (unsigned char *) fail_stack.stack[--fail_stack.avail]; ; ; dummy_high_reg = (unsigned) fail_stack.stack[--fail_stack.avail]; ; dummy_low_reg = (unsigned) fail_stack.stack[--fail_stack.avail]; ; for (this_reg = dummy_high_reg; this_reg >= dummy_low_reg; this_reg--) { ; reg_info_dummy[this_reg].word = fail_stack.stack[--fail_stack.avail]; ; reg_dummy[this_reg] = (const char *) fail_stack.stack[--fail_stack.avail]; ; reg_dummy[this_reg] = (const char *) fail_stack.stack[--fail_stack.avail]; ; } ; }
+                                                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+grep.i:7797:210: warning: cast to smaller integer type 'unsigned int' from 'fail_stack_elt_t' (aka 'const unsigned char *')
+           ) sdummy = (const char *) string_temp; ; ; ; pdummy = (unsigned char *) fail_stack.stack[--fail_stack.avail]; ; ; dummy_high_reg = (unsigned) fail_stack.stack[--fail_stack.avail]; ; dummy_low_reg = (unsigned) fail_stack.stack[--fail_stack.avail]; ; for (this_reg = dummy_high_reg; this_reg >= dummy_low_reg; this_reg--) { ; reg_info_dummy[this_reg].word = fail_stack.stack[--fail_stack.avail]; ; reg_dummy[this_reg] = (const char *) fail_stack.stack[--fail_stack.avail]; ; reg_dummy[this_reg] = (const char *) fail_stack.stack[--fail_stack.avail]; ; } ; }
+                                                                                                                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+grep.i:7830:304: warning: cast to 'char *' from smaller integer type 'int'
+          do { char *destination; int this_reg; ; ; ; ; ; ; ; while (((fail_stack).size - (fail_stack).avail) < ((highest_active_reg - lowest_active_reg + 1) * 3 + 4)) { if (!((fail_stack).size > re_max_failures * ((num_regs - 1) * 3 + 4) ? 0 : ((fail_stack).stack = (fail_stack_elt_t *) (destination = (char *) 
+                                                                                                                                                                                                                                                                                                               ^~~~~~~~
+grep.i:7842:448: warning: cast to 'fail_stack_elt_t' (aka 'const unsigned char *') from smaller integer type 'unsigned int'
+         ? 0 : ((fail_stack).size <<= 1, 1)))) return -2; ; ; } ; for (this_reg = lowest_active_reg; this_reg <= highest_active_reg; this_reg++) { ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regstart[this_reg]; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regend[this_reg]; ; ; ; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) reg_info[this_reg].word; } ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) lowest_active_reg; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) highest_active_reg; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) 0; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) 0; ; ; } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+grep.i:7842:527: warning: cast to 'fail_stack_elt_t' (aka 'const unsigned char *') from smaller integer type 'unsigned int'
+         ? 0 : ((fail_stack).size <<= 1, 1)))) return -2; ; ; } ; for (this_reg = lowest_active_reg; this_reg <= highest_active_reg; this_reg++) { ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regstart[this_reg]; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regend[this_reg]; ; ; ; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) reg_info[this_reg].word; } ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) lowest_active_reg; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) highest_active_reg; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) 0; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) 0; ; ; } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+grep.i:7855:304: warning: cast to 'char *' from smaller integer type 'int'
+          do { char *destination; int this_reg; ; ; ; ; ; ; ; while (((fail_stack).size - (fail_stack).avail) < ((highest_active_reg - lowest_active_reg + 1) * 3 + 4)) { if (!((fail_stack).size > re_max_failures * ((num_regs - 1) * 3 + 4) ? 0 : ((fail_stack).stack = (fail_stack_elt_t *) (destination = (char *) 
+                                                                                                                                                                                                                                                                                                               ^~~~~~~~
+grep.i:7867:448: warning: cast to 'fail_stack_elt_t' (aka 'const unsigned char *') from smaller integer type 'unsigned int'
+         ? 0 : ((fail_stack).size <<= 1, 1)))) return -2; ; ; } ; for (this_reg = lowest_active_reg; this_reg <= highest_active_reg; this_reg++) { ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regstart[this_reg]; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regend[this_reg]; ; ; ; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) reg_info[this_reg].word; } ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) lowest_active_reg; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) highest_active_reg; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) 0; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) 0; ; ; } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+grep.i:7867:527: warning: cast to 'fail_stack_elt_t' (aka 'const unsigned char *') from smaller integer type 'unsigned int'
+         ? 0 : ((fail_stack).size <<= 1, 1)))) return -2; ; ; } ; for (this_reg = lowest_active_reg; this_reg <= highest_active_reg; this_reg++) { ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regstart[this_reg]; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) regend[this_reg]; ; ; ; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) reg_info[this_reg].word; } ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) lowest_active_reg; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) highest_active_reg; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) 0; ; ; ; fail_stack.stack[fail_stack.avail++] = (fail_stack_elt_t) 0; ; ; } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+grep.i:7959:91: warning: equality comparison with extraneous parentheses
+   if ((re_syntax_table[(d) == end1 ? *string2 : (d) == string2 - 1 ? *(end1 - 1) : *(d)] == 1))
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+grep.i:7959:91: note: remove extraneous parentheses around the comparison to silence this warning
+   if ((re_syntax_table[(d) == end1 ? *string2 : (d) == string2 - 1 ? *(end1 - 1) : *(d)] == 1))
+       ~                                                                                  ^   ~
+grep.i:7959:91: note: use '=' to turn this equality comparison into an assignment
+   if ((re_syntax_table[(d) == end1 ? *string2 : (d) == string2 - 1 ? *(end1 - 1) : *(d)] == 1))
+                                                                                          ^~
+                                                                                          =
+grep.i:7981:135: warning: cast to smaller integer type 'unsigned int' from 'fail_stack_elt_t' (aka 'const unsigned char *')
+         ) d = (const char *) string_temp; ; ; ; p = (unsigned char *) fail_stack.stack[--fail_stack.avail]; ; ; highest_active_reg = (unsigned) fail_stack.stack[--fail_stack.avail]; ; lowest_active_reg = (unsigned) fail_stack.stack[--fail_stack.avail]; ; for (this_reg = highest_active_reg; this_reg >= lowest_active_reg; this_reg--) { ; reg_info[this_reg].word = fail_stack.stack[--fail_stack.avail]; ; regend[this_reg] = (const char *) fail_stack.stack[--fail_stack.avail]; ; regstart[this_reg] = (const char *) fail_stack.stack[--fail_stack.avail]; ; } ; }
+                                                                                                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+grep.i:7981:206: warning: cast to smaller integer type 'unsigned int' from 'fail_stack_elt_t' (aka 'const unsigned char *')
+         ) d = (const char *) string_temp; ; ; ; p = (unsigned char *) fail_stack.stack[--fail_stack.avail]; ; ; highest_active_reg = (unsigned) fail_stack.stack[--fail_stack.avail]; ; lowest_active_reg = (unsigned) fail_stack.stack[--fail_stack.avail]; ; for (this_reg = highest_active_reg; this_reg >= lowest_active_reg; this_reg--) { ; reg_info[this_reg].word = fail_stack.stack[--fail_stack.avail]; ; regend[this_reg] = (const char *) fail_stack.stack[--fail_stack.avail]; ; regstart[this_reg] = (const char *) fail_stack.stack[--fail_stack.avail]; ; } ; }
+                                                                                                                                                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+grep.i:9073:49: warning: add explicit braces to avoid dangling else
+      { if (! lexleft) if (0 != 0) dfaerror(0); else return END; (c) = (unsigned char) *lexptr++; --lexleft; };
+                                                ^
+grep.i:9182:94: warning: add explicit braces to avoid dangling else
+   { if (! lexleft) if ("unfinished repeat count" != 0) dfaerror("unfinished repeat count"); else return END; (c) = (unsigned char) *lexptr++; --lexleft; };
+                                                                                             ^
+grep.i:9196:95: warning: add explicit braces to avoid dangling else
+    { if (! lexleft) if ("unfinished repeat count" != 0) dfaerror("unfinished repeat count"); else return END; (c) = (unsigned char) *lexptr++; --lexleft; };
+                                                                                              ^
+grep.i:9215:93: warning: add explicit braces to avoid dangling else
+  { if (! lexleft) if ("unfinished repeat count" != 0) dfaerror("unfinished repeat count"); else return END; (c) = (unsigned char) *lexptr++; --lexleft; };
+                                                                                            ^
+grep.i:9234:98: warning: add explicit braces to avoid dangling else
+       { if (! lexleft) if ("unfinished repeat count" != 0) dfaerror("unfinished repeat count"); else return END; (c) = (unsigned char) *lexptr++; --lexleft; };
+                                                                                                 ^
+grep.i:9310:72: warning: add explicit braces to avoid dangling else
+   { if (! lexleft) if ("Unbalanced [" != 0) dfaerror("Unbalanced ["); else return END; (c) = (unsigned char) *lexptr++; --lexleft; };
+                                                                       ^
+grep.i:9313:76: warning: add explicit braces to avoid dangling else
+       { if (! lexleft) if ("Unbalanced [" != 0) dfaerror("Unbalanced ["); else return END; (c) = (unsigned char) *lexptr++; --lexleft; };
+                                                                           ^
+grep.i:9335:77: warning: add explicit braces to avoid dangling else
+        { if (! lexleft) if ("Unbalanced [" != 0) dfaerror("Unbalanced ["); else return END; (c1) = (unsigned char) *lexptr++; --lexleft; };
+                                                                            ^
+grep.i:9339:71: warning: add explicit braces to avoid dangling else
+  { if (! lexleft) if ("Unbalanced [" != 0) dfaerror("Unbalanced ["); else return END; (c) = (unsigned char) *lexptr++; --lexleft; };
+                                                                      ^
+grep.i:9340:76: warning: add explicit braces to avoid dangling else
+       { if (! lexleft) if ("Unbalanced [" != 0) dfaerror("Unbalanced ["); else return END; (c1) = (unsigned char) *lexptr++; --lexleft; };
+                                                                           ^
+grep.i:9343:73: warning: add explicit braces to avoid dangling else
+    { if (! lexleft) if ("Unbalanced [" != 0) dfaerror("Unbalanced ["); else return END; (c2) = (unsigned char) *lexptr++; --lexleft; };
+                                                                        ^
+grep.i:9356:72: warning: add explicit braces to avoid dangling else
+   { if (! lexleft) if ("Unbalanced [" != 0) dfaerror("Unbalanced ["); else return END; (c2) = (unsigned char) *lexptr++; --lexleft; };
+                                                                       ^
+grep.i:9357:77: warning: add explicit braces to avoid dangling else
+        { if (! lexleft) if ("Unbalanced [" != 0) dfaerror("Unbalanced ["); else return END; (c1) = (unsigned char) *lexptr++; --lexleft; };
+                                                                            ^
+grep.i:9376:7: warning: add explicit braces to avoid dangling else
+      else if ((1 && 
+      ^
+grep.i:9249:7: warning: case value not in enumerated type 'token'
+ case '\n':
+      ^
+grep.i:9094:7: warning: case value not in enumerated type 'token'
+ case '$':
+      ^
+grep.i:9257:7: warning: case value not in enumerated type 'token'
+ case '(':
+      ^
+grep.i:9264:7: warning: case value not in enumerated type 'token'
+ case ')':
+      ^
+grep.i:9155:7: warning: case value not in enumerated type 'token'
+ case '*':
+      ^
+grep.i:9162:7: warning: case value not in enumerated type 'token'
+ case '+':
+      ^
+grep.i:9273:7: warning: case value not in enumerated type 'token'
+ case '.':
+      ^
+grep.i:9110:7: warning: case value not in enumerated type 'token'
+ case '1':
+      ^
+grep.i:9111:7: warning: case value not in enumerated type 'token'
+ case '2':
+      ^
+grep.i:9112:7: warning: case value not in enumerated type 'token'
+ case '3':
+      ^
+grep.i:9113:7: warning: case value not in enumerated type 'token'
+ case '4':
+      ^
+grep.i:9114:7: warning: case value not in enumerated type 'token'
+ case '5':
+      ^
+grep.i:9115:7: warning: case value not in enumerated type 'token'
+ case '6':
+      ^
+grep.i:9116:7: warning: case value not in enumerated type 'token'
+ case '7':
+      ^
+grep.i:9117:7: warning: case value not in enumerated type 'token'
+ case '8':
+      ^
+grep.i:9118:7: warning: case value not in enumerated type 'token'
+ case '9':
+      ^
+grep.i:9126:7: warning: case value not in enumerated type 'token'
+ case '<':
+      ^
+grep.i:9131:7: warning: case value not in enumerated type 'token'
+ case '>':
+      ^
+grep.i:9146:7: warning: case value not in enumerated type 'token'
+ case '?':
+      ^
+grep.i:9141:7: warning: case value not in enumerated type 'token'
+ case 'B':
+      ^
+grep.i:9286:7: warning: case value not in enumerated type 'token'
+ case 'W':
+      ^
+grep.i:9306:7: warning: case value not in enumerated type 'token'
+ case '[':
+      ^
+grep.i:9076:7: warning: case value not in enumerated type 'token'
+ case '\\':
+      ^
+grep.i:9084:7: warning: case value not in enumerated type 'token'
+ case '^':
+      ^
+grep.i:9136:7: warning: case value not in enumerated type 'token'
+ case 'b':
+      ^
+grep.i:9285:7: warning: case value not in enumerated type 'token'
+ case 'w':
+      ^
+grep.i:9171:7: warning: case value not in enumerated type 'token'
+ case '{':
+      ^
+grep.i:9241:7: warning: case value not in enumerated type 'token'
+ case '|':
+      ^
+grep.i:10496:3: warning: add explicit braces to avoid dangling else
+  else
+  ^

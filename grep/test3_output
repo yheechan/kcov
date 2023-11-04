@@ -1,0 +1,30 @@
+  while ((opt = getopt(argc, argv, "0123456789A:B:CEFGVX:bce:f:hiLlnqsvwxy"))
+#define MAX_BUF_SIZE (1L << 16)
+     char' -- the range is inclusive, so if `range_end' == 0xff
+     loop, since all characters <= 0xff.  */
+	DEBUG_PRINT2 ("    start: 0x%x\n", regstart[this_reg]);		\
+	DEBUG_PRINT2 ("    end: 0x%x\n", regend[this_reg]);		\
+	DEBUG_PRINT2 ("    info: 0x%x\n      ", reg_info[this_reg]);	\
+    DEBUG_PRINT2 ("  Pushing pattern 0x%x: ", pattern_place);		\
+    DEBUG_PRINT2 ("  Pushing string 0x%x: `", string_place);		\
+  DEBUG_PRINT2 ("  Popping string 0x%x: `", str);			\
+  DEBUG_PRINT2 ("  Popping pattern 0x%x: ", pat);			\
+      DEBUG_PRINT2 ("      info: 0x%x\n", reg_info[this_reg]);		\
+      DEBUG_PRINT2 ("      end: 0x%x\n", regend[this_reg]);		\
+      DEBUG_PRINT2 ("      start: 0x%x\n", regstart[this_reg]);		\
+      DEBUG_PRINT2 ("\n0x%x: ", p);
+          DEBUG_PRINT3 (" %d (to 0x%x):\n", mcnt, p + mcnt);
+          DEBUG_PRINT3 (" %d (to 0x%x)", mcnt, p + mcnt);
+          DEBUG_PRINT2 ("(to 0x%x).\n", p);
+               DEBUG_PRINT3 ("  Setting 0x%x to %d.\n", p, mcnt);
+              DEBUG_PRINT2 ("  Setting two bytes from 0x%x to no_op.\n", p+2);
+            DEBUG_PRINT3 ("  Setting 0x%x to %d.\n", p1, mcnt);
+      if (pos.constraint != 0xFF)
+void (obstack_1grow) (obstack, character)
+  obstack_1grow (obstack, character);
+void (obstack_1grow_fast) (obstack, character)
+  obstack_1grow_fast (obstack, character);
+	strcpy(n, "\\(^\\|[^0-9A-Za-z_]\\)\\(");
+	strcpy(n + i, "\\)\\([^0-9A-Za-z_]\\|$\\)");
+	strcpy(n, "(^|[^0-9A-Za-z_])(");
+	strcpy(n + i, ")([^0-9A-Za-z_]|$)");

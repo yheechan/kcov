@@ -1,0 +1,1281 @@
+4:   This program is free software; you can redistribute it and/or modify
+15:   along with this program; if not, write to the Free Software
+43:#ifndef errno
+45:#endif
+47:#ifdef STDC_HEADERS
+55:#endif
+57:#if defined(STDC_HEADERS) || defined(HAVE_STRING_H)
+60:#ifdef NEED_MEMORY_H
+63:#endif
+67:#ifdef __STDC__
+71:#endif
+73:#endif
+75:#ifdef HAVE_UNISTD_H
+76:#if flag_systypes==0
+79:#endif
+85:#endif
+93:/* Provide missing ANSI features if necessary. */
+95:#ifndef HAVE_STRERROR
+99:#endif
+101:#ifndef HAVE_MEMCHR
+102:#ifdef __STDC__
+106:#endif
+116:    if (*p == c)
+120:#endif
+141:#ifdef __STDC__
+143:#endif
+147:  if (errnum)
+157:#ifdef __STDC__
+159:#endif
+175:  if (size && !result)
+188:  if (ptr)
+192:  if (size && !result)
+197:#if !defined(HAVE_VALLOC)
+200:#ifdef __STDC__
+204:#endif
+205:#endif
+218:#if defined(HAVE_WORKING_MMAP)
+219:#if flag_systypes==0
+222:#endif
+229:#endif
+239:  if (!initialized)
+242:#ifndef BUFSALLOC
+246:#endif
+252:      if (!buffer)
+258:#if defined(HAVE_WORKING_MMAP)
+259:  if (fstat(fd, &bufstat) < 0 || !S_ISREG(bufstat.st_mode))
+266:#endif
+269:/* Read new stuff into the buffer, saving the specified
+279:#if defined(HAVE_WORKING_MMAP)
+281:#endif
+284:  if (pagesize == 0 && (pagesize = getpagesize()) == 0)
+287:  if (save > bufsalloc)
+293:      if (!nbuffer)
+310:#if defined(HAVE_WORKING_MMAP)
+311:  if (bufmapped && bufoffset % pagesize == 0
+317:      if (maddr == (caddr_t) -1)
+323:#if 0
+328:#endif
+338:      if (bufmapped)
+347:#endif
+348:  if (cc > 0)
+368:				   NULL if no character has been output
+369:				   or if it's conceptually before bufbeg. */
+380:    if (*beg == '\n')
+391:  if (out_file)
+393:  if (out_line)
+399:  if (out_byte)
+402:  if (ferror(stdout))
+414:  if (!lastout)
+419:      if ((nl = memchr(lastout, '\n', lim - lastout)) != 0)
+439:  if (!out_quiet && pending > 0)
+444:  if (!out_quiet)
+450:	if (p > bp)
+455:      /* We only print the "--" separator if our output is
+457:      if ((out_before || out_after) && used && p != lastout)
+468:  if (nlinesp)
+473:	  if ((nl = memchr(p, '\n', lim - p)) != 0)
+477:	  if (!out_quiet)
+484:    if (!out_quiet)
+491:/* Scan the specified portion of the buffer, matching lines (or
+492:   between matching lines if OUT_INVERT is true).  Return a count of
+508:      if (b == lim && ((b > beg && b[-1] == '\n') || b == beg))
+510:      if (!out_invert)
+515:      else if (p < b)
+522:  if (out_invert && p < lim)
+552:      if (fillbuf(save) < 0)
+558:      if (lastout)
+560:      if (buflim - bufbeg == save)
+566:      if (beg < lim)
+569:	  if (pending)
+581:      if (beg != lastout)
+585:      if (out_line)
+588:  if (residue)
+591:      if (pending)
+609:/* Go through the matchers vector and look for the specified matcher.
+618:    if (strcmp(name, matchers[i].name) == 0)
+639:  /* add this line for diff between *.c and *.int.c */
+643:  if (prog && strrchr(prog, '/'))
+674:	if (out_after < 0)
+679:	if (out_before < 0)
+686:	if (matcher && strcmp(matcher, "egrep") != 0)
+687:	  fatal("you may specify only one of -E, -F, or -G", 0);
+691:	if (matcher && strcmp(matcher, "fgrep") != 0)
+692:	  fatal("you may specify only one of -E, -F, or -G", 0);;
+696:	if (matcher && strcmp(matcher, "grep") != 0)
+697:	  fatal("you may specify only one of -E, -F, or -G", 0);
+704:	if (matcher)
+705:	  fatal("matcher already specified", 0);
+718:	if (keyfound)
+726:	if (!fp)
+732:	if (keyfound)
+738:	    if (keycc == keyalloc)
+741:	if (fp != stdin)
+744:	if (keycc - oldcc > 0 && keys[keycc - 1] == '\n')
+788:  if (!keyfound)
+789:    if (optind < argc)
+797:  if (!matcher)
+800:  if (!setmatcher(matcher) && !setmatcher("default"))
+805:  if (argc - optind > 1 && !no_filenames)
+810:  if (optind < argc)
+814:	if (desc < 0)
+816:	    if (!suppress_errors)
+823:	    if (count_matches)
+825:		if (out_file)
+829:	    if (count)
+832:		if (list_files == 1)
+835:	    else if (list_files == -1)
+838:	if (desc != 0)
+846:      if (count_matches)
+848:      if (count)
+851:	  if (list_files == 1)
+854:      else if (list_files == -1)
+861:   NOTE: getopt is now part of the C library, so if you don't know what
+868:   This program is free software; you can redistribute it and/or modify it
+879:   along with this program; if not, write to the Free Software
+884:#if !defined (__GNUC__) && defined (_AIX)
+886:#endif
+888:#ifdef HAVE_CONFIG_H
+891:#endif
+893:#if (defined( __GNUC__) && (!defined(LINUX)))
+896:#if defined (HAVE_ALLOCA_H) || (defined(sparc) && (defined(sun) || (!defined(USG) && !defined(SVR4) && !defined(__svr4__))))
+900:#ifndef _AIX
+902:#endif
+903:#endif /* alloca.h */
+904:#endif /* not __GNUC__ */
+906:#if !__STDC__ && !defined(const) && IN_GCC
+908:#endif
+911:#ifndef _NO_PROTO
+913:#endif
+917:/* Comment out all this code if we are using the GNU C Library, and are not
+921:   (especially if it is a shared library).  Rather than having every GNU
+925:#if defined (_LIBC) || !defined (__GNU_LIBRARY__)
+930:#ifdef	__GNU_LIBRARY__
+934:#if flag_stdlib==0   
+937:#endif
+940:#endif	/* GNU C library.  */
+948:   but it behaves differently for the user, since it allows the user
+1008:   If the caller did not specify anything,
+1009:   the default is REQUIRE_ORDER if the environment variable
+1027:   as if it were the argument of an option with character code 1.
+1040:#ifdef	__GNU_LIBRARY__
+1045:#if flag_string==0   
+1048:#endif
+1065:      if (*str == chr)
+1082:#endif				/* GNU C library.  */
+1150:   wants an optional arg; if there is text in the current ARGV-element,
+1153:   If OPTSTRING starts with `-' or `+', it requests different methods of
+1162:   When `getopt' finds a long-named option, it returns 0 if that option's
+1164:   if the `flag' field is zero.
+1198:  if (optind == 0)
+1206:      if (optstring[0] == '-')
+1211:      else if (optstring[0] == '+')
+1216:      else if (getenv ("POSIXLY_CORRECT") != NULL)
+1222:  if (nextchar == NULL || *nextchar == '\0')
+1224:      if (ordering == PERMUTE)
+1229:	  if (first_nonopt != last_nonopt && last_nonopt != optind)
+1231:	  else if (last_nonopt != optind)
+1239:#ifdef GETOPT_COMPAT
+1242:#endif				/* GETOPT_COMPAT */
+1250:	 then exchange with previous non-options as if it were an option,
+1253:      if (optind != argc && !strcmp (argv[optind], "--"))
+1257:	  if (first_nonopt != last_nonopt && last_nonopt != optind)
+1259:	  else if (first_nonopt == last_nonopt)
+1269:      if (optind == argc)
+1273:	  if (first_nonopt != last_nonopt)
+1281:      if ((argv[optind][0] != '-' || argv[optind][1] == '\0')
+1282:#ifdef GETOPT_COMPAT
+1285:#endif				/* GETOPT_COMPAT */
+1288:	  if (ordering == REQUIRE_ORDER)
+1301:  if (longopts != NULL
+1304:#ifdef GETOPT_COMPAT
+1306:#endif				/* GETOPT_COMPAT */
+1322:	if (!strncmp (p->name, nextchar, s - nextchar))
+1324:	    if (s - nextchar == strlen (p->name))
+1332:	    else if (pfound == NULL)
+1343:      if (ambig && !exact)
+1345:	  if (opterr)
+1353:      if (pfound != NULL)
+1357:	  if (*s)
+1361:	      if (pfound->has_arg)
+1365:		  if (opterr)
+1367:		      if (argv[optind - 1][1] == '-')
+1382:	  else if (pfound->has_arg == 1)
+1384:	      if (optind < argc)
+1388:		  if (opterr)
+1396:	  if (longind != NULL)
+1398:	  if (pfound->flag)
+1409:      if (!long_only || argv[optind][1] == '-'
+1410:#ifdef GETOPT_COMPAT
+1412:#endif				/* GETOPT_COMPAT */
+1415:	  if (opterr)
+1417:	      if (argv[optind][1] == '-')
+1439:    if (*nextchar == '\0')
+1442:    if (temp == NULL || c == ':')
+1444:	if (opterr)
+1446:#if 0
+1447:	    if (c < 040 || c >= 0177)
+1453:	    /* 1003.2 specifies the format of this message.  */
+1455:#endif
+1460:    if (temp[1] == ':')
+1462:	if (temp[2] == ':')
+1465:	    if (*nextchar != '\0')
+1477:	    if (*nextchar != '\0')
+1484:	    else if (optind == argc)
+1486:		if (opterr)
+1488:#if 0
+1492:		    /* 1003.2 specifies the format of this message.  */
+1495:#endif
+1498:		if (optstring[0] == ':')
+1526:#endif	/* _LIBC or not __GNU_LIBRARY__.  */
+1528:#ifdef TEST
+1546:      if (c == EOF)
+1561:	  if (digit_optind != 0 && digit_optind != this_option_optind)
+1562:	    printf ("digits occur in two different argv-elements.\n");
+1587:  if (optind < argc)
+1598:#endif /* TEST */
+1606:   This program is free software; you can redistribute it and/or modify
+1617:   along with this program; if not, write to the Free Software
+1621:#if defined (_AIX) && !defined (REGEX_MALLOC)
+1623:#endif
+1628:#if flag_systypes==0
+1631:#endif
+1633:#ifdef HAVE_CONFIG_H
+1634:#if flag_config==0
+1637:#endif
+1638:#endif
+1642:#ifdef emacs
+1655:#if HAVE_STRING_H || STDC_HEADERS
+1656:#if flag_string==0
+1659:#endif
+1660:#ifndef bcmp
+1662:#endif
+1663:#ifndef bcopy
+1665:#endif
+1666:#ifndef bzero
+1668:#endif
+1670:#if flag_strings==0
+1673:#endif
+1674:#endif
+1676:#ifdef STDC_HEADERS
+1677:#if flag_stdlib==0 
+1680:#endif
+1684:#endif
+1691:#ifndef Sword 
+1693:#endif
+1695:#ifdef SYNTAX_TABLE
+1712:   if (done)
+1731:#endif /* not SYNTAX_TABLE */
+1735:#endif /* not emacs */
+1749:   STDC_HEADERS is defined, then autoconf has verified that the ctype
+1753:#if ! defined (isascii) || defined (STDC_HEADERS)
+1756:#endif
+1758:#ifdef isblank
+1762:#endif
+1763:#ifdef isgraph
+1767:#endif
+1780:#ifndef NULL
+1782:#endif
+1789:#if __STDC__
+1794:#endif
+1806:#ifdef REGEX_MALLOC
+1814:#ifndef alloca
+1817:#ifdef __GNUC__
+1820:#if HAVE_ALLOCA_H
+1821:#if flag_alloca==0
+1824:#endif 
+1826:#ifndef _AIX /* Already did AIX, up at the top.  */
+1828:#endif /* not _AIX */
+1829:#endif /* not HAVE_ALLOCA_H */ 
+1830:#endif /* not __GNUC__ */
+1832:#endif /* not alloca */
+1842:#endif /* not REGEX_MALLOC */
+1845:/* True if `size1' is non-NULL and PTR is pointing anywhere inside
+1846:   `string1' or just past its end.  This works if PTR is NULL, which is
+1870:   command code can specify any interpretation whatsoever for its
+1887:        /* Matches any one char belonging to specified set.  First
+1890:           are ordered low-bit-first.  A character is in the set if its
+1896:           not one of those specified.  */
+1927:        /* Succeeds if at beginning of buffer (if emacs) or at beginning
+1928:           of string to be matched (if not).  */
+1952:        /* Change to pop_failure_jump if know won't have to backtrack to
+1962:           point. This failure point will be thrown away if an attempt
+1988:  wordbeg,	/* Succeeds if at word beginning.  */
+1989:  wordend,	/* Succeeds if at word end.  */
+1991:  wordbound,	/* Succeeds if at a word boundary.  */
+1992:  notwordbound	/* Succeeds if not at a word boundary.  */
+1994:#ifdef emacs
+1995:  ,before_dot,	/* Succeeds if before point.  */
+1996:  at_dot,	/* Succeeds if at point.  */
+1997:  after_dot,	/* Succeeds if after point.  */
+1999:	/* Matches any character whose syntax is specified.  Followed by
+2003:	/* Matches any character whose syntax is not that specified.  */
+2005:#endif /* emacs */
+2037:#ifdef DEBUG
+2048:#ifndef EXTRACT_MACROS /* To debug the macros.  */
+2051:#endif /* not EXTRACT_MACROS */
+2053:#endif /* DEBUG */
+2064:#ifdef DEBUG
+2074:#ifndef EXTRACT_MACROS
+2078:#endif /* not EXTRACT_MACROS */
+2080:#endif /* DEBUG */
+2083:   it is doing (if the variable `debug' is nonzero).  If linked with the
+2085:   interactively.  And if linked with the main program in `main.c' and
+2088:#ifdef DEBUG
+2099:#define DEBUG_PRINT1(x) if (debug) printf (x)
+2100:#define DEBUG_PRINT2(x1, x2) if (debug) printf (x1, x2)
+2101:#define DEBUG_PRINT3(x1, x2, x3) if (debug) printf (x1, x2, x3)
+2102:#define DEBUG_PRINT4(x1, x2, x3, x4) if (debug) printf (x1, x2, x3, x4)
+2104:  if (debug) print_partial_compiled_pattern (s, e)
+2106:  if (debug) print_double_string (w, s1, sz1, s2, sz2)
+2122:      if (fastmap[i++])
+2131:	  if (was_a_range)
+2154:  if (start == NULL)
+2212:	      if (c / 8 < *p
+2216:		  if (last + 1 == c && ! in_range)
+2222:		  else if (last + 1 != c && in_range)
+2228:		  if (! in_range)
+2234:	    if (in_range)
+2323:#ifdef emacs
+2347:#endif /* emacs */
+2385:  if (bufp->fastmap_accurate && bufp->fastmap)
+2413:  if (where == NULL)
+2417:      if (FIRST_STRING_P (where))
+2443:#endif /* not DEBUG */
+2451:/* Specify the precise syntax of regexps for compilation.  This provides
+2453:   different, incompatible syntaxes.
+2500:   if necessary.  Also cast from a signed character in the constant
+2504:  do {if (p == pend) return REG_EEND;					\
+2506:    if (translate) c = translate[c]; 					\
+2512:  do {if (p == pend) return REG_EEND;					\
+2583:   into the pattern are two bytes long.  So if 2^16 bytes turns out to
+2595:    if (bufp->allocated == MAX_BUF_SIZE) 				\
+2598:    if (bufp->allocated > MAX_BUF_SIZE)					\
+2601:    if (bufp->buffer == NULL)						\
+2604:    if (old_buffer != bufp->buffer)					\
+2608:        if (fixup_alt_jump)						\
+2610:        if (laststart)							\
+2612:        if (pending_exact)						\
+2669:  { if (p != pend)							\
+2674:           if (num < 0)							\
+2677:           if (p == pend) 						\
+2700:   If it succeeds, results are put in BUFP (if it returns an error, the
+2741:     command.  This makes it possible to tell if a new exact-match
+2742:     character can be added to that command or if the character requires
+2755:     which to go back if the interval is invalid.  */
+2768:#ifdef DEBUG
+2770:  if (debug)
+2778:#endif /* DEBUG */
+2782:  if (compile_stack.stack == NULL)
+2793:  /* Set `used' to zero, so that if we return an error, the pattern
+2801:#if !defined (emacs) && !defined (SYNTAX_TABLE)
+2804:#endif
+2806:  if (bufp->allocated == 0)
+2808:      if (bufp->buffer)
+2810:             enough space.  This loses if buffer's address is bogus, but
+2818:      if (!bufp->buffer) return REG_ESPACE;
+2834:            if (   /* If at start of pattern, it's an operator.  */
+2849:            if (   /* If at end of pattern, it's an operator.  */
+2864:          if ((syntax & RE_BK_PLUS_QM)
+2870:          if (!laststart)
+2872:              if (syntax & RE_CONTEXT_INVALID_OPS)
+2874:              else if (!(syntax & RE_CONTEXT_INDEP_OPS))
+2895:                if (p == pend)
+2900:                if (c == '*'
+2904:                else if (syntax & RE_BK_PLUS_QM  &&  c == '\\')
+2906:                    if (p == pend) return REG_EESCAPE;
+2909:                    if (!(c1 == '+' || c1 == '?'))
+2929:            if (!laststart)  
+2934:            if (many_times_ok)
+2940:                   But if we are at the `*' in the exact sequence `.*\n',
+2955:                if (TRANSLATE (*(p - 2)) == TRANSLATE ('.')
+2980:            if (!zero_times_ok)
+3005:            if (p == pend) return REG_EBRACK;
+3013:            /* We test `*p == '^' twice, instead of using an if
+3016:            if (*p == '^')
+3029:            if ((re_opcode_t) b[-2] == charset_not
+3036:                if (p == pend) return REG_EBRACK;
+3041:                if ((syntax & RE_BACKSLASH_ESCAPE_IN_LISTS) && c == '\\')
+3043:                    if (p == pend) return REG_EESCAPE;
+3053:                if (c == ']' && p != p1 + 1)
+3056:                /* Look ahead to see if it's a range when the last thing
+3058:                if (had_char_class && c == '-' && *p != ']')
+3061:                /* Look ahead to see if it's a range when the last thing
+3062:                   was a character: if this is a hyphen not at the
+3065:                if (c == '-' 
+3072:                    if (ret != REG_NOERROR) return ret;
+3075:                else if (p[0] == '-' && p[1] != ']')
+3083:                    if (ret != REG_NOERROR) return ret;
+3086:                /* See if we're at the beginning of a possible character
+3089:                else if (syntax & RE_CHAR_CLASSES && c == '[' && *p == ':')
+3097:                    if (p == pend) return REG_EBRACK;
+3102:                        if (c == ':' || c == ']' || p == pend
+3112:                    if (c == ':' && *p == ']')
+3128:                        if (!IS_CHAR_CLASS (str)) return REG_ECTYPE;
+3134:                        if (p == pend) return REG_EBRACK;
+3138:                            if (   (is_alnum  && ISALNUM (ch))
+3181:          if (syntax & RE_NO_BK_PARENS)
+3188:          if (syntax & RE_NO_BK_PARENS)
+3195:          if (syntax & RE_NEWLINE_ALT)
+3202:          if (syntax & RE_NO_BK_VBAR)
+3209:           if (syntax & RE_INTERVALS && syntax & RE_NO_BK_BRACES)
+3216:          if (p == pend) return REG_EESCAPE;
+3219:             distinguish, e.g., \B from \b, even if we normally would
+3226:              if (syntax & RE_NO_BK_PARENS)
+3233:              if (COMPILE_STACK_FULL)
+3237:                  if (compile_stack.stack == NULL) return REG_ESPACE;
+3243:                 group.  They are all relative offsets, so that if the
+3256:              if (regnum <= MAX_REGNUM)
+3275:              if (syntax & RE_NO_BK_PARENS) goto normal_backslash;
+3277:              if (COMPILE_STACK_EMPTY)
+3278:                if (syntax & RE_UNMATCHED_RIGHT_PAREN_ORD)
+3284:              if (fixup_alt_jump)
+3297:              if (COMPILE_STACK_EMPTY)
+3298:                if (syntax & RE_UNMATCHED_RIGHT_PAREN_ORD)
+3327:                if (this_group_regnum <= MAX_REGNUM)
+3341:              if (syntax & RE_LIMITED_OPS || syntax & RE_NO_BK_VBAR)
+3344:              if (syntax & RE_LIMITED_OPS)
+3348:                 jumps to this alternative if the former fails.  */
+3355:                 which gets executed if it gets matched.  Adjust that
+3358:                 (if any) alternative's such jump, etc.).  The last such
+3370:              if (fixup_alt_jump)
+3387:              if (!(syntax & RE_INTERVALS)
+3403:                if (p == pend)
+3405:                    if (syntax & RE_NO_BK_BRACES)
+3413:                if (c == ',')
+3416:                    if (upper_bound < 0) upper_bound = RE_DUP_MAX;
+3422:                if (lower_bound < 0 || upper_bound > RE_DUP_MAX
+3425:                    if (syntax & RE_NO_BK_BRACES)
+3431:                if (!(syntax & RE_NO_BK_BRACES)) 
+3433:                    if (c != '\\') return REG_EBRACE;
+3438:                if (c != '}')
+3440:                    if (syntax & RE_NO_BK_BRACES)
+3449:                if (!laststart)
+3451:                    if (syntax & RE_CONTEXT_INVALID_OPS)
+3453:                    else if (syntax & RE_CONTEXT_INDEP_OPS)
+3462:                 if (upper_bound == 0)
+3476:                    (The upper bound and `jump_n' are omitted if
+3502:                     if (upper_bound > 1)
+3526:                            so that if we fail during matching, we'll
+3547:               if (!(syntax & RE_NO_BK_BRACES))
+3549:                   if (p > pattern  &&  p[-1] == '\\')
+3554:#ifdef emacs
+3555:            /* There is no way to specify the before_dot and after_dot
+3572:#endif /* emacs */
+3613:              if (syntax & RE_NO_BK_REFS)
+3618:              if (c1 > regnum)
+3621:              /* Can't back reference to a subexpression if inside of it.  */
+3622:              if (group_in_compile_stack (compile_stack, c1))
+3632:              if (syntax & RE_BK_PLUS_QM)
+3640:                 not to translate; but if we don't translate it
+3652:          if (!pending_exact 
+3687:  if (fixup_alt_jump)
+3690:  if (!COMPILE_STACK_EMPTY) 
+3698:#ifdef DEBUG
+3699:  if (debug)
+3704:#endif /* DEBUG */
+3777:/* P points to just after a ^ in PATTERN.  Return true if that ^ comes
+3819:/* Returns true if REGNUM is in one of COMPILE_STACK's elements and 
+3820:   false if it's not.  */
+3832:    if (compile_stack.stack[this_element].regnum == regnum)
+3862:  if (p == pend)
+3866:     with unsigned char *'s; if the high bit of the pattern character
+3867:     is set, the range endpoints will be negative if we fetch using a
+3880:  if (range_start > range_end)
+3884:     char' -- the range is inclusive, so if `range_end' == 0xff
+3903:#ifndef INIT_FAILURE_ALLOC
+3905:#endif
+3908:   exactly that if always used MAX_FAILURE_SPACE each time we failed.
+3928:/* Initialize `fail_stack'.  Do `return -2' if the alloc fails.  */
+3935:    if (fail_stack.stack == NULL)					\
+3945:   Return 1 if succeeds, and 0 if either ran out of memory
+3966:   Return 1 if was able to do so and 0 if ran out of memory allocating
+3985:#ifdef DEBUG
+3991:#endif
+3995:   if we ever fail back to it.  
+4001:   Does `return FAILURE_CODE' if runs out of memory.  */
+4022:        if (!DOUBLE_FAIL_STACK (fail_stack))			\
+4082:#ifdef DEBUG
+4086:#endif
+4109:   Also assumes the variables `fail_stack' and (if debugging), `bufp',
+4134:  if (string_temp != NULL)						\
+4180:   Returns 0 if we succeed, -2 if an internal error.   */
+4188:#ifndef REGEX_MALLOC
+4190:#endif
+4202:     statement, to which we get only if a particular path doesn't
+4218:      if (p == pend)
+4231:#ifdef SWITCH_ENUM_BUG
+4235:#endif
+4239:           if a backreference is used, since it's too hard to figure out
+4258:	    if (p[j / BYTEWIDTH] & (1 << (j % BYTEWIDTH)))
+4269:	    if (!(p[j / BYTEWIDTH] & (1 << (j % BYTEWIDTH))))
+4276:	    if (SYNTAX (j) == Sword)
+4283:	    if (SYNTAX (j) != Sword)
+4294:          if (!(bufp->syntax & RE_DOT_NEWLINE))
+4297:          /* Return if we have already set `can_be_null'; if we have,
+4299:	  else if (bufp->can_be_null)
+4306:#ifdef emacs
+4310:	    if (SYNTAX (j) == (enum syntaxcode) k)
+4318:	    if (SYNTAX (j) != (enum syntaxcode) k)
+4331:#endif /* not emacs */
+4355:	  if (j > 0)
+4362:             point already; if so, discard that as redundant.  */
+4363:          if ((re_opcode_t) *p != on_failure_jump
+4372:          if (!FAIL_STACK_EMPTY () 
+4391:          if (p + j < pend)
+4393:              if (!PUSH_PATTERN_OP (p + j, fail_stack))
+4399:          if (succeed_n_p)
+4414:          if (k == 0)
+4442:         stack), or quit if no more.  The test at the top of the loop
+4448:  /* Set `can_be_null' for the last path (also the first path, if the
+4474:  if (num_regs)
+4491:/* Like re_search_2, below, but only one string is specified, and
+4524:   found, -1 if no match, or -2 if error (such as failure
+4544:  if (startpos < 0 || startpos > total_size)
+4547:  /* Fix up RANGE if it might eventually take us outside
+4549:  if (endpos < -1)
+4551:  else if (endpos > total_size)
+4556:  if (bufp->used > 0 && (re_opcode_t) bufp->buffer[0] == begbuf && range > 0)
+4558:      if (startpos > 0)
+4564:  /* Update the fastmap now if not correct already.  */
+4565:  if (fastmap && !bufp->fastmap_accurate)
+4566:    if (re_compile_fastmap (bufp) == -2)
+4576:      if (fastmap && startpos < total_size && !bufp->can_be_null)
+4578:	  if (range > 0)	/* Searching forwards.  */
+4584:              if (startpos < size1 && startpos + range >= size1)
+4589:              /* Written out as an if-else to avoid testing `translate'
+4591:	      if (translate)
+4608:	      if (!fastmap[(unsigned char) TRANSLATE (c)])
+4614:      if (range >= 0 && startpos == total_size && fastmap
+4620:      if (val >= 0)
+4623:      if (val == -2)
+4627:      if (!range) 
+4629:      else if (range > 0) 
+4666:      /* This field is one if this group can match the empty string,
+4667:         zero if not.  If not yet determined,  `MATCH_NULL_UNSET_VALUE'.  */
+4714:   string2 if necessary.  */
+4719:      if (dend == end_match_2) 						\
+4727:/* Test if at very beginning or at very end of the virtual concatenation
+4733:/* Test if D points to a character which is word-constituent.  We have
+4734:   two special cases to check for: if past the end of string1, look at
+4735:   the first character in string2; and if before the beginning of
+4742:/* Test if the character before D and the one at D differ with respect
+4750:#ifdef REGEX_MALLOC
+4751:#define FREE_VAR(var) if (var) free (var); var = NULL
+4768:#endif /* not REGEX_MALLOC */
+4774:   use numbers larger than 255.  They must differ by 1, because of
+4783:#ifndef emacs   /* Emacs never uses this.  */
+4795:#endif /* not emacs */
+4807:   We return -1 if no match, -2 if an internal error (such as the
+4848:     a ``dummy''; if a failure happens and the failure point is a dummy,
+4851:#ifdef DEBUG
+4854:#endif
+4892:     turn happens only if we have not yet matched the entire string. */
+4897:     allocate space for that if we're not allocating space for anything
+4900:     treat `best_regend' differently than the rest.  So we keep track of
+4910:#ifdef DEBUG
+4913:#endif
+4919:  /* Do not bother to initialize all the register variables if there are
+4922:     pattern), even though we never use it, since it simplifies the
+4924:  if (bufp->re_nsub)
+4936:      if (!(regstart && regend && old_regstart && old_regend && reg_info 
+4943:#ifdef REGEX_MALLOC
+4952:#endif /* REGEX_MALLOC */
+4955:  if (pos < 0 || pos > size1 + size2)
+4975:  /* We move `string1' into `string2' if the latter's empty -- but not if
+4977:  if (size2 == 0 && string1 != NULL)
+4988:  if (stop <= size1)
+5005:  if (size1 > 0 && pos <= size1)
+5023:     function if the match is complete, or it drops through if the match
+5029:      if (p == pend)
+5035:          if (d != end_match_2)
+5039:              if (!FAIL_STACK_EMPTY ())
+5045:                  if (!best_regs_set
+5064:              else if (best_regs_set)   
+5070:                     strings `x-' and `y-z-', if the two strings are
+5089:          if (regs && !bufp->no_sub)
+5092:              if (bufp->regs_allocated == REGS_UNALLOCATED)
+5099:                  if (regs->start == NULL || regs->end == NULL)
+5103:              else if (bufp->regs_allocated == REGS_REALLOCATE)
+5107:                  if (regs->num_regs < num_regs + 1)
+5112:                      if (regs->start == NULL || regs->end == NULL)
+5124:                 indices.  Register zero has to be set differently,
+5126:              if (regs->num_regs > 0)
+5137:                  if (REG_UNSET (regstart[mcnt]) || REG_UNSET (regend[mcnt]))
+5171:#ifdef SWITCH_ENUM_BUG
+5175:#endif
+5191:          /* This is written out as an if-else so we don't waste time
+5193:          if (translate)
+5198:		  if (translate[(unsigned char) *d++] != (char) *p++)
+5208:		  if (*d++ != (char) *p++) goto fail;
+5222:          if ((!(bufp->syntax & RE_DOT_NEWLINE) && TRANSLATE (*d) == '\n')
+5245:	    if (c < (unsigned) (*p * BYTEWIDTH)
+5251:	    if (!not) goto fail;
+5267:          /* Find out if this group can match the empty string.  */
+5270:          if (REG_MATCH_NULL_STRING_P (reg_info[*p]) == MATCH_NULL_UNSET_VALUE)
+5296:          if (lowest_active_reg == NO_LOWEST_ACTIVE_REG)
+5329:          if (lowest_active_reg == highest_active_reg)
+5350:	      if (r == 0)
+5364:          if ((!MATCHED_SOMETHING (reg_info[*p])
+5381:		    if (is_a_jump_n)
+5395:              if (mcnt < 0 && (re_opcode_t) *p1 == on_failure_jump
+5408:                  if (EVER_MATCHED_SOMETHING (reg_info[*p]))
+5414:		      /* Restore this and inner groups' (if any) registers.  */
+5420:                          if ((int) old_regend[r] >= (int) regstart[r])
+5446:            if (REG_UNSET (regstart[regno]) || REG_UNSET (regend[regno]))
+5452:            /* Where to stop matching; if both the place to start and
+5466:		    if (dend2 == end_match_2) break;
+5467:		    if (dend2 == regend[regno]) break;
+5474:		if (d2 == dend2) break;
+5483:                   one shot, so, if necessary, adjust the count.  */
+5484:                if (mcnt > dend2 - d2)
+5487:		/* Compare that many; failure if mismatch, else move
+5489:		if (translate 
+5500:           (unless `not_bol' is set in `bufp'), and, if
+5505:          if (AT_STRINGS_BEG (d))
+5507:              if (!bufp->not_bol) break;
+5509:          else if (d[-1] == '\n' && bufp->newline_anchor)
+5521:          if (AT_STRINGS_END (d))
+5523:              if (!bufp->not_eol) break;
+5527:          else if ((d == end1 ? *string2 : *d) == '\n'
+5538:          if (AT_STRINGS_BEG (d))
+5546:	  if (AT_STRINGS_END (d))
+5557:           to do is match the \n against the \n; if we restored the
+5560:           Because this is used only in specific cases, we don't need to
+5598:             for that group and all inner ones, so that if we fail back
+5614:          if (p1 < pend && (re_opcode_t) *p1 == start_memory)
+5621:              if (lowest_active_reg == NO_LOWEST_ACTIVE_REG)
+5647:               (e.g., if the string was `ab').  But instead of trying to
+5658:            if (p2 == pend)
+5668:            else if ((re_opcode_t) *p2 == exactn
+5678:                if ((re_opcode_t) p1[3] == exactn && p1[5] != c)
+5685:		else if ((re_opcode_t) p1[3] == charset
+5690:		    if (c < (unsigned char) (p1[4] * BYTEWIDTH)
+5694:                    /* `not' is equal to 1 if c would match, which means
+5696:		    if (!not)
+5705:	  if ((re_opcode_t) p[-1] != pop_failure_jump)
+5789:          if (mcnt > 0)
+5796:	  else if (mcnt == 0)
+5810:          if (mcnt)
+5835:          if (AT_WORD_BOUNDARY (d))
+5841:	  if (AT_WORD_BOUNDARY (d))
+5847:	  if (WORDCHAR_P (d) && (AT_STRINGS_BEG (d) || !WORDCHAR_P (d - 1)))
+5853:	  if (!AT_STRINGS_BEG (d) && WORDCHAR_P (d - 1)
+5858:#ifdef emacs
+5859:#ifdef emacs19
+5862: 	  if (PTR_CHAR_POS ((unsigned char *) d) >= point)
+5868: 	  if (PTR_CHAR_POS ((unsigned char *) d) != point)
+5874:          if (PTR_CHAR_POS ((unsigned char *) d) <= point)
+5880:	  if (PTR_CHAR_POS ((unsigned char *) d) + 1 != point)
+5883:#endif /* not emacs19 */
+5895:	  if (SYNTAX (*d++) != (enum syntaxcode) mcnt)
+5910:	  if (SYNTAX (*d++) == (enum syntaxcode) mcnt)
+5919:          if (!WORDCHAR_P (d))
+5928:	  if (WORDCHAR_P (d))
+5933:#endif /* not emacs */
+5941:    /* We goto here if a matching operation fails. */
+5943:      if (!FAIL_STACK_EMPTY ())
+5951:          if (!p)
+5956:          if (p < pend)
+5973:                  if ((is_a_jump_n && (re_opcode_t) *p1 == succeed_n)
+5983:          if (d >= string1 && d <= end1)
+5990:  if (best_regs_set)
+6003:   Return true if the pattern up to the corresponding stop_memory can
+6036:	  if (mcnt >= 0)
+6039:                 seeing if any of the alternatives cannot match nothing.
+6062:                  if (!alt_match_null_string_p (p1, p1 + mcnt - 3, 
+6070:                  /* Break if it's the beginning of an n-th alternative
+6072:                  if ((re_opcode_t) *p1 != on_failure_jump)
+6079:                  if ((re_opcode_t) p1[mcnt-3] != jump_past_alt)
+6092:              if (!alt_match_null_string_p (p1, p1 + mcnt, reg_info))
+6096:            } /* if mcnt > 0 */
+6107:          if (!common_op_match_null_string_p (&p1, end, reg_info))
+6143:          if (!common_op_match_null_string_p (&p1, end, reg_info))
+6155:   Sets P to one after the op and its arguments, if any.  */
+6178:#ifdef emacs
+6182:#endif
+6193:      if (REG_MATCH_NULL_STRING_P (reg_info[reg_no]) == MATCH_NULL_UNSET_VALUE)
+6196:      if (!ret)
+6203:      if (mcnt >= 0)
+6214:      if (mcnt == 0)
+6225:      if (!REG_MATCH_NULL_STRING_P (reg_info[*p1]))
+6242:/* Return zero if TRANSLATE[S1] and TRANSLATE[S2] are identical for LEN
+6254:      if (translate[*p1++] != translate[*p2++]) return 1;
+6264:   Returns 0 if the pattern was valid, otherwise an error string.
+6297:   them if this is an Emacs or POSIX compilation.  */
+6299:#if !defined (emacs) && !defined (_POSIX_SOURCE)
+6310:  if (!s)
+6312:      if (!re_comp_buf.buffer)
+6317:  if (!re_comp_buf.buffer)
+6320:      if (re_comp_buf.buffer == NULL)
+6325:      if (re_comp_buf.fastmap == NULL)
+6350:#endif /* not emacs and not _POSIX_SOURCE */
+6354:#ifndef emacs
+6363:     `syntax' to RE_SYNTAX_POSIX_EXTENDED if the
+6387:   It returns 0 if it succeeds, nonzero if it doesn't.  (See regex.h for
+6406:  /* Don't bother to use a fastmap when searching.  This simplifies the
+6407:     REG_NEWLINE case: if we used a fastmap, we'd have to put all the
+6412:  if (cflags & REG_ICASE)
+6417:      if (preg->translate == NULL)
+6427:  /* If REG_NEWLINE is set, newlines are treated differently.  */
+6428:  if (cflags & REG_NEWLINE)
+6446:  if (ret == REG_ERPAREN) ret = REG_EPAREN;
+6452:/* regexec searches for a given pattern, specified by PREG, in the
+6460:   EFLAGS specifies `execution flags' which affect matching: if
+6462:   string; if REG_NOTEOL is set, then $ does not match at the end.
+6464:   We return 0 if we find a match and REG_NOMATCH if not.  */
+6490:  if (want_reg_info)
+6495:      if (regs.start == NULL || regs.end == NULL)
+6505:  if (want_reg_info)
+6507:      if (ret >= 0)
+6541:  if (errcode < 0
+6544:       to this routine.  If we are given anything else, or if other regex
+6553:  if (! msg)
+6558:  if (errbuf_size != 0)
+6560:      if (msg_size > errbuf_size)
+6579:  if (preg->buffer != NULL)
+6586:  if (preg->fastmap != NULL)
+6591:  if (preg->translate != NULL)
+6596:#endif /* not emacs  */
+6608:   This program is free software; you can redistribute it and/or modify
+6619:   along with this program; if not, write to the Free Software
+6623:   Modified July, 1988 by Arthur David Olson to assist BMG speedups  */
+6629:#ifdef STDC_HEADERS
+6630:#if flag_stdlib==0
+6633:#endif
+6635:#if flag_systypes==0 
+6638:#endif
+6641:#endif
+6643:#if defined(HAVE_STRING_H) || defined(STDC_HEADERS)
+6644:#if flag_string==0
+6647:#endif
+6651:#if flag_strings==0
+6654:#endif
+6655:#endif
+6657:#ifndef isgraph
+6659:#endif
+6674:#ifdef isascii
+6698:#endif
+6703:#if __STDC__
+6707:#endif
+6718:  if (!r)
+6730:  if (!r)
+6743:  if (!r)
+6752:/* Reallocate an array of type t if nalloc is too small for index. */
+6754:  if ((index) >= (nalloc))			  \
+6761:#ifdef DEBUG
+6769:  if (t < 0)
+6771:  else if (t < NOTCHAR)
+6798:#endif /* DEBUG */
+6865:    if (s1[i] != s2[i])
+6881:    if (equal(s, dfa->charclasses[i]))
+6915:static int laststart;		/* True if we're separated from beginning or (, |
+6923:    if (! lexleft)	   	      \
+6924:      if (eoferr != 0)	   	      \
+6974:  if (lexleft < len)
+6992:     "if (backslash) ...".  */
+6999:	  if (backslash)
+7001:	  if (lexleft == 0)
+7007:	  if (backslash)
+7009:	  if (syntax_bits & RE_CONTEXT_INDEP_ANCHORS
+7017:	  if (backslash)
+7019:	  if (syntax_bits & RE_CONTEXT_INDEP_ANCHORS
+7041:	  if (backslash && !(syntax_bits & RE_NO_BK_REFS))
+7049:	  if (backslash)
+7054:	  if (backslash)
+7059:	  if (backslash)
+7064:	  if (backslash)
+7069:	  if (syntax_bits & RE_LIMITED_OPS)
+7071:	  if (backslash != ((syntax_bits & RE_BK_PLUS_QM) != 0))
+7073:	  if (!(syntax_bits & RE_CONTEXT_INDEP_OPS) && laststart)
+7078:	  if (backslash)
+7080:	  if (!(syntax_bits & RE_CONTEXT_INDEP_OPS) && laststart)
+7085:	  if (syntax_bits & RE_LIMITED_OPS)
+7087:	  if (backslash != ((syntax_bits & RE_BK_PLUS_QM) != 0))
+7089:	  if (!(syntax_bits & RE_CONTEXT_INDEP_OPS) && laststart)
+7094:	  if (!(syntax_bits & RE_INTERVALS))
+7096:	  if (backslash != ((syntax_bits & RE_NO_BK_BRACES) == 0))
+7105:	  if (ISDIGIT(c))
+7111:		  if (!ISDIGIT(c))
+7116:	  else if (c != ',')
+7118:	  if (c == ',')
+7122:		if (!ISDIGIT(c))
+7128:	  if (!(syntax_bits & RE_NO_BK_BRACES))
+7130:	      if (c != '\\')
+7134:	  if (c != '}')
+7140:	  if (syntax_bits & RE_LIMITED_OPS)
+7142:	  if (backslash != ((syntax_bits & RE_NO_BK_VBAR) == 0))
+7148:	  if (syntax_bits & RE_LIMITED_OPS
+7156:	  if (backslash != ((syntax_bits & RE_NO_BK_PARENS) == 0))
+7163:	  if (backslash != ((syntax_bits & RE_NO_BK_PARENS) == 0))
+7165:	  if (parens == 0 && syntax_bits & RE_UNMATCHED_RIGHT_PAREN_ORD)
+7172:	  if (backslash)
+7176:	  if (!(syntax_bits & RE_DOT_NEWLINE))
+7178:	  if (syntax_bits & RE_DOT_NOT_NULL)
+7185:	  if (!backslash)
+7189:	    if (ISALNUM(c2))
+7191:	  if (c == 'W')
+7197:	  if (backslash)
+7201:	  if (c == '^')
+7211:		 Note that if we're looking at some other [:...:]
+7216:	      if (c == '[' && (syntax_bits & RE_CHAR_CLASSES))
+7218:		  if (looking_at(prednames[c1].name))
+7221:			if ((*prednames[c1].pred)(c2))
+7228:	      if (c == '\\' && (syntax_bits & RE_BACKSLASH_ESCAPE_IN_LISTS))
+7231:	      if (c1 == '-')
+7234:		  if (c2 == ']')
+7244:		      if (c2 == '\\'
+7255:		  if (case_fold)
+7256:		    if (ISUPPER(c))
+7258:		    else if (ISLOWER(c))
+7266:	  if (invert)
+7269:	      if (syntax_bits & RE_HAT_LISTS_NOT_NEWLINE)
+7278:	  if (case_fold && ISALPHA(c))
+7282:	      if (isupper(c))
+7307:   updating the maximum depth if necessary. */
+7334:  if (depth > dfa->depth)
+7368:#if __STDC__
+7372:#endif
+7377:  if ((tok >= 0 && tok < NOTCHAR) || tok >= CSET || tok == BACKREF
+7384:  else if (tok == LPAREN)
+7388:      if (tok != RPAREN)
+7436:    if (tok == REPMN)
+7440:	if (maxrep == 0)
+7442:	if (minrep == 0)
+7484:      if (toplevel)
+7508:  if (! syntax_bits_set)
+7509:    dfaerror("No syntax specified");
+7516:  if (tok != END)
+7522:  if (d->nregexps)
+7557:  if (i < s->nelem && p.index == s->elems[i].index)
+7572:/* Merge two sets of positions into a third.  The result is exactly as if
+7584:    if (s1->elems[i].index > s2->elems[j].index)
+7586:    else if (s1->elems[i].index < s2->elems[j].index)
+7608:    if (p.index == s->elems[i].index)
+7610:  if (i < s->nelem)
+7616:   the given preceding context, or create a new state if there is no such
+7639:      if (hash != d->states[i].hash || s->nelem != d->states[i].elems.nelem
+7643:	if (s->elems[j].constraint
+7647:      if (j == s->nelem)
+7662:    if (d->tokens[s->elems[j].index] < 0)
+7665:	if (SUCCEEDS_IN_CONTEXT(constraint, newline, 0, letter, 0)
+7670:	if (! d->states[i].first_end)
+7673:    else if (d->tokens[s->elems[j].index] == BACKREF)
+7703:    if (d->tokens[s->elems[i].index] >= NOTCHAR
+7710:	if (visited[old.index])
+7755:   Nullable:  A node is nullable if it is at the root of a regexp that can
+7760:   * A PLUS node is nullable if its argument is nullable.
+7761:   * A CAT node is nullable if both its arguments are nullable.
+7762:   * An OR node is nullable if either argument is nullable.
+7772:     the firstpos of the right if the left argument is nullable.
+7783:     the lastpos of the left if the right argument is nullable.
+7790:   Later, if we find that a special symbol is in a follow set, we will
+7816:  int wants_newline;		/* True if some position wants newline info. */
+7823:#ifdef DEBUG
+7831:#endif
+7853:#ifdef DEBUG
+7854:    {				/* Nonsyntactic #ifdef goo... */
+7855:#endif
+7883:	if (d->tokens[i] != PLUS)
+7902:	   union that of the second argument if the first is nullable. */
+7903:	if (nullable[-2])
+7910:	   union that of the first argument if the second is nullable. */
+7911:	if (nullable[-1])
+7923:	/* A CAT node is nullable if both arguments are nullable. */
+7938:	/* An OR node is nullable if either argument is nullable. */
+7962:#ifdef DEBUG
+7963:    /* ... balance the above nonsyntactic #ifdef goo... */
+7982:#endif
+7987:    if (d->tokens[i] < NOTCHAR || d->tokens[i] == BACKREF
+7990:#ifdef DEBUG
+8000:#endif
+8003:	if (d->follows[i].nelem < merged.nelem)
+8015:  /* Check if any of the positions of state 0 will want newline context. */
+8018:    if (PREV_NEWLINE_DEPENDENT(merged.elems[i].constraint))
+8041:   every position in the group matches (taking into account, if necessary,
+8046:   and its associated backward context information, if necessary.
+8077:  int matchesf;			/* True if matches is nonempty. */
+8079:  int intersectf;		/* True if intersect is nonempty. */
+8081:  int leftoversf;		/* True if leftovers is nonempty. */
+8094:  /* Initialize the set of letters, if necessary. */
+8095:  if (! initialized)
+8099:	if (ISALNUM(i))
+8109:      if (d->tokens[pos.index] >= 0 && d->tokens[pos.index] < NOTCHAR)
+8111:      else if (d->tokens[pos.index] >= CSET)
+8118:      if (pos.constraint != 0xFF)
+8120:	  if (! MATCHES_NEWLINE_CONTEXT(pos.constraint,
+8123:	  if (! MATCHES_NEWLINE_CONTEXT(pos.constraint,
+8127:	  if (! MATCHES_LETTER_CONTEXT(pos.constraint,
+8131:	  if (! MATCHES_LETTER_CONTEXT(pos.constraint,
+8139:	  if (j == CHARCLASS_INTS)
+8148:	  if (d->tokens[pos.index] >= 0 && d->tokens[pos.index] < NOTCHAR
+8152:	  /* Check if this group's label has a nonempty intersection with
+8157:	  if (! intersectf)
+8160:	  /* It does; now find the set differences both ways. */
+8172:	  if (leftoversf)
+8187:	  if (! matchesf)
+8193:      if (j == ngrps)
+8210:  if (d->searchflag)
+8216:	  if (PREV_NEWLINE_DEPENDENT(d->states[0].elems.elems[i].constraint))
+8218:	  if (PREV_LETTER_DEPENDENT(d->states[0].elems.elems[i].constraint))
+8223:      if (wants_newline)
+8227:      if (wants_letter)
+8232:	if (i == '\n')
+8234:	else if (ISALNUM(i))
+8255:      if (d->searchflag)
+8259:      /* Find out if the new state will want any context information. */
+8261:      if (tstbit('\n', labels[i]))
+8263:	  if (PREV_NEWLINE_DEPENDENT(follows.elems[j].constraint))
+8268:	if (labels[i][j] & letters[j])
+8270:      if (j < CHARCLASS_INTS)
+8272:	  if (PREV_LETTER_DEPENDENT(follows.elems[j].constraint))
+8277:      if (wants_newline)
+8281:      if (wants_letter)
+8289:	  if (labels[i][j] & 1 << k)
+8293:	      if (c == '\n')
+8295:	      else if (ISALNUM(c))
+8297:	      else if (c < NOTCHAR)
+8309:   Each state may or may not have a transition table; if it does, and it
+8327:  if (d->trcount >= 1024)
+8330:	if (d->trans[i])
+8335:	else if (d->fails[i])
+8347:  if (ACCEPTS_IN_CONTEXT(d->states[s].newline, 1, d->states[s].letter, 0,
+8350:  if (ACCEPTS_IN_CONTEXT(d->states[s].newline, 0, d->states[s].letter, 1,
+8353:  if (ACCEPTS_IN_CONTEXT(d->states[s].newline, 0, d->states[s].letter, 0,
+8364:    if (trans[i] >= d->tralloc)
+8387:  if (ACCEPTING(s, *d))
+8410:   character after the match, or NULL if none is found.  Begin points to
+8416:   see a newline.  Finally, if backref is non-NULL it points to a place
+8417:   where we're supposed to store a 1 if backreferencing happened and the
+8418:   match needs to be verified by a backtracking matcher.  Otherwise
+8436:  if (! sbit_init)
+8442:	if (i == '\n')
+8444:	else if (ISALNUM(i))
+8450:  if (! d->tralloc)
+8461:      if ((t = trans[s]) != 0)
+8465:	    if (! (t = trans[s1]))
+8475:      if (s >= 0 && p <= (unsigned char *) end && d->fails[s])
+8477:	  if (d->success[s] & sbit[*p])
+8479:	      if (backref)
+8480:		if (d->states[s].backref)
+8493:      if (count && (char *) p <= end && p[-1] == '\n')
+8496:      /* Check if we've run off the end of the buffer. */
+8497:      if ((char *) p > end)
+8500:      if (s >= 0)
+8507:      if (p[-1] == '\n' && newline)
+8545:  if (case_fold)	/* dummy folding in service of dfamust() */
+8551:      if (!copy)
+8557:	if (ISUPPER(s[i]))
+8594:    if (d->follows[i].elems)
+8598:    if (d->trans[i])
+8600:    else if (d->fails[i])
+8675:					simplify the *entire* r.e. being sought)
+8689:   Are optimizable r.e.'s likely to be used in real-life situations
+8702:  if (old == NULL)
+8704:  else if (newsize == 0)
+8707:  if (old == NULL)
+8711:  if (result != NULL && new != NULL)
+8733:    if (strncmp(cp, lookfor, len) == 0)
+8739:ifree(cp)
+8742:  if (cp != NULL)
+8752:  if (cpp == NULL)
+8769:  if (cpp == NULL)
+8771:  if ((new = icpyalloc(new)) == NULL)
+8779:    if (istrstr(cpp[i], new) != NULL)
+8787:    if (istrstr(new, cpp[j]) == NULL)
+8792:	if (--i == j)
+8799:  if (cpp == NULL)
+8807:   list of their distinct common substrings. Return NULL if something
+8819:  if (left == NULL || right == NULL)
+8822:  if (cpp == NULL)
+8833:	  if (i > len)
+8837:      if (len == 0)
+8839:      if ((cpp = enlist(cpp, lcp, len)) == NULL)
+8852:  if (old == NULL || new == NULL)
+8857:      if (old == NULL)
+8874:  if (left == NULL || right == NULL)
+8877:  if (both == NULL)
+8885:	  if (temp == NULL)
+8892:	  if (both == NULL)
+8932:  if (musts == NULL)
+8943:      if (mp[i].in == NULL || mp[i].left == NULL ||
+8949:#ifdef DEBUG
+8957:#endif
+8977:	  if (mp <= musts)
+8984:	  if (mp < &musts[2])
+8995:	    if (strcmp(lmp->is, rmp->is) != 0)
+9006:	    if (n > rn)
+9009:	      if (lmp->right[ln - i - 1] != rmp->right[rn - i - 1])
+9015:	    if (new == NULL)
+9023:	  if (mp <= musts)
+9029:	  if (mp != &musts[1])
+9032:	    if (strlen(musts[0].in[i]) > strlen(result))
+9034:	  if (strcmp(result, musts[0].is) == 0)
+9038:	  if (mp < &musts[2])
+9050:	    if (lmp->in == NULL)
+9052:	    if (lmp->right[0] != '\0' &&
+9058:		if (tp == NULL)
+9061:		if (tp == NULL)
+9066:		if (lmp->in == NULL)
+9070:	    if (lmp->is[0] != '\0')
+9074:		if (lmp->left == NULL)
+9078:	    if (rmp->is[0] == '\0')
+9081:	    if (lmp->right == NULL)
+9084:	    if (lmp->is[0] != '\0' && rmp->is[0] != '\0')
+9087:		if (lmp->is == NULL)
+9095:	  if (t < END)
+9100:	  else if (t == '\0')
+9102:	      /* not on *my* shift */
+9105:	  else if (t >= CSET)
+9117:	      if (mp->in == NULL)
+9122:#ifdef DEBUG
+9131:#endif
+9135:  if (strlen(result))
+9148:      ifree((char *) mp[i].in);
+9149:      ifree(mp[i].left);
+9150:      ifree(mp[i].right);
+9151:      ifree(mp[i].is);
+9159:   This program is free software; you can redistribute it and/or modify
+9170:   along with this program; if not, write to the Free Software
+9179:   IBM-Germany, Scientific Center Heidelberg, Tiergartenstrasse 15, D-6900
+9185:#ifdef STDC_HEADERS
+9189:#if flag_stdlib==0 
+9192:#endif
+9196:#ifdef __STDC__
+9199:#if flag_systypes==0
+9202:#endif
+9203:#endif
+9206:#endif
+9208:#ifdef HAVE_MEMCHR
+9209:#if flag_string==0
+9212:#endif
+9213:#ifdef NEED_MEMORY_H
+9214:#if flag_memory==0
+9217:#endif
+9218:#endif
+9220:#ifdef __STDC__
+9224:#endif
+9225:#endif
+9227:#ifdef GREP
+9230:#endif
+9246:  char balance;			/* Difference in depths of subtrees. */
+9258:  int shift;			/* Shift function for search failures. */
+9259:  int maxshift;			/* Max shift of self and descendents. */
+9272:  char *target;			/* Target string if there's only one. */
+9278:   pointer to it.  Return NULL if memory is not available. */
+9286:  if (!kwset)
+9293:  if (!kwset->trie)
+9304:  kwset->trie->shift = 0;
+9351:	  if (label < link->label)
+9360:      if (!link)
+9364:	  if (!link)
+9370:	  if (!link->trie)
+9378:	  link->trie->shift = 0;
+9383:	  if (dirs[--depth] == L)
+9391:	      if (dirs[depth] == L)
+9398:	  /* Rebalance the tree by pointer rotations if necessary. */
+9399:	  if (depth && ((dirs[depth] == L && --links[depth]->balance)
+9442:	      if (dirs[depth - 1] == L)
+9454:  if (!trie->accepting)
+9459:  if (trie->depth < kwset->mind)
+9461:  if (trie->depth > kwset->maxd)
+9474:  if (!tree)
+9492:  if (!tree)
+9504:	if (tree->label < link->label)
+9508:      if (link)
+9527:  if (!tree)
+9531:  if (depth < delta[tree->label])
+9535:/* Return true if A has every label in B. */
+9541:  if (!b)
+9543:  if (!hasevery(a, b->llink))
+9545:  if (!hasevery(a, b->rlink))
+9548:    if (b->label < a->label)
+9562:  if (!tree)
+9569:/* Compute the shift for each trie node, as well as the delta
+9587:  if (kwset->mind < 256)
+9594:  /* Check if we can use the simple boyer-moore algorithm, instead
+9596:  if (kwset->words == 1 && kwset->trans == 0)
+9609:      /* Find the minimal delta2 shift that we might make after
+9612:	if (kwset->target[i] == kwset->target[kwset->mind - 1])
+9618:	 computing the delta table, failure function, and shift function. */
+9624:	  curr->shift = kwset->mind;
+9625:	  curr->maxshift = kwset->mind;
+9633:	  /* Update the shifts at each node in the current node's chain
+9638:		 doesn't, then the shift at the fail should be no larger
+9639:		 than the difference of their depths. */
+9640:	      if (!hasevery(fail->links, curr->links))
+9641:		if (curr->depth - fail->depth < fail->shift)
+9642:		  fail->shift = curr->depth - fail->depth;
+9644:	      /* If the current node is accepting then the shift at the
+9646:		 difference of their depths. */
+9647:	      if (curr->accepting && fail->maxshift > curr->depth - fail->depth)
+9648:		fail->maxshift = curr->depth - fail->depth;
+9653:	 shift exceeds their inherited maxshift. */
+9656:	  if (curr->maxshift > curr->parent->maxshift)
+9657:	    curr->maxshift = curr->parent->maxshift;
+9658:	  if (curr->shift > curr->maxshift)
+9659:	    curr->shift = curr->maxshift;
+9668:      if ((trans = kwset->trans) != 0)
+9677:  if ((trans = kwset->trans) != 0)
+9704:  if (len == 0)
+9706:  if (len > size)
+9708:  if (len == 1)
+9717:  /* Significance of 12: 1 (initial offset) + 10 (skip loop) + 1 (md2). */
+9718:  if (size > 12 * len)
+9726:	    if (d == 0)
+9731:	    if (d == 0)
+9736:	    if (d == 0)
+9743:	if (U(tp[-2]) == gc)
+9747:	    if (i > len)
+9760:      if (d != 0)
+9762:      if (tp[-2] == gc)
+9766:	  if (i > len)
+9794:  if (len < kwset->mind)
+9801:  if ((d = kwset->mind) != 0)
+9809:  if (len >= 4 * kwset->mind)
+9816:      if (qlim && end <= qlim)
+9829:      if (d)
+9833:      if (trie->accepting)
+9838:      d = trie->shift;
+9844:	    if (c < tree->label)
+9848:	  if (tree)
+9851:	      if (trie->accepting)
+9859:	  d = trie->shift;
+9861:      if (mch)
+9870:  if (lim - mch > kwset->maxd)
+9876:      if ((d = delta[c = (end += d)[-1]]) != 0)
+9879:      if (!(trie = next[c]))
+9884:      if (trie->accepting && beg <= mch)
+9889:      d = trie->shift;
+9895:	    if (c < tree->label)
+9899:	  if (tree)
+9902:	      if (trie->accepting && beg <= mch)
+9910:	  d = trie->shift;
+9912:      if (lmch)
+9917:      if (!d)
+9921:  if (kwsmatch)
+9932:   the matching substring, or NULL if no match is found.  If FOUNDLEN
+9934:   matching substring.  Similarly, if FOUNDIDX is non-NULL, store
+9948:  if (kwset->words == 1 && kwset->trans == 0)
+9951:      if (kwsmatch != 0 && ret != 0)
+9977:This program is free software; you can redistribute it and/or modify it
+9988:along with this program; if not, write to the Free Software
+9996:/* Comment out all this code if we are using the GNU C Library, and are not
+10000:   (especially if it is a shared library).  Rather than having every GNU
+10004:#if defined (_LIBC) || !defined (__GNU_LIBRARY__)
+10007:#ifdef __STDC__
+10011:#endif
+10025:   in such a case, redefine COPYING_UNIT to `long' (if that works)
+10027:#ifndef COPYING_UNIT
+10029:#endif
+10049:    if ((h) -> use_extra_arg) \
+10061:/* Initialize an obstack H for use.  Specify chunk size SIZE (0 means default).
+10076:  if (alignment == 0)
+10078:  if (size == 0)
+10082:	 Use the values for range checking, because if range checking is off,
+10083:	 the extra bytes won't be missed terribly, but if range checking is on
+10121:  if (alignment == 0)
+10123:  if (size == 0)
+10127:	 Use the values for range checking, because if range checking is off,
+10128:	 the extra bytes won't be missed terribly, but if range checking is on
+10176:  if (new_size < h->chunk_size)
+10185:     Word at a time is fast and is safe if the object
+10187:  if (h->alignment_mask + 1 >= DEFAULT_ALIGNMENT)
+10206:     But not if that chunk might contain an empty object.  */
+10207:  if (h->object_base == old_chunk->contents && ! h->maybe_empty_object)
+10219:/* Return nonzero if object OBJ has been allocated from obstack H.
+10229:  register struct _obstack_chunk*  plp;	/* point to previous chunk if any */
+10257:  register struct _obstack_chunk*  plp;	/* point to previous chunk if any */
+10272:  if (lp)
+10278:  else if (obj != 0)
+10291:  register struct _obstack_chunk*  plp;	/* point to previous chunk if any */
+10306:  if (lp)
+10312:  else if (obj != 0)
+10317:#if 0
+10324:#ifdef __STDC__
+10428:#endif /* __STDC__ */
+10430:#endif /* 0 */
+10432:#endif	/* _LIBC or not __GNU_LIBRARY__.  */
+10436:   This program is free software; you can redistribute it and/or modify
+10447:   along with this program; if not, write to the Free Software
+10454:#ifdef STDC_HEADERS
+10455:#if flag_limits==0
+10459:#endif
+10460:#if flag_stdlib==0
+10463:#endif
+10466:#if flag_systypes==0
+10469:#endif
+10471:#endif
+10473:#ifdef HAVE_MEMCHR
+10474:#if flag_string==0
+10477:#endif
+10478:#ifdef NEED_MEMORY_H
+10479:#if flag_memory==0
+10482:#endif
+10483:#endif
+10485:#ifdef __STDC__
+10489:#endif
+10490:#endif
+10492:#if defined(HAVE_STRING_H) || defined(STDC_HEADERS)
+10495:#endif
+10497:#ifdef isascii
+10503:#endif
+10514:#if __STDC__
+10526:#endif
+10573:  if (match_icase)
+10577:  if (!(kwset = kwsalloc(match_icase ? trans : (char *) 0)))
+10591:  if (dfa_1.musts)
+10599:	  if (!dm->exact)
+10602:	  if ((err = kwsincr(kwset, dm->must, strlen(dm->must))) != 0)
+10609:	  if (dm->exact)
+10611:	  if ((err = kwsincr(kwset, dm->must, strlen(dm->must))) != 0)
+10614:      if ((err = kwsprep(kwset)) != 0)
+10624:#ifdef __STDC__
+10626:#endif
+10632:  if ((err = re_compile_pattern(pattern, size, &regex)) != 0)
+10637:  /* In the match_words and match_lines cases, we use a different pattern
+10639:     Then if DFA succeeds we do some hairy stuff using the regex matcher
+10641:  if (match_words || match_lines)
+10654:      if (match_lines)
+10656:      if (match_words)
+10663:      if (match_words)
+10665:      if (match_lines)
+10682:#ifdef __STDC__
+10684:#endif
+10687:  if (strcmp(matcher, "posix-egrep") == 0)
+10698:  if ((err = re_compile_pattern(pattern, size, &regex)) != 0)
+10703:  /* In the match_words and match_lines cases, we use a different pattern
+10705:     Then if DFA succeeds we do some hairy stuff using the regex matcher
+10707:  if (match_words || match_lines)
+10720:      if (match_lines)
+10722:      if (match_words)
+10729:      if (match_words)
+10731:      if (match_lines)
+10759:      if (kwset)
+10763:	  if (!beg)
+10768:	  if (!end)
+10773:	  if (kwsm.index < lastexact)
+10775:	  if (!dfaexec(&dfa_1, beg, end, 0, (int *) 0, &backref))
+10782:	  if (!backref)
+10791:	  if (!beg)
+10795:	  if (!end)
+10800:	  if (!backref)
+10806:      if ((start = re_search(&regex, beg, end - beg, 0, end - beg, &regs)) >= 0)
+10809:	  if (!match_lines && !match_words || match_lines && len == end - beg)
+10811:	  /* If -w, check if the match aligns with word boundaries.
+10817:	  if (match_words)
+10820:		if ((start == 0 || !WCHAR(beg[start - 1]))
+10823:		if (len > 0)
+10830:		if (len <= 0)
+10833:		    if (start == end - beg)
+10866:      if ((err = kwsincr(kwset, beg, lim - beg)) != 0)
+10868:      if (lim < pattern + size)
+10874:  if ((err = kwsprep(kwset)) != 0)
+10890:      if (!(beg = kwsexec(kwset, beg, buf + size - beg, &kwsmatch)))
+10893:      if (match_lines)
+10895:	  if (beg > buf && beg[-1] != '\n')
+10897:	  if (beg + len < buf + size && beg[len] != '\n')
+10901:      else if (match_words)
+10904:	    if (try > buf && WCHAR((unsigned char) try[-1]))
+10906:	    if (try + len < buf + size && WCHAR((unsigned char) try[len]))
+10921:  if ((end = memchr(beg + len, '\n', (buf + size) - (beg + len))) != 0)
