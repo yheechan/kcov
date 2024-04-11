@@ -109,8 +109,13 @@ private:
         auto stmtName = s->getStmtClassName();
 
         // Get line and column information
-        SourceLocation startLocation = s->getBeginLoc();
         SourceManager &srcmgr = TheRewriter.getSourceMgr(); // you can get SourceManager from initialization part
+        SourceLocation startLocation = s->getBeginLoc();
+
+        if (startLocation.isMacroID()) {
+            startLocation = srcmgr.getSpellingLoc(startLocation);
+        }
+
         unsigned int lineNum = srcmgr.getExpansionLineNumber(startLocation);
         unsigned int colNum = srcmgr.getExpansionColumnNumber(startLocation);
         llvm::StringRef fileName = srcmgr.getFilename(startLocation);
@@ -196,7 +201,8 @@ int main(int argc, char *argv[])
       /usr/include
     End of search list.
     */
-    const char *include_paths[] = {"/usr/local/include",
+    const char *include_paths[] = {
+        "/usr/local/include",
         "/usr/include/x86_64-linux-gnu",
         "/usr/lib/gcc/x86_64-linux-gnu/7/include",
         "/usr/include"};
